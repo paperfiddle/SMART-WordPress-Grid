@@ -1,0 +1,58 @@
+//
+// @file /sass/fonts/_mix-mono.scss
+//
+
+//
+// If you don't declare 'Menlo', you get Courier
+// If you don't declare 'Consolas', you get Courier New in Firefox
+//
+// In theory, 'monospace' should render  
+// the Android, Chrome OS, and Linux fonts without `local`s. 
+//
+// This is because of how common families like 'Courier' and 'monospace'
+// are mapped back to the system fonts.  
+//
+// On Android, if you want a serif-mono, you must declare Cutive Mono
+//
+
+
+@mixin mono-400($size) {
+	font-family: $font-family__mono;
+	font-style: normal;
+	font-weight: 400;
+	font-size: $size;
+}
+
+@mixin mono-400i($size) {
+	font-family: $font-family__mono;
+	font-style: italic;
+	font-weight: 400;
+	font-size: $size;
+}
+
+@mixin mono-700($size) {
+	font-family: $font-family__mono;
+	font-style: normal;
+	font-weight: 700;
+	font-size: $size;
+}
+
+@mixin mono-700i($size) {
+	font-family: $font-family__mono;
+	font-style: italic;
+	font-weight: 700;
+	font-size: $size;
+}
+
+
+//
+// Usage
+// 
+
+code, pre {
+	@include mono-400(8.5rem);
+	// font-style: ;
+	// font-weight: ;
+	// font-stretch: ;
+}
+

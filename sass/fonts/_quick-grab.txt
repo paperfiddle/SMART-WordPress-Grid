@@ -1,0 +1,46 @@
+//
+// @file /sass/fonts/_quick-grab.txt
+//
+
+
+// Property: 'font-size' 
+// Accepts: A ratio to 2 decimal places - 1.62
+// Default: 1
+
+@include font-size();
+
+
+// sans-serif
+// Properties: 'font-family' + 'font-style' + 'font-weight'
+// Accepts: None
+
+@include sans-300;
+@include sans-300i;
+@include sans-400;
+@include sans-400i;
+@include sans-600;
+@include sans-600i;
+@include sans-700;
+@include sans-700i;
+@include sans-900;
+@include sans-900i;
+
+
+// serif
+// Properties: 'font-family' + 'font-style' + 'font-weight'
+// Accepts: None
+
+@include serif-400;
+@include serif-400i;
+@include serif-700;
+@include serif-700i;
+
+
+// monospace
+// Properties: 'font-family' + 'font-style' + 'font-weight'
+// Accepts: None
+
+@include mono-400;
+@include mono-400i;
+@include mono-700;
+@include mono-700i;

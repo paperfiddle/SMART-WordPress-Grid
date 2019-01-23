@@ -1,0 +1,24 @@
+//
+// @file /sass/fonts/_globals-theme.scss
+//
+
+// This global is the size of 1rem.
+// The only place this $global is used directly is on 'html' (root). 
+// Everywhere else uses '@include font-size();' to set proportioanl
+// fonts - changing this $global cascades to all font sizes.
+// set with this @mixin.
+
+$font-size: 20px;
+
+
+// This theme uses system font stacks.
+// This theme uses @mixins to set family, style, and weight. 
+// These $globals are for the @mixins - do not use them directly.
+// @link https://github.com/paperfiddle/SMART-CSS-System-Font-Stacks
+
+$font-family__sans: '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Sego UI', 'Roboto', sans-serif,  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$font-family__serif: 'Georgia', serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$font-family__mono: 'Menolo', 'Consolas', monospace, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
