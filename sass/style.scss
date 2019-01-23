@@ -1,9 +1,23 @@
-/**
+@charset "UTF-8";
+/*!
+Theme Name: SMART WordPress Grid
+Theme URI: https://github.com/paperfiddle/SMART-WordPress-Grid
+Author: Lisa Burton
+Author URI: https://paper.earth
+Description: A custom WordPress theme using CSS Grid
+Version: 0.1
+License: 
+License URI: 
 
+Tags: responsive, grid, system fonts, font awesome, 
 
- */
+Styles have been normalized using:
+	[normalize.css](https://necolas.github.io/normalize.css/)
+	[reset.css](https://meyerweb.com/eric/tools/css/reset/)
+
+*/
 
 
 @import "/color/import";
 @import "/fonts/import"; 
-
+@import "/boxes/import";

@@ -1,0 +1,47 @@
+//
+// @file /sass/boxes/_mix-border-radius.scss
+//
+
+
+@mixin ui-border-radius ($tl:$border-radius, $tr:null, $br:null, $bl:null) {
+	@if $tr == null {
+		-webkit-border-radius: $tl;
+		   -moz-border-radius: $tl;
+		        border-radius: $tl;
+	} @else {
+		-webkit-border-top-left-radius: $tl;
+		   -moz-border-top-left-radius: $tl;
+		        border-top-left-radius: $tl;	
+
+		-webkit-border-top-left-radius: $tl;
+		   -moz-border-top-left-radius: $tl;
+		        border-top-left-radius: $tl;
+
+		-webkit-border-top-right-radius: $tr;
+		   -moz-border-top-right-radius: $tr;
+		        border-top-right-radius: $tr;
+
+		-webkit-border-bottom-right-radius: $br;
+		   -moz-border-bottom-right-radius: $br;
+		        border-bottom-right-radius: $br;
+
+		-webkit-border-bottom-left-radius: $bl;
+		   -moz-border-bottom-left-radius: $bl;
+		        border-bottom-left-radius: $bl; 		
+	}
+	-webkit-background-clip: padding-box;
+	   -moz-background-clip: padding;
+	        background-clip: padding-box;
+}
+
+
+//
+// Usage
+//
+
+// .box-a {@include border-radius;}
+// .box-b {@include border-radius(60px,0px,0px,0px);}
+// .box-c {@include border-radius(0px,60px,0px,0px);}
+// .box-d {@include border-radius(0px,0px,60px,0px);}
+// .box-e {@include border-radius(0px,0px,0px,60px);}
+
