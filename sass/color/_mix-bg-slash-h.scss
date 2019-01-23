@@ -1,0 +1,31 @@
+//
+// @finle /sass/color/_mix-bg-slash-v.scss
+//
+
+
+@mixin bg-slash-v($hex-left, $alpha-left, $hex-right, $alpha-right){
+
+	background: rgba($hex-left,$alpha-left);
+
+	background: -webkit-linear-gradient(
+		290deg, 
+		rgba($hex-left,$alpha-left) 0%, 
+		rgba($hex-left,$alpha-left) 45%, 
+		rgba($hex-right,$alpha-right) 45%, 
+		rgba($hex-right,$alpha-right) 100%);
+
+	background: -o-linear-gradient(
+		290deg, 
+		rgba($hex-left,$alpha-left) 0%, 
+		rgba($hex-left,$alpha-left) 45%, 
+		rgba($hex-right,$alpha-right) 45%, 
+		rgba($hex-right,$alpha-right) 100%);
+
+	background: linear-gradient(
+		160deg, 
+		rgba($hex-left,$alpha-left) 0%, 
+		rgba($hex-left,$alpha-left) 45%, 
+		rgba($hex-right,$alpha-right) 45%, 
+		rgba($hex-right,$alpha-right) 100%);
+
+}
