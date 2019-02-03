@@ -1,0 +1,117 @@
+//
+// @file /sass/components/_c-branding.scss
+//
+
+
+/**
+ * c-branding - Base
+ * ======================================== */
+
+.c-branding {
+	line-height: 1.266;
+	a {text-decoration: none;}
+	&__icon {@include icon-fas(f520);}	// Temporary fa icon
+	background-color: rgba($color__primary, 0.4);
+
+} // .c-branding
+
+
+/**
+ * c-branding--full - Base
+ * ======================================== */
+
+.c-branding--full {
+
+	display: -ms-grid;
+		display: grid;
+	-webkit-box-pack: start;
+		-ms-flex-pack: start;
+			justify-content: start;
+
+	grid-template-areas:
+	"logo name"
+	"logo slogan";	
+
+	.c-branding__name {
+		grid-area: name;
+		-ms-flex-item-align: end;
+			-ms-grid-row-align: end;
+				align-self: end;
+	}
+
+	.c-branding__slogan {
+		grid-area: slogan;
+		-ms-flex-item-align: start;
+			-ms-grid-row-align: start;
+				align-self: start;		
+	}	
+
+	.c-branding__logo {
+		grid-area: logo;
+		-ms-flex-item-align: center;
+			-ms-grid-row-align: center;
+				align-self: center;
+
+		@include font-size(2.565); // when fa icon
+		// max-height: 2.565rem; // when img
+		// margin-right: 0.25rem;
+	}
+
+} // --full
+
+
+/**
+ * c-branding--compact - Base
+ * ======================================== */
+.c-branding--compact {
+
+	.c-branding__logo {
+		@include font-size(1.602); // when fa icon
+		// max-height: 1.602rem; // when img
+	}
+
+	.c-branding__name {
+
+	}
+
+} // --compact
+
+
+/**
+ * c-branding--mobile - Base
+ * ======================================== */
+.c-branding--mobile {
+
+	.c-branding__name,
+	.c-branding__slogan {display: none;}
+
+	.c-branding__logo {
+		@include font-size(4); // when fa icon
+		// max-height: 4rem; // when img
+	}
+
+} // --mobile
+
+
+
+
+ /**
+ * c-branding - Styles
+ * ======================================== */
+
+.c-branding {	
+	&__name {
+		@include serif-700;
+		@include font-size(1.125);		
+	}
+
+	&__slogan {
+		@include sans-400i;
+		@include font-size(0.79);
+	}
+
+	&__logo {}
+	&__icon {}	
+
+} // .c-branding
+

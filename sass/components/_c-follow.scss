@@ -1,0 +1,60 @@
+//
+// @file /sass/components/_c-follow.scss
+//
+
+
+/**
+ * c-follow - Base
+ * ======================================== */
+
+.c-follow {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+
+	-webkit-box-pack: center;
+	   -ms-flex-pack: center;
+	 justify-content: center;
+
+	-webkit-box-align: center;
+	   -ms-flex-align: center;
+	      align-items: center;
+
+	-ms-flex-line-pack: center;
+	     align-content: center;
+
+	&__item {}
+	&__link {}
+	&__icon {}
+
+	&__text {
+		@include screen-reader-text;
+	}
+
+	&--horizontal {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		        -ms-flex-flow: row nowrap;
+		            flex-flow: row nowrap;
+	}
+
+	&--vertical {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		        -ms-flex-flow: column nowrap;
+		            flex-flow: column nowrap;
+	}
+
+} // .c-follow
+
+
+/**
+ * c-follow - Styles
+ * ======================================== */
+
+ .c-follow {
+	&__item {}
+	&__link {}
+	&__icon {}
+	&__text {}
+}
