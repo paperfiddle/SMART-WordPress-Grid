@@ -1,0 +1,347 @@
+// FA Brands
+
+
+// <i class="fab fa-twitter"></i>
+.icon-twitter {@include icon-fab(f099);}
+
+// <i class="fab fa-facebook-f"></i>
+.icon-fb {@include icon-fab(f39e);}
+
+// <i class="fab fa-pinterest-p"></i>
+.icon-pinterest {@include icon-fab(f231);}
+
+// <i class="fab fa-instagram"></i>
+.icon-instagram {@include icon-fab(f16d);}
+
+// <i class="fab fa-linkedin-in"></i>
+.icon-linkedin {@include icon-fab(f0e1);}
+
+// <i class="fab fa-amazon"></i>
+.icon-amazon {@include icon-fab(f270);}
+
+// <i class="fab fa-amazon-pay"></i>
+.icon-amazon-pay {@include icon-fab(f42c);}
+
+// 	<i class="fab fa-aws"></i>
+.icon-aws {@include icon-fab(f375);}
+
+// <i class="fab fa-js"></i>
+.icon-js {@include icon-fab(f3b8);}
+
+// <i class="fab fa-sass"></i>
+.icon-sass {@include icon-fab(f41e);}
+
+// <i class="fab fa-font-awesome-flag"></i>
+.icon-font-awesome {@include icon-fab(f425);}
+
+// <i class="fab fa-php"></i>
+.icon-php {@include icon-fab(f457);}
+
+// <i class="fab fa-html5"></i>
+.icon-html5 {@include icon-fab(f13b);}
+
+// <i class="fab fa-wordpress-simple"></i>
+.icon-wordpress {@include icon-fab(f411);}
+
+
+
+// FA Contact
+
+
+// <i class="fas fa-mobile-alt"></i>
+.icon-mobile {@include icon-fas(f3cd);}
+
+// <i class="fas fa-at"></i>
+.icon-at {@include icon-fas(f1fa);}
+
+// <i class="fas fa-map-marker-alt"></i>
+.icon-map-marker {@include icon-fas(f3c5);}
+
+// <i class="fas fa-external-link-square-alt"></i>
+.icon-external-link-alt {@include icon-fas(f360);}
+
+// <i class="far fa-comment"></i>
+.icon-comment {@include icon-far(f075);}
+
+// <i class="far fa-address-card"></i>
+.icon-address-card {@include icon-far(f2bb);}
+
+
+
+// FA Arrows
+
+
+// <i class="fas fa-angle-up"></i>
+.icon-carat-1-n,
+.icon-angle-up {@include icon-fas(f106);}
+
+// <i class="fas fa-angle-right"></i>
+.icon-carat-1-e,
+.icon-angle-right {@include icon-fas(f105);}
+
+// <i class="fas fa-angle-down"></i>
+.icon-carat-1-n,
+.icon-angle-down {@include icon-fas(f107);}
+
+// <i class="fas fa-angle-left"></i>
+.icon-carat-1-w,
+.icon-angle-left {@include icon-fas(f104);}
+
+// <i class="fas fa-sort"></i>
+.icon-sort {@include icon-fas(f0dc);}
+.icon-sort-h {@include icon-fas(f0dc) {@include rotate(90);} ;}
+
+// <i class="fas fa-caret-up"></i>
+.icon-triangle-1-n,
+.icon-circle-triangle-n,
+.icon-caret-up {@include icon-fas(f0d8);}
+
+// <i class="fas fa-caret-right"></i>
+.icon-triangle-1-e,
+.icon-circle-triangle-e,
+.icon-caret-right {@include icon-fas(f0da);}
+
+// <i class="fas fa-caret-down"></i>
+.icon-triangle-1-s,
+.icon-circle-triangle-s,
+.icon-caret-down {@include icon-fas(f0d7);}
+
+// <i class="fas fa-caret-left"></i>
+.icon-triangle-1-w,
+.icon-circle-triangle-w,
+.icon-caret-left {@include icon-fas(f0d9);}
+
+// <i class="fas fa-arrow-up"></i>
+.icon-arrow-up {@include icon-fas(f062);}
+
+// <i class="fas fa-arrow-right"></i>
+.icon-arrow-right {@include icon-fas(f061);}
+
+// <i class="fas fa-arrow-left"></i>
+.icon-arrow-down {@include icon-fas(f063);}
+
+// <i class="fas fa-arrow-down"></i>
+.icon-arrow-left {@include icon-fas(f060);}
+
+// <i class="fas fa-arrows-alt-v"></i>
+.icon-arrow-2-n-s {@include icon-fas(f338);}
+.icon-arrow-2-ne-sw {@include icon-fas(f338) {@include rotate();} ;}
+
+// <i class="fas fa-arrows-alt-h"></i>
+.icon-arrow-2-e-w {@include icon-fas(f337);}
+.icon-gripsmall-diagonal-se,
+.icon-arrow-2-se-nw {@include icon-fas(f337) {@include rotate();} ;}
+
+// <i class="fas fa-arrows-alt"></i>
+.icon-arrow-4 {@include icon-fas(f0b2);}
+
+// <i class="fas fa-expand-arrows-alt"></i>
+.icon-arrow-4-diag {@include icon-fas(f31e);}
+
+// <i class="fas fa-sign-in-alt"></i>
+.icon-arrow-stop-n {@include icon-fas(f2f6) {@include rotate(270);} ;}
+.icon-arrow-stop-e {@include icon-fas(f2f6);}
+.icon-arrow-stop-s {@include icon-fas(f2f6) {@include rotate(90);} ;}
+.icon-arrow-stop-w {@include icon-fas(f2f6) {@include rotate(180);} ;}
+
+
+
+// FA Navigation
+
+
+// <i class="fas fa-"></i>
+.icon-ellipsis-v {@include icon-fas(f142);}
+
+// <i class="fas fa-ellipsis-h"></i>
+.icon-ellipsis-h {@include icon-fas(f141);}
+
+// <i class="fas fa-home"></i>
+.icon-home {@include icon-fas(f015);}
+
+// <i class="fas fa-shopping-cart"></i>
+.icon-cart {@include icon-fas(f07a);}
+
+// <i class="far fa-bell"></i>
+.icon-bell {@include icon-far(f0f3);}
+
+// <i class="fas fa-question"></i>
+.icon-question {@include icon-fas(f128);}
+
+// <i class="fas fa-search"></i>
+.icon-search {@include icon-fas(f002);}
+
+// <i class="fas fa-cog"></i>
+.icon-cog {@include icon-fas(f013);}
+
+// <i class="far fa-user"></i>
+.icon-user {@include icon-far(f007);}
+
+// <i class="far fa-heart"></i>
+.icon-heart {@include icon-far(f004);}
+
+// <i class="far fa-star"></i>
+.icon-star {@include icon-far(f005);}
+
+// <i class="fas fa-hashtag"></i>
+.icon-hashtag {@include icon-fas(f292);}
+
+// <i class="fas fa-th-large"></i>
+.icon-categories {@include icon-fas(f009);}
+
+// <i class="fas fa-tags"></i>
+.icon-tags {@include icon-fas(f02c);}
+
+// <i class="fas fa-tag"></i>
+.icon-tag {@include icon-fas(f02b);}
+
+// <i class="fas fa-external-link-inverse"></i>
+.icon-external-link-inverse {@include icon-fas(f35d);}
+
+// <i class="fas fa-link"></i>
+.icon-link {@include icon-fas(f0c1);}
+
+// <i class="fas fa-undo"></i>
+.icon-undo {@include icon-fas(f0e2);}
+
+// <i class="fas fa-redo"></i>
+.icon-redo {@include icon-fas(f01e);}
+
+// <i class="fas fa-sync"></i>
+.icon-refresh {@include icon-fas(f021);}
+
+// <i class="fas fa-search-plus"></i>
+.icon-search-plus {@include icon-fas(f00e);}
+
+// <i class="fas fa-search-minus"></i>
+.icon-search-minus {@include icon-fas(f010);}
+
+
+
+
+// FA Media + Devices
+
+
+// <i class="fas fa-battery-empty"></i>
+.icon-battery-0 	{@include icon-fas(f244);}
+
+// <i class="fas fa-battery-quarter"></i>
+.icon-battery-1 	{@include icon-fas(f243);}
+
+// <i class="fas fa-battery-half"></i>
+.icon-battery-2 	{@include icon-fas(f242);}
+
+// <i class="fas fa-battery-three-quarters"></i>
+.icon-battery-3 	{@include icon-fas(f241);}
+
+// <i class="fas fa-battery-full"></i>
+.icon-battery-4 	{@include icon-fas(f240);}
+
+// <i class="fas fa-volume-off"></i>
+.icon-volume-off {@include icon-fas(f026);}
+
+// <i class="fas fa-volume-up"></i>
+.icon-volume-on {@include icon-fas(f028);}
+
+// <i class="fas fa-step-backward"></i>
+.icon-media-step-back {@include icon-fas(f048);}
+
+// <i class="fas fa-backward"></i>
+.icon-backward {@include icon-fas(f04a);}
+
+// <i class="fas fa-play"></i>
+.icon-play {@include icon-fas(f04b);}
+
+// <i class="fas fa-pause"></i>
+.icon-pause {@include icon-fas(f04c);}
+
+// <i class="fas fa-stop"></i>
+.icon-stop  {@include icon-fas(f04d);}
+
+// <i class="fas fa-forward"></i>
+.icon-forward  {@include icon-fas(f04e);}
+
+// <i class="fas fa-step-forward"></i>
+.icon-step-forward {@include icon-fas(f051);}
+
+// <i class="fas fa-eject"></i>
+.icon-eject {@include icon-fas(f052);}
+
+// <i class="fas fa-random"></i>
+.icon-random {@include icon-fas(f074);}
+
+// <i class="far fa-image"></i>
+.icon-image {@include icon-far(f03e);}
+
+// <i class="fas fa-film"></i>
+.icon-video {@include icon-fas(f008);}
+
+
+
+// FA Documents + Files
+
+
+// <i class="fas fa-exchange-alt"></i>
+.icon-exchange {@include icon-fas(f362);}
+
+// <i class="far fa-folder"></i>
+.icon-foloder {@include icon-far(f07b);}
+
+// <i class="far fa-folder-open"></i>
+.icon-folder-open {@include icon-far(f07c);}
+
+// <i class="far fa-file"></i>
+.icon-file {@include icon-far(f15b);}
+
+// <i class="far fa-file-alt"></i>
+.icon-file-alt {@include icon-far(f15c);}
+
+// <i class="far fa-envelope"></i>
+.icon-enevelope {@include icon-far(f0e0);}
+
+// <i class="far fa-envelope-open"></i>
+.icon-enevelope-open {@include icon-far(f2b6);}
+
+// <i class="fas fa-lock"></i>
+.icon-lock {@include icon-fas(f023);}
+
+// <i class="fas fa-lock-open"></i>
+.icon-lock-open {@include icon-fas(f3c1);}
+
+
+
+// FA Misc
+
+
+// <i class="fas fa-plus"></i>
+.icon-plus {@include icon-fas(f067);}
+
+// <i class="fas fa-minus"></i>
+.icon-minus {@include icon-fas(f068);}
+
+// <i class="fas fa-times"></i>
+.icon-closethick,
+.icon-times {@include icon-fas(f00d);}
+
+// <i class="fas fa-check"></i>
+.icon-check {@include icon-fas(f00c);}
+
+// <i class="fas fa-dollar-sign"></i>
+.icon-usd {@include icon-fas(f155);}
+
+// <i class="fas fa-info"></i>
+.icon-info {@include icon-fas(f129);}
+
+// <i class="fas fa-exclamation"></i>
+.icon-exclamation {@include icon-fas(f12a);}
+
+// <i class="fas fa-code"></i>
+.icon-code {@include icon-fas(f121);}
+
+// <i class="fas fa-cut"></i>
+.icon-cut {@include icon-fas(f0c4);}
+
+// <i class="fas fa-volleyball-ball"></i>
+.icon-volleyball {@include icon-fas(f45f);}
+
+// <i class="fas fa-cookie-bite"></i>
+.icon-cookie-bite {@include icon-fas(f564);}
