@@ -1,0 +1,32 @@
+//
+// @file /doc/quick-grab_fonts.txt
+// @link https://github.com/paperfiddle/SMART-CSS-System-Font-Stacks
+//
+
+// Replaces `font-size`
+
+@include font-size();
+
+
+// Replaces `font-family`, `font-weight`, `font-style`
+
+@include sans-300;
+@include sans-300i;
+@include sans-400;
+@include sans-400i;
+@include sans-600;
+@include sans-600i;
+@include sans-700;
+@include sans-700i;
+@include sans-900;
+@include sans-900i;
+
+@include serif-400;
+@include serif-400i;
+@include serif-700;
+@include serif-700i;
+
+@include mono-400;
+@include mono-400i;
+@include mono-700;
+@include mono-700i;

@@ -1,0 +1,69 @@
+//
+// @file /doc/quick-grab_color.scss
+//
+
+
+// 
+// Suggestions for "Bright Sky, Grass, Sun"
+//
+
+// linear - Brand 
+@include bg-linear-h($color__primary-a,$color__secondary);
+
+// linear - Dark on left
+@include bg-linear-h($color__black, 1, $color__black-a, 1);
+@include bg-linear-h($color__white-a, 1, $color__white, 1);
+@include bg-linear-h($color__primary-a, 1, $color__primary, 1);
+@include bg-linear-h($color__secondary-a, 1, $color__secondary, 1);
+@include bg-linear-h($color__alt-a, 1, $color__alt, 1);
+
+// linear - Dark on right
+@include bg-linear-h($color__black-a, 1, $color__black, 1);
+@include bg-linear-h($color__white, 1, $color__white-a, 1);
+@include bg-linear-h($color__primary, 1, $color__primary-a, 1);
+@include bg-linear-h($color__secondary, 1, $color__secondary-a, 1);
+@include bg-linear-h($color__alt, 1, $color__alt-a, 1);
+
+// linear - Dark on top
+@include bg-linear-v($color__black, 1, $color__black-a, 1);
+@include bg-linear-v($color__white-a, 1, $color__white, 1);
+@include bg-linear-v($color__primary-a, 1, $color__primary, 1);
+@include bg-linear-v($color__secondary-a, 1, $color__secondary, 1);
+@include bg-linear-v($color__alt-a, 1, $color__alt, 1);
+
+// linear - Dark on bottom
+@include bg-linear-v($color__black-a, 1, $color__black, 1);
+@include bg-linear-v($color__white, 1, $color__white-a, 1);
+@include bg-linear-v($color__primary, 1, $color__primary-a, 1);
+@include bg-linear-v($color__secondary, 1, $color__secondary-a, 1);
+@include bg-linear-v($color__alt, 1, $color__alt-a, 1);
+
+
+// slash-v - Dark on left
+@include bg-slash-v($color__black, 1, $color__black-a, 1);
+@include bg-slash-v($color__white-a, 1, $color__white, 1);
+@include bg-slash-v($color__primary-a, 1, $color__primary, 1);
+@include bg-slash-v($color__secondary-a, 1, $color__secondary, 1);
+@include bg-slash-v($color__alt-a, 1, $color__alt, 1);
+
+// slash-v - Dark on right
+@include bg-slash-h($color__black-a, 1, $color__black, 1);
+@include bg-slash-h($color__white, 1, $color__white-a, 1);
+@include bg-slash-h($color__primary, 1, $color__primary-a, 1);
+@include bg-slash-h($color__secondary, 1, $color__secondary-a, 1);
+@include bg-slash-h($color__alt, 1, $color__alt-a, 1);
+
+// slash-h - Dark on top
+@include bg-slash-h($color__black, 1, $color__black-a, 1);
+@include bg-slash-h($color__white-a, 1, $color__white, 1);
+@include bg-slash-h($color__primary-a, 1, $color__primary, 1);
+@include bg-slash-h($color__secondary-a, 1, $color__secondary, 1);
+@include bg-slash-h($color__alt-a, 1, $color__alt, 1);
+
+// slash-h - Dark on bottom
+@include bg-slash-h($color__black-a, 1, $color__black, 1);
+@include bg-slash-h($color__white, 1, $color__white-a, 1);
+@include bg-slash-h($color__primary, 1, $color__primary-a, 1);
+@include bg-slash-h($color__secondary, 1, $color__secondary-a, 1);
+@include bg-slash-h($color__alt, 1, $color__alt-a, 1);
+
