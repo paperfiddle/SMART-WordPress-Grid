@@ -1,0 +1,23 @@
+// 
+// @file /sass/typography/_code.scss
+//  
+
+
+/**
+ * Code
+ * ========================================*/
+
+// Match https://github.com/google/code-prettify
+
+code,
+kbd,
+samp,
+pre {
+	@include mono-400;
+    background: #f8f8ff;
+    color: #800; 
+    font-size: 0.9em; 
+    font-weight: normal;
+    padding: 0.1em 0.2em;
+}
+

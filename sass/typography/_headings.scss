@@ -1,0 +1,36 @@
+// 
+// @file /sass/typography/_headings.scss
+//  
+
+
+/**
+ * Headings
+ * ========================================*/
+ 
+h1,h2,h3,h4 {
+	line-height: 1.226;
+	margin: 0 0 1em 0;	
+}
+
+h1 { 
+	@include sans-900;
+	@include font-size(1.424); 
+	color: $color__black;
+}
+
+h2 { 
+	@include serif-700;
+	@include font-size(1.266); 
+	color: $color__primary;
+}
+
+h3 {
+	@include serif-700; 
+	@include font-size(1); 
+}
+
+h4 { 
+	@include serif-700;
+	@include font-size(0.889); 
+}
+

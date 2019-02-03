@@ -1,0 +1,28 @@
+// 
+// @file /sass/typography/_links.scss
+//  
+
+
+ /**
+  * Links
+  * ========================================*/
+
+a {
+	color: $color__black;
+	text-decoration: underline;
+	border: 0;
+	outline: 0;
+	background: 0;
+
+	&:link,
+	&:visited {}
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: $color__primary;
+		text-decoration: none;
+	}
+
+} // a
+

@@ -1,0 +1,20 @@
+// 
+// @file /sass/typography/_lists.scss
+//  
+
+
+/**
+ * Lists
+ * ========================================*/
+
+ul, ol {
+	margin: 0 0 1.602em 0;
+	padding: 0 2em;	
+	line-height: 1.424;
+
+	ul, ol {margin: 0;}
+	
+}
+
+li {margin-bottom: 0.889em;}
+
