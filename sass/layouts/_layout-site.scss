@@ -1,0 +1,51 @@
+//
+// @file /sass/layouts/_layout-site.scss
+//
+
+
+/**
+ * .site - Layout
+ * ======================================== */
+
+.site {
+	&__top {}
+	&__header {
+		z-index: 1;		
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		// width: 100%;
+	}
+	&__main {margin-top: 3rem;}
+	&__footer {}
+	&__bottom {}
+	&__cookies {}
+
+} // .site
+
+
+
+/**
+ * .site - Backgrounds
+ * ======================================== */
+
+.site {
+	&__top {}
+	&__header {}
+	&__main {}
+	&__footer {
+		min-height: 6rem; 
+		@include bg-linear-v($color__black-a, 1, $color__black, 1);}
+	&__bottom {
+		min-height: 6rem; 
+		@include bg-slash-v($color__primary, 1, $color__primary-a, 1);}
+	&__cookies {
+		min-height: 6rem; 
+		@include bg-slash-v($color__secondary, 1, $color__secondary-a, 1);}
+	&__totop {
+		min-height: 6rem; 
+		@include bg-slash-h($color__alt, 1, $color__alt-a, 1);}
+} // .site
+
+
