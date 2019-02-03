@@ -17,7 +17,22 @@ Styles have been normalized using:
 
 */
 
+// Globals
+@import "globals/import";
+@import "mixins/import";
 
-@import "/color/import";
-@import "/fonts/import"; 
-@import "/boxes/import";
+// Layouts
+@import "helpers/import";
+@import "layouts/import";
+
+// Components - keep order
+@import "icons/import";
+@import "bits/import";
+@import "components/import";
+
+
+// Styles
+@import "typography/import";
+
+
+
