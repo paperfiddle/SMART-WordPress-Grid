@@ -1,0 +1,28 @@
+//
+// @file /sass/helpers/_aria-controls.scss
+//
+
+
+/** 
+ * Aria Controls 
+ * ======================================== */
+
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+[aria-disabled="true"],
+[disabled] {
+  cursor: not-allowed;
+}
+
+[aria-hidden="false"][hidden]:not(:focus) {
+  clip: rect(0, 0, 0, 0);
+  display: inherit;
+  position: absolute;
+}
+

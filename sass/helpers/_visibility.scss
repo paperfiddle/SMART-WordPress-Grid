@@ -1,0 +1,31 @@
+//
+// @file /sass/helpers/_hidden-accessible.scss
+//
+
+.is-hidden {
+	display: none;
+}
+
+
+.is-hidden-accessible {
+ 	@include hidden-accessible;
+}
+
+.is-visible {
+	// set properties on elenemt 
+	// see: _c-top.scss
+}
+
+.screen-reader-text {
+	@include screen-reader-text;
+}
+
+
+template {
+	display: none;
+}
+
+[hidden] {
+	display: none;
+}
+

@@ -1,0 +1,22 @@
+//
+// @file /sass/helpers/_touch-action.scss
+//
+
+
+/** 
+ * Touch Action
+ * ======================================== */
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation; 
+  touch-action: manipulation; 
+}
+
