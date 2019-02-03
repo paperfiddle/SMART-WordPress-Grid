@@ -1,0 +1,44 @@
+//
+// @file /sass/mixins/_mix-mono.scss
+//
+// @link https://github.com/paperfiddle/SMART-CSS-System-Font-Stacks
+// @see /doc/quick-grab_fonts.scss
+//
+
+
+@mixin mono-400 {
+	font-family: $font-family__mono;
+	font-style: normal;
+	font-weight: 400;
+}
+
+@mixin mono-400i {
+	font-family: $font-family__mono;
+	font-style: italic;
+	font-weight: 400;
+}
+
+@mixin mono-700 {
+	font-family: $font-family__mono;
+	font-style: normal;
+	font-weight: 700;
+}
+
+@mixin mono-700i {
+	font-family: $font-family__mono;
+	font-style: italic;
+	font-weight: 700;
+}
+
+
+//
+// Usage
+// 
+
+// code, pre {
+// 	@include mono-400;
+// 	// font-style: ;
+// 	// font-weight: ;
+// 	// font-stretch: ;
+// }
+

@@ -1,0 +1,69 @@
+//
+// @file /sass/mixins/_mix-serif.scss
+// @link https://github.com/paperfiddle/SMART-CSS-System-Font-Stacks
+//
+
+//
+// If you don't declare serif fonts, you'll get 
+// Times and Times New Roman on macOS, iOS, and Windows.
+//
+// I like Georgia - some other useful ones are: 
+// macOS, iOS can also use Baskerville, Hoefler Text, Palatino
+// Windows can also use Cambria, Constantia 
+//
+// In theory, 'serif' should render  
+// the Android, Chrome OS, and Linux fonts without `local`s. 
+//
+// This is because of how common families like 'Times' and 'serif'
+// are mapped back to the system fonts. 
+//
+
+//
+// Currently, this theme is using `Georgia, serif`
+// @see /globals/_theme-globals.scss
+// I like Georgia with a little space, so I've added it here. 
+//
+// TODO: Check spacing on Android, Chrome OS, Linux `serif`
+// 
+
+
+
+@mixin serif-400 {
+	font-family: $font-family__serif;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
+@mixin serif-400i {
+	font-family: $font-family__serif;
+	font-style: italic;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
+@mixin serif-700 {
+	font-family: $font-family__serif;
+	font-style: normal;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+@mixin serif-700i {
+	font-family: $font-family__serif;
+	font-style: italic;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+
+//
+// Usage
+//
+
+// strong {
+// 	@include serif-700;
+// 	// font-style: ;
+// 	// font-weight: ;
+// 	// font-stretch: ;
+// }

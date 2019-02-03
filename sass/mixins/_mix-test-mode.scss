@@ -1,0 +1,13 @@
+//
+// @file /sass/global/_mix-text-mode.scss
+//
+
+
+@mixin test-mode {
+
+	@if $test-mode == true { @content }
+	@else if $test-mode == false {} // do nothing	
+	@else {} // do nothing
+
+} // mixin
+

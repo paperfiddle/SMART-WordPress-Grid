@@ -1,0 +1,16 @@
+//
+// @file /sass/mixins/_mix-clearfix.scss
+//
+
+
+@mixin clearfix() {
+	min-height: 0; /* support: IE7 */
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+		border-collapse: collapse;
+    }
+    &:after {clear: both;}
+}
+

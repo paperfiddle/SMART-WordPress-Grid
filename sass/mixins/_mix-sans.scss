@@ -1,0 +1,107 @@
+//
+// @file /sass/mixins/_mix-sans.scss
+// @link https://github.com/paperfiddle/SMART-CSS-System-Font-Stacks
+// 
+
+//
+// `-apple-system` and `BlinkMacSystemFont` 
+// invoke the SF, Helvetica Neue, Lucida Grande stack
+// on macOS + iOS in Safari + Chrome. (Opera?)
+//
+// If you want to target Firefox for macOS and iOS, 
+// you'll need `local`s for either SF Text or SF Display,
+// plus Helvetica Neue.
+//
+// Normally, SF Text is for 19px and under. SF Display is 20px and up.
+// There's no sane way to use both - and this is just for FF on Apple. 
+// So I suggest sticking with SF Text since it has italics. 
+//
+// I specifically call either Verdana or Trebuchet MS.
+// These cover older macOS and Widnows. 
+// This prevents Helvetica and Arial (less legible).
+//
+//
+// In theory, 'sans-serif' should render  
+// the Android, Chrome OS, and Linux fonts without `local`s. 
+//
+// This is because of how common families like 'Arial', 'Helvetica' 
+// and 'serif' are mapped back to the system fonts. 
+//
+// Even so, it's common to see Roboto, so I use it here and 
+// remind Roboto Condensed can be used as an alternative 
+// (though it has less varients). 
+// 
+
+
+@mixin sans-300 {
+	font-family: $font-family__sans;
+	font-style: normal;
+	font-weight: 300;
+}
+
+@mixin sans-300i {
+	font-family: $font-family__sans;
+	font-style: italic;
+	font-weight: 300;
+}
+
+
+@mixin sans-400 {
+	font-family: $font-family__sans;
+	font-style: normal;
+	font-weight: 400;
+}
+
+@mixin sans-400i {
+	font-family: $font-family__sans;
+	font-style: italic;
+	font-weight: 400;
+}
+
+
+@mixin sans-600 {
+	font-family: $font-family__sans;
+	font-style: normal;
+	font-weight: 600;
+}
+
+@mixin sans-600i {
+	font-family: $font-family__sans;
+	font-style: italic;
+	font-weight: 600;
+}
+
+
+@mixin sans-700 {
+	font-family: $font-family__sans;
+	font-style: normal;
+	font-weight: 700;
+}
+
+@mixin sans-700i {
+	font-family: $font-family__sans;
+	font-style: italic;
+	font-weight: 700;
+}
+
+
+@mixin sans-900 {
+	font-family: $font-family__sans;
+	font-style: normal;
+	font-weight: 900;
+}
+
+@mixin sans-900i {
+	font-family: $font-family__sans;
+	font-style: italic;
+	font-weight: 900;
+}
+
+//
+// Usage
+//
+
+// h1 {
+// 	@include sans-700;
+// }
+
