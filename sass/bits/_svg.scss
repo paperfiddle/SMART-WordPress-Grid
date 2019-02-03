@@ -1,0 +1,22 @@
+//
+// @file /sass/bits/_svg.scss
+// 
+
+
+/**
+ * SVG
+ * =======================================*/
+
+svg:not([fill]) {
+	fill: currentColor;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+svg {
+	vertical-align: middle;
+}
+
+

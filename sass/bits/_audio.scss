@@ -1,0 +1,19 @@
+//
+// @file /sass/bits/_audio.scss
+// 
+
+
+/**
+ * Audio
+ * =======================================*/
+
+audio {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
