@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<title></title>
+</head>
+<body>
+
+
+<!-- START Modal -->
+<h1>JS Modal</h1>
+
+<button id="js-modal-01-open" type="button" aria-label="Open Modal 01" class="c-modal__open">Open Modal 01</button>
+
+<button id="js-modal-02-open" type="button" aria-label="Open Modal 02" class="c-modal__open">Open Modal 02</button>
+
+<p>Adapted from Ire Aderinokun's <a href="">Creating an Accessible Modal Dialog</a>.</p>
+
+
+
+<!-- Modal Overlays -->
+<div id="js-modal-overlay-primary" class="c-modal__overlay c-modal__overlay--primary" tabindex="-1" aria-hidden="true"></div>
+<div id="js-modal-overlay-secondary" class="c-modal__overlay c-modal__overlay--secondary" tabindex="-1" aria-hidden="true"></div>
+<div id="js-modal-overlay-alt" class="c-modal__overlay c-modal__overlay--alt" tabindex="-1" aria-hidden="true"></div>
+<div id="js-modal-overlay-black" class="c-modal__overlay c-modal__overlay--black" tabindex="-1" aria-hidden="true"></div>
+<div id="js-modal-overlay-white" class="c-modal__overlay c-modal__overlay--white" tabindex="-1" aria-hidden="true"></div>
+
+
+<!-- START Modal 01 -->
+<div id="js-modal-01" class="c-modal" role="dialog" aria-labelledby="js-modal-01-title" aria-describedby="js-modal-01-description" aria-hidden="true">
+
+	<button type="button" aria-label="Close Navigation" class="c-modal__close">X</button>
+
+	<header class="c-modal__header">
+		<h1 id="js-modal-01-title" class="c-modal__title" tabindex="0">An Extra Long Title to Test Word Wrap Goes Here</h1>
+		<p id="js-modal-01-description" class="c-modal__description">Short description for screen readers here.</p>
+	</header>
+
+	  <main class="c-modal__main">
+		  <div style="width:100%;height:0;padding-bottom:50%;position:relative;"><iframe tabindex="-1" src="https://giphy.com/embed/3oFzmrk6S4UONeH04w" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div> 
+	  </main>
+	  
+	  <footer class="c-modal__footer">
+		  <p><a href="https://giphy.com/gifs/nehumanesociety-3oFzmrk6S4UONeH04w">via GIPHY</a></p> 
+	  </footer>	
+</div><!-- END Modal 01 -->
+
+
+<!-- START Modal 02 -->
+<div id="js-modal-02" class="c-modal" role="dialog" aria-labelledby="js-modal-02-title" aria-describedby="js-modal-02-description" aria-hidden="true">
+
+	<button type="button" aria-label="Close Navigation" class="c-modal__close">X</button>
+
+	<header class="c-modal__header">
+		<h1 id="js-modal-02-title" class="c-modal__title" tabindex="0">Modal 02</h1>
+		<p id="js-modal-02-description" class="c-modal__description">Short description for screen readers here.</p>
+	</header>
+
+	  <main class="c-modal__main">
+		 <p>Testing a second modal.</p>
+	  </main>
+	  
+	  <footer class="c-modal__footer">
+		  <p>Some foooter text</p> 
+	  </footer>	
+</div><!-- END Modal 01 -->
+
+
+<!-- Scripts -->
+<script type="text/javascript" src="../js/c-modal.js"></script>
+
+<script>
+	var modalInstance = document.querySelector('#js-modal-01');
+	var overlayInstance = document.querySelector('#js-modal-overlay-black');
+
+	var newInstance = new Modal(modalInstance, overlayInstance);
+	newInstance.addEventListeners('#js-modal-01-open', '#js-modal-01 .c-modal__close');
+</script>
+
+<script>
+	var modalInstance = document.querySelector('#js-modal-02');
+	var overlayInstance = document.querySelector('#js-modal-overlay-primary');
+
+	var newInstance = new Modal(modalInstance, overlayInstance);
+	newInstance.addEventListeners('#js-modal-02-open', '#js-modal-02 .c-modal__close');
+</script>	
+
+</body>
+</html>
