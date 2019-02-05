@@ -16,7 +16,13 @@ html {
 	-ms-text-size-adjust: 100%; 
 	-webkit-text-size-adjust: 100%; 
 	word-break: break-word; 
-}
+
+	// TODO: Load `smooth-scroll.js` for non -webkit
+	// Then conditionally use this property for -webkit 
+	// (FF, Chrome, Opera)
+	// scroll-behavior: smooth; 
+
+} //
 
 *,
 *::before,
@@ -36,6 +42,7 @@ html {
 	tab-size: 4;
 }
 
+:focus{@include focus;}
 
 /** 
  * Body - Base
