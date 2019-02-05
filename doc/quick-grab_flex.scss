@@ -1,0 +1,87 @@
+//
+// @file /doc/quick-grab_flex.scss
+//
+
+
+//
+// Container
+//
+
+// Replace `display`
+
+@include display-flex;
+@include display-grid;
+
+
+// Replace `flex-flow`
+// $direction = row, row-reverse, column, column-reverse
+// $wrap = wrap, nowrap, wrap-reverse
+
+@include flex-flow(row, nowrap); // default
+@include flex-flow(row, wrap);
+@include flex-flow(column, nowrap);
+@include flex-flow(column, wrap);
+@include flex-flow($direction, $wrap);
+
+
+// Replace `justify-content`
+// flex + grid
+
+@include justify-content(start); // default
+@include justify-content(end);
+@include justify-content(center);
+@include justify-content(stretch); // grid only
+@include justify-content(space-between);
+@include justify-content(space-around);
+@include justify-content(space-evenly);
+
+
+// Replace `align-items`
+// flex + grid
+
+@include align-items(flex-start);
+@include align-items(flex-end);
+@include align-items(center);
+@include align-items(stretch); // default
+@include align-items(baseline); // flex only
+
+
+// Replace `align-content`
+//
+
+@include align-content(flex-start); 
+@include align-content(flex-end);
+@include align-content(center);
+@include align-content(stretch); // default
+@include align-content(space-between);
+@include align-content(space-around);
+@include align-content(space-evenly); // grid only
+
+
+//
+// Items
+//
+
+// Replace `order`
+
+@include flex-order($order);
+
+
+// Replace `flex`, `flex-grow`, `flex-shrink`, `flex-basis`
+// TODO: Add some examples
+
+@include flex-flex($grow, $shrink, $basis);
+
+
+// Replace `align-self`
+// TODO: What does auto do? 
+
+@include align-self(start);
+@include align-self(end);
+@include align-self(center);
+@include align-self(stretch); // default
+@include align-self(baseline); // flex only
+@include align-self(auto); // flex only
+
+
+
