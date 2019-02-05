@@ -7,13 +7,7 @@ Description: A custom WordPress theme using CSS Grid
 Version: 0.1
 License: 
 License URI: 
-
 Tags: responsive, grid, system fonts, font awesome, 
-
-Styles have been normalized using:
-	[normalize.css](https://necolas.github.io/normalize.css/)
-	[reset.css](https://meyerweb.com/eric/tools/css/reset/)
-
 */
 .is-hidden-accessible {
   border: 0;
@@ -95,8 +89,8 @@ textarea,
 /**
  * .site - Layout
  * ======================================== */
-#site__main {
-  margin-top: 5rem; }
+#site__main-target {
+  height: 5rem; }
 
 /**
  * .site - Backgrounds
@@ -738,7 +732,7 @@ video {
   display: -ms-grid;
   display: grid;
   grid-template-areas: 'head-brand head-foll head-nav';
-  padding: 0 0.5rem;
+  padding: 4px 0.5rem;
   will-change: transform;
   transition: transform 600ms ease; }
   .c-site-head.is-unpin {
@@ -778,6 +772,158 @@ video {
   .c-site-head a:hover, .c-site-head a:active, .c-site-head a:focus {
     color: #212121; }
 
+/**
+ * c-nav-head - Base
+ * ======================================== */
+.c-nav-head__toggle {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+.c-nav-head__label {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+.c-nav-head__nav {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%; }
+.c-nav-head__nav ul {
+  float: right;
+  margin: 0 1rem 0 0;
+  padding: 0;
+  list-style: none; }
+
+/**
+ * c-site-header - Nav - transformations
+ * ======================================== */
+.c-nav-head__nav {
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out; }
+.c-nav-head__nav a {
+  opacity: 0;
+  transition: opacity 150ms ease-in-out; }
+.c-nav-head__toggle:checked ~ nav {
+  transform: scale(1, 1); }
+.c-nav-head__toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms; }
+
+/**
+ * c-site-header - nav hamburger
+ * ======================================== */
+.c-nav-head__label span, .c-nav-head__label span::before, .c-nav-head__label span::after {
+  position: relative;
+  display: block;
+  background: #fff;
+  height: 2px;
+  width: 1rem;
+  border-radius: 2px; }
+.c-nav-head__label span::before, .c-nav-head__label span::after {
+  content: '';
+  position: absolute; }
+.c-nav-head__label span::before {
+  bottom: 0.389rem; }
+.c-nav-head__label span::after {
+  top: 0.389rem; }
+
+/**
+ * c-site-header - nav styles
+ * ======================================== */
+.c-nav-head__toggle:focus ~ .c-nav-head__label {
+  outline: 4px dashed #2979FF; }
+  .c-nav-head__toggle:focus ~ .c-nav-head__label span,
+  .c-nav-head__toggle:focus ~ .c-nav-head__label span::before,
+  .c-nav-head__toggle:focus ~ .c-nav-head__label span::after {
+    background: #212121; }
+.c-nav-head__label span, .c-nav-head__label span::before, .c-nav-head__label span::after {
+  background: #fff; }
+.c-nav-head__label:hover span,
+.c-nav-head__label:hover span::before,
+.c-nav-head__label:hover span::after {
+  background: #212121; }
+.c-nav-head__nav {
+  text-align: left;
+  font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  font-size: 1.13rem;
+  text-transform: uppercase; }
+.c-nav-head__nav li {
+  margin: 0 0 1rem 0; }
+.c-nav-head__nav li:first-child {
+  margin-top: 1rem; }
+
+/**
+ * .c-totop - Base
+ * ======================================== */
+#c-totop {
+  z-index: 2;
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2;
+  text-align: center;
+  text-decoration: none; }
+
+/**
+ * .c-totop - JS Support
+ * ======================================== */
+#c-totop {
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear;
+  -o-transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear;
+  transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear; }
+  #c-totop.is-unpin {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0); }
+  #c-totop.is-pin, #c-totop.is-unpin:focus {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+
+/**
+ * .c-totop - Style
+ * ======================================== */
+#c-totop {
+  color: #F5F5F5;
+  background: rgba(33, 33, 33, 0.4);
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box; }
+  #c-totop:hover, #c-totop:active, #c-totop:focus {
+    color: #fff;
+    background: rgba(33, 33, 33, 0.8); }
+
+.c-totop__icon::before {
+  content: "\f106";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900; }
+
+/**
+ * c-skip-to-main - Base
+ * ======================================== */
 /**
  * c-branding - Base
  * ======================================== */
@@ -900,173 +1046,6 @@ video {
 /**
  * c-follow - Styles
  * ======================================== */
-/**
- * c-nav-head - Base
- * ======================================== */
-.c-nav-head__toggle {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px; }
-.c-nav-head__label {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
-.c-nav-head__nav {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 100%; }
-.c-nav-head__nav ul {
-  float: right;
-  margin: 0 1rem 0 0;
-  padding: 0;
-  list-style: none; }
-
-/**
- * c-site-header - Nav - transformations
- * ======================================== */
-.c-nav-head__nav {
-  transform: scale(1, 0);
-  transform-origin: top;
-  transition: transform 400ms ease-in-out; }
-.c-nav-head__nav a {
-  opacity: 0;
-  transition: opacity 150ms ease-in-out; }
-.c-nav-head__toggle:checked ~ nav {
-  transform: scale(1, 1); }
-.c-nav-head__toggle:checked ~ nav a {
-  opacity: 1;
-  transition: opacity 250ms ease-in-out 250ms; }
-
-/**
- * c-site-header - nav hamburger
- * ======================================== */
-.c-nav-head__label span, .c-nav-head__label span::before, .c-nav-head__label span::after {
-  position: relative;
-  display: block;
-  background: #fff;
-  height: 2px;
-  width: 1rem;
-  border-radius: 2px; }
-.c-nav-head__label span::before, .c-nav-head__label span::after {
-  content: '';
-  position: absolute; }
-.c-nav-head__label span::before {
-  bottom: 0.389rem; }
-.c-nav-head__label span::after {
-  top: 0.389rem; }
-
-/**
- * c-site-header - nav styles
- * ======================================== */
-.c-nav-head__toggle:focus ~ .c-nav-head__label {
-  outline: 4px dashed #2979FF; }
-  .c-nav-head__toggle:focus ~ .c-nav-head__label span,
-  .c-nav-head__toggle:focus ~ .c-nav-head__label span::before,
-  .c-nav-head__toggle:focus ~ .c-nav-head__label span::after {
-    background: #212121; }
-.c-nav-head__label span, .c-nav-head__label span::before, .c-nav-head__label span::after {
-  background: #fff; }
-.c-nav-head__label:hover span,
-.c-nav-head__label:hover span::before,
-.c-nav-head__label:hover span::after {
-  background: #212121; }
-.c-nav-head__nav {
-  text-align: left;
-  font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 23px;
-  font-size: 1.13rem;
-  text-transform: uppercase; }
-.c-nav-head__nav li {
-  margin: 0 0 1rem 0; }
-.c-nav-head__nav li:first-child {
-  margin-top: 1rem; }
-
-/**
- * c-skip-to-main - Base
- * ======================================== */
-/**
- * .c-totop - Base
- * ======================================== */
-#c-totop__link {
-  z-index: 2;
-  position: fixed;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  width: 2rem;
-  height: 2rem;
-  line-height: 2;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  border-radius: 100%;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box; }
-
-#c-top__icon::before {
-  content: "\f106";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900; }
-
-/**
- * .c-totop - JS Support
- * ======================================== */
-#c-totop__link {
-  background: rgba(33, 33, 33, 0.4);
-  transform-origin: center;
-  transition: all 1000ms linear; }
-  #c-totop__link.is-unpin {
-    opacity: 0;
-    transform: scale(0); }
-  #c-totop__link.is-pin {
-    opacity: 1;
-    transform: scale(1); }
-
-.controls {
-  text-align: right;
-  margin-bottom: 1em; }
-
-.controls li {
-  display: inline; }
-
-button {
-  background: #000;
-  color: #fff;
-  border: 0;
-  font-size: 0.85rem;
-  border-radius: 0.25rem; }
-
-/*
-Custom elements are inline by default
-*/
-toggle-section {
-  display: block; }
-
-/*
-Only applies if script runs and 
-`role="region"` is added
-*/
-toggle-section[role="region"] {
-  border-width: 2px 0;
-  border-style: solid; }
-
-toggle-section[role="region"] + toggle-section {
-  border-top: 0; }
-
 /** 
  * Base HTML
  * ========================================*/

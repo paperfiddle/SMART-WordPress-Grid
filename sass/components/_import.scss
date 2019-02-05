@@ -2,18 +2,22 @@
 // @file /sass/components/_import.scss
 //
 
-
+// JS
 @import "c-site-head";
+@import "c-nav-head";
+@import "c-totop";
+
+// No JS
+
+
+@import "c-skip-to-main";
 @import "c-branding";
 @import "c-follow";
-@import "c-nav-head";
-@import "c-skip-to-main";
-
 @import "c-cards";
 @import "c-search";
 
-@import "c-totop";
-@import "c-toggle-section"; // JS
+
+
 
 // @import "";
 // @import "";

@@ -9,14 +9,12 @@
 </head>
 <body>
 
-<span id="c-totop__target"></span>
 
-<a id="c-skip-to-main__link" class="screen-reader-text" href="#c-skip-site-main__target" title="Skip to main-content">Skip to main content</a>
+<a id="c-skip-to-main" class="screen-reader-text" href="#site__main-target" title="Skip to main-content">Skip to main content</a>
 
 <div id="site">
 
 	<header id="site__head" class="c-site-head c-site-head--full">
-
 
 		<div class="c-branding c-branding--full">
 			<div class="c-branding__name"><a href="">site.name</a></div>		
@@ -61,13 +59,14 @@
 		</div><!-- .c-nav-head -->		
 	</header><!-- #site__head -->
 
-	<span id="c-skip-to-main__target"></span>
 	<main id="site__main">
+
+		<div id="site__main-target" role="separator" aria-label="Start main content"></div>
 
 		<h1>Toggle Sections One</h1>
 		<toggle-section open="false">
 			<h2 id="section-1">Section 1</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non lectus sit amet nunc facilisis molestie. Praesent quis libero et mauris facilisis dignissim at sed nisi.</p> 
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non lectus sit amet nunc facilisis molestie. Praesent quis <a href="#">libero et mauris facilisis</a> dignissim at sed nisi.</p> 
 			<p>Nullam efficitur porttitor lectus, ac finibus nibh fermentum ac. Phasellus aliquam, nibh non efficitur pharetra, tellus diam posuere lectus, a consequat elit ex nec ligula.</p>
 		</toggle-section>
 		<toggle-section open="false">
@@ -87,9 +86,10 @@
 			<p>Aliquam erat volutpat. Nulla facilisi. Nunc porttitor, elit non eleifend aliquam, est leo scelerisque nibh, nec faucibus odio urna ac nulla.</p> 
 			<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>
 		</toggle-section>		
-
 	</main><!-- #site__main -->
 
+	<a id="c-totop" title="Scroll to top" aria-label="Scroll to top" rel="bookmark" href="#site__main-target"><span class="c-totop__icon"></span></a>
+	
 	<footer id="site__foot">			
 	</footer><!-- #site__ footer -->
 
@@ -103,14 +103,14 @@
 
 
 
-<a id="c-totop__link" title="Scroll to top of site" rel="bookmark" href="#c-totop__target"><span id="c-top__icon"></span></a>
+
 
 <!-- START Scripts -->
 
 <script type="text/javascript" src="../js/smooth-scroll.js"></script>
 <script type="text/javascript" src="../js/c-site-head.js"></script>
 <script type="text/javascript" src="../js/c-totop.js"></script>
-<script type="text/javascript" src="../js/fx.js"></script>
+
 
 
 

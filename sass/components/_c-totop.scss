@@ -10,9 +10,8 @@
  * .c-totop - Base
  * ======================================== */
 
-#c-totop__target {} // no style
+#c-totop {
 
-#c-totop__link {
 	// position
 	z-index: 2;
 	position: fixed;
@@ -25,15 +24,8 @@
 	line-height: 2;
 	text-align: center;
 	// style
-	text-decoration: none;
-	color: $color__white;
-	@include border-radius($border-radius__icon);
-	
-} //
+	text-decoration: none;	
 
-
-#c-top__icon {
-	@include icon-fas(f106);
 } //
 
 
@@ -41,21 +33,59 @@
  * .c-totop - JS Support
  * ======================================== */
 
-#c-totop__link {
-	background: rgba($color__black, 0.4);
+#c-totop {
+
 	// will-change: transform;
-	transform-origin: center;
-	transition: all 1000ms linear; 
+
+	-webkit-transform-origin: center;
+	    -ms-transform-origin: center;
+	        transform-origin: center;
+
+	-webkit-transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear;
+	     -o-transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear;
+	        transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear;
 
 	&.is-unpin {
 		opacity: 0;	
-		transform: scale(0);		
+		-webkit-transform: scale(0);	
+		    -ms-transform: scale(0);	
+		        transform: scale(0);
 	}
 
-	&.is-pin {
+	&.is-pin,
+	&.is-unpin:focus { // accessibility
 		opacity: 1;			
-		transform: scale(1);
+		-webkit-transform: scale(1);
+		    -ms-transform: scale(1);
+		        transform: scale(1);
 	}
 
 }  //
+
+
+/**
+ * .c-totop - Style
+ * ======================================== */
+
+ #c-totop {
+
+ 	color: $color__white-a;
+ 	background: rgba($color__black, 0.4);
+	@include border-radius($border-radius__icon);
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: $color__white;
+		background: rgba($color__black, 0.8);
+	}
+
+ } //
+
+
+ .c-totop__icon {
+
+	@include icon-fas(f106);
+
+} //
 

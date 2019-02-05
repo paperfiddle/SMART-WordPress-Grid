@@ -23,7 +23,7 @@
 	// layout
 	@include display-grid;
 	grid-template-areas: 'head-brand head-foll head-nav';
-	padding: 0 0.5rem;
+	padding: 4px 0.5rem;
 	
 	// JS support
 	will-change: transform;
