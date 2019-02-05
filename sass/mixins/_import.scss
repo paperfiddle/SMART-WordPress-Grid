@@ -5,10 +5,15 @@
 
 @import "mix-test-mode";
 
+@import "mix-flex";
+
 @import "mix-font-size";
 @import "mix-sans";
 @import "mix-serif";
 @import "mix-mono";
+
+@import "mix-hidden-accessible";
+@import "mix-screen-reader-text";
 
 @import "mix-border-radius";
 @import "mix-box-shadow";
