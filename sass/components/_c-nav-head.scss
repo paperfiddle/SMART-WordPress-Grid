@@ -1,0 +1,130 @@
+//
+// @file /sass/componenets/_c-nav-head.scss
+//
+
+
+
+/**
+ * c-nav-head - Base
+ * ======================================== */
+
+.c-nav-head {
+
+	&__toggle { 
+		@include hidden-accessible; 
+	}
+	&__label {
+		height: 100%; // center v
+		@include display-flex;
+		@include align-items(center);
+	}
+	&__nav {
+		position: absolute;
+		top: 100%; // start at bottom edge of header		
+		right: 0;		
+		width: 100%;	
+	}
+	&__nav ul {
+		float: right;
+		margin: 0 1rem 0 0;
+		padding: 0;		
+		list-style: none;
+	}
+	&__nav li {}
+	
+} // .c-top-nav
+
+
+/**
+ * c-site-header - Nav - transformations
+ * ======================================== */
+
+.c-nav-head {
+	&__nav {
+		transform: scale(1,0);	
+		transform-origin: top;
+		transition: transform 400ms ease-in-out;
+	}
+	&__nav a {
+		opacity: 0;
+		transition: opacity 150ms ease-in-out;
+	}
+	&__toggle:checked ~ nav {
+		transform: scale(1,1);
+	}
+	&__toggle:checked ~ nav a {
+		opacity: 1;
+		transition: opacity 250ms ease-in-out 250ms;
+	}
+}
+
+
+/**
+ * c-site-header - nav hamburger
+ * ======================================== */
+
+.c-nav-head {
+	&__label span,
+	&__label span::before,
+	&__label span::after {
+		position: relative;
+		display: block;
+		background: $color__white;
+		height: 2px;
+		width: 1rem;
+		border-radius: 2px;
+	}
+	&__label span::before,
+	&__label span::after {
+		content: '';
+		position: absolute;
+	}
+
+	&__label span::before {
+		bottom: 0.389rem;
+	}
+	&__label span::after {
+		top: 0.389rem;
+	}
+} // .c-site-head
+
+
+/**
+ * c-site-header - nav styles
+ * ======================================== */
+
+.c-nav-head {
+	// Toggle
+	&__toggle {}
+	&__toggle:focus ~ &__label {
+		@include focus;
+		span,
+		span::before,
+		span::after {background: $color__black;}		
+	}
+	&__label span,
+	&__label span::before,
+	&__label span::after {
+		background: $color__white;
+	}	
+	&__label:hover {
+		span,
+		span::before,
+		span::after {background: $color__black;}
+	}
+	// Menu
+	&__nav {
+		text-align: left;
+		@include sans-400;
+		@include font-size(1.125);
+		text-transform: uppercase;		
+	}
+	&__nav ul {}
+	&__nav li {
+		margin: 0 0 1rem 0;
+	}
+	&__nav li:first-child {
+		margin-top: 1rem;
+	}
+	&__nav a {}
+} // .c-top-nav

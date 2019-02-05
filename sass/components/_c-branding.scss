@@ -8,11 +8,11 @@
  * ======================================== */
 
 .c-branding {
+
 	line-height: 1.266;
 	a {text-decoration: none;}
 	&__icon {@include icon-fas(f520);}	// Temporary fa icon
-	background-color: rgba($color__primary, 0.4);
-
+	
 } // .c-branding
 
 
@@ -22,11 +22,8 @@
 
 .c-branding--full {
 
-	display: -ms-grid;
-		display: grid;
-	-webkit-box-pack: start;
-		-ms-flex-pack: start;
-			justify-content: start;
+	@include display-grid;
+	@include justify-content(start);
 
 	grid-template-areas:
 	"logo name"
@@ -34,24 +31,17 @@
 
 	.c-branding__name {
 		grid-area: name;
-		-ms-flex-item-align: end;
-			-ms-grid-row-align: end;
-				align-self: end;
+		@include align-self(end);
 	}
 
 	.c-branding__slogan {
 		grid-area: slogan;
-		-ms-flex-item-align: start;
-			-ms-grid-row-align: start;
-				align-self: start;		
+		@include align-self(start);	
 	}	
 
 	.c-branding__logo {
 		grid-area: logo;
-		-ms-flex-item-align: center;
-			-ms-grid-row-align: center;
-				align-self: center;
-
+		@include align-self(center);
 		@include font-size(2.565); // when fa icon
 		// max-height: 2.565rem; // when img
 		// margin-right: 0.25rem;
@@ -65,13 +55,18 @@
  * ======================================== */
 .c-branding--compact {
 
+	@include display-flex;
+	@include align-items(center);
+
 	.c-branding__logo {
-		@include font-size(1.602); // when fa icon
-		// max-height: 1.602rem; // when img
+		@include flex-order(1);
+		@include font-size(1.424); // when fa icon
+		// max-height: 1.242rem; // when img
+		// margin-right: 0.25rem;
 	}
 
 	.c-branding__name {
-
+		@include flex-order(2);
 	}
 
 } // --compact
@@ -86,13 +81,11 @@
 	.c-branding__slogan {display: none;}
 
 	.c-branding__logo {
-		@include font-size(4); // when fa icon
+		@include font-size(1.602); // when fa icon
 		// max-height: 4rem; // when img
 	}
 
 } // --mobile
-
-
 
 
  /**
@@ -100,6 +93,9 @@
  * ======================================== */
 
 .c-branding {	
+
+	color: $color__white;
+
 	&__name {
 		@include serif-700;
 		@include font-size(1.125);		
@@ -111,7 +107,7 @@
 	}
 
 	&__logo {}
-	&__icon {}	
+	&__icon {}
 
 } // .c-branding
 

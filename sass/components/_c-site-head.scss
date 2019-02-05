@@ -1,184 +1,59 @@
 //
-// @file /sass/components/_c-site-header.scss
+// @file /sass/components/_c-site-head.scss
 //
 
+.c-site-head {}
+.c-site-head--full {}
+.c-site-head--compact {}
+.c-site-head--mobile {}
+
 
 /**
- * c-site-header - Sticky
+ * .c-site-head - Base
  * ======================================== */
 
 .c-site-head {
+	// position
+	z-index: 1;	
 	position: fixed;
 	top: 0;
-	z-index: 1;	
-	width: 100%;
-	background: var(--background);
-}
+	left: 0;
+	right: 0;
 
-
-/**
- * c-site-header - Position - Branding
- * ======================================== */
-
-.c-site-head {
-	&__branding {
-		display: inline-flex;
-		margin: 0.5rem 1rem;
-		color: white;		
-	}
-	&__branding:focus {
-		@include focus;
-	}	
-	&__logo {}
-	&__name { @include font-size(1.125); }
-	&__slogan {}
-} // .c-branding
-
-
-/**
- * c-site-header - Position - Nav
- * ======================================== */
-
-.c-site-head {
-	&__nav-toggle { 
-		@include hidden-accessible; 
-	}
-	&__nav-label {
-		position: absolute;
-		top: 0;
-		right: 1rem;
-		height: 100%; // center v
-		display: flex; // center v
-		align-items: center; // center v
-	}
-	&__nav {
-		position: absolute;
-		top: 100%; // start at bottom edge of header		
-		right: 0;		
-		width: 100%;	
-	}
-	&__nav ul {
-		float: right;
-		margin: 0 1rem 0 0;
-		padding: 0;		
-		list-style: none;
-	}
-	&__nav li {}
-} // .c-top-nav
-
-
-/**
- * c-site-header - Nav - transformations
- * ======================================== */
-
-.c-site-head {
-	&__nav {
-		transform: scale(1,0);	
-		transform-origin: top;
-		transition: transform 400ms ease-in-out;
-	}
-	&__nav a {
-		opacity: 0;
-		transition: opacity 150ms ease-in-out;
-	}
-	&__nav-toggle:checked ~ nav {
-		transform: scale(1,1);
-	}
-	&__nav-toggle:checked ~ nav a {
-		opacity: 1;
-		transition: opacity 250ms ease-in-out 250ms;
-	}
-}
-
-
-/**
- * c-site-header - nav hamburger
- * ======================================== */
-
-.c-site-head {
-	&__nav-label span,
-	&__nav-label span::before,
-	&__nav-label span::after {
-		position: relative;
-		display: block;
-		background: $color__primary;
-		height: 2px;
-		width: 1rem;
-		border-radius: 2px;
-	}
-	&__nav-label span::before,
-	&__nav-label span::after {
-		content: '';
-		position: absolute;
-	}
-
-	&__nav-label span::before {
-		bottom: 0.389rem;
-	}
-	&__nav-label span::after {
-		top: 0.389rem;
-	}
-} // .c-site-head
-
-
-/**
- * c-site-header - bg colors
- * ======================================== */
-.c-site-head {
-	@include bg-linear-h($color__black, 0.5, $color__black-a, 0.5);
+	// layout
+	@include display-grid;
+	grid-template-areas: 'head-brand head-foll head-nav';
+	padding: 0 0.5rem;
 	
-	&__nav {
-		@include bg-linear-h($color__black, 0.5, $color__black-a, 0.5);
-	}
-}
+	// JS support
+	will-change: transform;
+	transition: transform 600ms ease;
+	&.is-unpin {transform: translateY(-100%);}
+	&.is-pin {transform: translateY(0);}
+
+} //
+
+.c-site-head .c-branding {grid-area: head-brand; justify-self: start; }
+.c-site-head .c-follow   {grid-area: head-foll; justify-self: center; }
+.c-site-head .c-nav-head {grid-area: head-nav; justify-self: end; }
 
 
 /**
- * c-site-header - nav styles
+ * .c-site-head - Styles
  * ======================================== */
 
-.c-site-head {
-	// Toggle
-	&__nav-toggle {}
-	&__nav-toggle:focus ~ &__nav-label {
-		@include focus;
-		span,
-		span::before,
-		span::after {background: $color__white;}		
-	}
-	&__nav-label span,
-	&__nav-label span::before,
-	&__nav-label span::after {
-		background: $color__primary;
-	}	
-	&__nav-label:hover {
-		span,
-		span::before,
-		span::after {background: $color__white;}
-	}
-	// Menu
-	&__nav {
-		text-align: left;
-		@include sans-400;
-		@include font-size(1.125);
-		text-transform: uppercase;		
-	}
-	&__nav ul {}
-	&__nav li {
-		margin: 0 0 1rem 0;
-	}
-	&__nav li:first-child {
-		margin-top: 1rem;
-	}
-	&__nav a {
-		text-decoration: none;
-		color: $color__white;
-		&:hover,
-		&:active,
-		&:focus {color: $color__primary;}		
-	}
-} // .c-top-nav
+ .c-site-head,
+ .c-nav-head__nav {
+ 	@include bg-linear-h($color__alt, 1, $color__alt-a, 1);
+ }
 
-
-
+ .c-site-head a {
+ 	text-decoration: none;
+	color: $color__white;
+	&:hover,
+	&:active,
+	&:focus {
+		color: $color__black;
+	} 
+}
 

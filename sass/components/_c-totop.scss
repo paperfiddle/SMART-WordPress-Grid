@@ -1,32 +1,61 @@
 //
 // @file /sass/components/_c-totop.scss
 //
+// @file /js/smooth-scroll.js - smooth scrolling for all `href=#`
+// @file /js/c-totop.js - switch visibility classes on scroll
+//
 
 
 /**
  * .c-totop - Base
  * ======================================== */
 
- .c-totop {
+#c-totop__target {} // no style
+
+#c-totop__link {
+	// position
+	z-index: 2;
 	position: fixed;
 	bottom: 0.5rem;
 	right: 0.5rem;	
+	// make square
+	width: 2rem;
+	height: 2rem;
+	// center
+	line-height: 2;
+	text-align: center;
+	// style
+	text-decoration: none;
+	color: $color__white;
+	@include border-radius($border-radius__icon);
+	
+} //
 
- 	&__link {}
- 	&__icon {} 
 
- } // .c-totop
+#c-top__icon {
+	@include icon-fas(f106);
+} //
 
 
 /**
- * .c-totop - Styles
+ * .c-totop - JS Support
  * ======================================== */
 
- .c-totop {
+#c-totop__link {
+	background: rgba($color__black, 0.4);
+	// will-change: transform;
+	transform-origin: center;
+	transition: all 1000ms linear; 
 
- 	&__link {}
- 	&__icon {@include icon-fas(f0d8);} // <i class="fas fa-caret-up"></i>
+	&.is-unpin {
+		opacity: 0;	
+		transform: scale(0);		
+	}
 
- } // .c-totop
+	&.is-pin {
+		opacity: 1;			
+		transform: scale(1);
+	}
 
- 
+}  //
+
