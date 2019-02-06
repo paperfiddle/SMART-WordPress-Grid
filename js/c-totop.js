@@ -6,56 +6,64 @@
 //
 
 
-// #id of the 'totop' link
-// Note the markup - just an <a> with no wrapper.
-// Meaning this element serves position + visibility + clicks
+/**
+ * #id of the 'totop' link
+ * Note the markup - just an <a> with no wrapper.
+ * Meaning this element serves position + visibility + clicks
+ */
 
 var linkID = document.getElementById('c-totop');
 
-
-// The user's viewport height
-// ?? difference bewteen variable in and outsid of function ??
-//
-// Originally had this in the scroll function,
-// but seemed greedy to request on every scroll.
-//
-// So I put it here thinking the tradeoff is that we miss if
-// user has switched orientation or resized brower
-// after page load. 
-//
-// This is acceptable becaue while we do need the height, 
-// after-load changes don't break layout or decrease UX
-// of the 'totop' component. 
-// 
-// After-load changes only affect when 'totop' is dsiplayed.
-// This is low impact - a single user in a single session is
-// not going to notice this timing quirk.
-//
-// But is this how putting the variable outside the funtion works? 
-// Or is height calculated on every scroll because it's 
-// used in the scroll function? 
-//
+/**
+ * The user's viewport height
+ * ?? difference bewteen variable in and outsid of function ??
+ * 
+ * Originally had this in the scroll function,
+ *  but seemed greedy to request on every scroll.
+ * 
+ * So I put it here thinking the tradeoff is that we miss if
+ * user has switched orientation or resized brower
+ * after page load. 
+ *
+ * This is acceptable becaue while we do need the height, 
+ * after-load changes don't break layout or decrease UX
+ * of the 'totop' component.  
+ * 
+ * After-load changes only affect when 'totop' is dsiplayed.
+ * This is low impact - a single user in a single session is
+ * not going to notice this timing quirk. 
+ * 
+ * But is this how putting the variable outside the funtion works? 
+ * Or is height calculated on every scroll because it's 
+ * used in the scroll function?  
+ */
 
 var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
 
-// Height at which to switch classes
-// Set low here for testing.
-// For prod, 1-2 is reasonable.
+/**
+ * Height at which to switch classes
+ * Set low here for testing.
+ * For prod, 1-2 is reasonable.
+ */
 
 var switchAt = viewHeight * 0.4;
 
 
-// The 'to top' link is visible by default for no-JS fallback.
-// This handles when page loads + before user has scorlled.
-// Result is that 'totop' link is briefly visible as page loads,
-// and fades out according to CSS transitons only if JS is enabled.
+/**
+ * The 'to top' link is visible by default for no-JS fallback.
+ * This handles when page loads + before user has scorlled.
+ * Result is that 'totop' link is briefly visible as page loads,
+ *  and fades out according to CSS transitons only if JS is enabled.
+ */
 
 linkID.classList.add('is-unpin');
 
 
-// Once user has scrolled, this function controlls visibility. 
-// CSS tranistions scale + opacity.
+/**
+ * Once user has scrolled, this function controlls visibility. 
+ * CSS tranistions scale + opacity.
+ */
 
 window.onscroll = function toTop(){
 			
@@ -74,34 +82,3 @@ window.onscroll = function toTop(){
 	}
 
 } //
-
-
-// On click, scroll to top
-// Note link is to `#site` - this is the no-JS fallback.
-//
-// Problem is the native scroll visually delivers user to
-// the first element in `#site__main`. 
-//
-// `#site__main` has `margin-top` to keep it below
-// the sticky site header. Native scroll does not see this.
-//
-// Result is that first 60+ px of content are left under header.
-//  
-// To improve UX, this function scrolls to top edge 
-// Problem is, doesn't trigger smooth-scroll or c-site-head.
-//
-
-// linkID.addEventListener('click', function (event) {
-
-// 	// Don't follow the link to `#site`
-// 	event.preventDefault();
-
-// 	// Scroll to top edge instead
-// 	window.scrollTo(0, 0);
-
-// 	// Log the clicked element in the console
-// 	console.log(event.target);
-
-// }, false);
-
-
