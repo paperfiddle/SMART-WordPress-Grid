@@ -10,7 +10,7 @@
 <body>
 
 
-<a id="c-skip-to-main" class="screen-reader-text" href="#site__main-target" title="Skip to main-content">Skip to main content</a>
+<a id="c-tomain" class="screen-reader-text" href="#site__main-target" title="Skip to main-content">Skip to main content</a>
 
 <div id="site">
 
@@ -63,29 +63,33 @@
 
 		<div id="site__main-target" role="separator" aria-label="Start main content"></div>
 
-		<h1>Toggle Sections One</h1>
-		<toggle-section open="false">
-			<h2 id="section-1">Section 1</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non lectus sit amet nunc facilisis molestie. Praesent quis <a href="#">libero et mauris facilisis</a> dignissim at sed nisi.</p> 
-			<p>Nullam efficitur porttitor lectus, ac finibus nibh fermentum ac. Phasellus aliquam, nibh non efficitur pharetra, tellus diam posuere lectus, a consequat elit ex nec ligula.</p>
-		</toggle-section>
-		<toggle-section open="false">
-			<h2 id="section-2">Section 2</h2>
-			<p>Aliquam erat volutpat. Nulla facilisi. Nunc porttitor, elit non eleifend aliquam, est leo scelerisque nibh, nec faucibus odio urna ac nulla.</p> 
-			<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>
-		</toggle-section>
+		<h1>Some Content</h1>
+		<p>Aliquam erat volutpat. Nulla facilisi. Nunc porttitor, elit non eleifend aliquam, est leo scelerisque nibh, nec faucibus odio urna ac nulla.</p> 
+		<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>
 
-		<h1>Toggle Sections Two</h1>
-		<toggle-section open="false">
-			<h2 id="section-3">Section 3</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non lectus sit amet nunc facilisis molestie. Praesent quis libero et mauris facilisis dignissim at sed nisi.</p> 
-			<p>Nullam efficitur porttitor lectus, ac finibus nibh fermentum ac. Phasellus aliquam, nibh non efficitur pharetra, tellus diam posuere lectus, a consequat elit ex nec ligula.</p>
-		</toggle-section>
-		<toggle-section open="false">
-			<h2 id="section-4">Section 4</h2>
-			<p>Aliquam erat volutpat. Nulla facilisi. Nunc porttitor, elit non eleifend aliquam, est leo scelerisque nibh, nec faucibus odio urna ac nulla.</p> 
-			<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>
-		</toggle-section>		
+		<!-- START Accordion -->
+		<div class="c-accordion">
+			<div class="c-accordion__panel">
+				<h1 class="c-accordion__header">Section One</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non lectus sit amet nunc facilisis molestie. Praesent quis <a href="#">libero et mauris facilisis</a> dignissim at sed nisi.</p> 
+				<p>Nullam efficitur porttitor lectus, ac finibus nibh fermentum ac. Phasellus aliquam, nibh non efficitur pharetra, tellus diam posuere lectus, a consequat elit ex nec ligula.</p>
+			</div><!-- panel -->
+			<div class="c-accordion__panel">
+				<h1 class="c-accordion__header">Section Two</h1>
+				<p>Aliquam erat volutpat. Nulla facilisi. Nunc porttitor, elit non eleifend aliquam, est leo scelerisque nibh, nec faucibus odio urna ac nulla.</p> 
+				<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>
+			</div><!-- panel -->
+			<div class="c-accordion__panel">
+				<h1 class="c-accordion__header">Etiam Eleifend Sapien ut Nulla Malesuada Aliquam Erat Volutpat</h1>
+				<p>Aliquam erat volutpat. Nulla facilisi. Nunc porttitor, elit non eleifend aliquam, est leo scelerisque nibh, nec faucibus odio urna ac nulla.</p> 
+				<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>
+			</div><!-- panel -->
+		</div><!-- END Accordion -->
+
+		<h1>Some More Content</h1>
+		<p>Aliquam erat volutpat. Nulla facilisi. Nunc porttitor, elit non eleifend aliquam, est leo scelerisque nibh, nec faucibus odio urna ac nulla.</p> 
+		<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>
+
 	</main><!-- #site__main -->
 
 	<a id="c-totop" title="Scroll to top" aria-label="Scroll to top" rel="bookmark" href="#site__main-target"><span class="c-totop__icon"></span></a>
@@ -110,7 +114,7 @@
 <script type="text/javascript" src="../js/smooth-scroll.js"></script>
 <script type="text/javascript" src="../js/c-site-head.js"></script>
 <script type="text/javascript" src="../js/c-totop.js"></script>
-
+<script type="text/javascript" src="../js/c-accordion.js"></script>
 
 
 
@@ -119,6 +123,9 @@
 		speed: 1000,
 		easing: 'easeOutQuad'
 	});
+
+	AriaAccordion.init('.c-accordion')
+
 </script>
 
 

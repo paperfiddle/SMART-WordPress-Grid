@@ -922,7 +922,76 @@ video {
   font-weight: 900; }
 
 /**
- * c-skip-to-main - Base
+ * c-accordion - Base
+ * ======================================== */
+button.c-accordion__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  width: 100%;
+  text-align: left; }
+  button.c-accordion__btn[aria-expanded="true"]::before {
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; }
+  button.c-accordion__btn[aria-expanded="false"]::before {
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; }
+  button.c-accordion__btn[aria-expanded="true"]:before {
+    margin: 0 0.25rem; }
+  button.c-accordion__btn[aria-expanded="false"]:before {
+    margin: 0 0.25rem; }
+
+.c-accordion__panel[aria-hidden="true"] {
+  display: none; }
+
+/**
+ * c-accordion - Styles
+ * ======================================== */
+.c-accordion {
+  max-width: 810px;
+  margin: 1rem auto; }
+  .c-accordion__header {
+    margin: 2px 0; }
+  .c-accordion__panel {
+    padding: 0 0.5rem;
+    border: 1px solid #E0E0E0; }
+  .c-accordion__panel :first-child {
+    margin-top: 1rem; }
+
+button.c-accordion__btn {
+  font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  font-size: 1.42rem;
+  padding: 0.25rem 0.4rem;
+  border: none;
+  background: #616161;
+  background: -moz-linear-gradient(left, #616161 0%, #212121 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #616161), color-stop(100%, #212121));
+  background: -webkit-linear-gradient(left, #616161 0%, #212121 100%);
+  background: -o-linear-gradient(left, #616161 0%, #212121 100%);
+  background: -ms-linear-gradient(left, #616161 0%, #212121 100%);
+  background: linear-gradient(to right, #616161 0%, #212121 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#hex-left', endColorstr='$hex-right', GradientType=1 );
+  color: white; }
+  button.c-accordion__btn:hover, button.c-accordion__btn:active, button.c-accordion__btn:focus, button.c-accordion__btn[aria-expanded="true"], button.c-accordion__btn[aria-selected="true"] {
+    background: #2979ff;
+    background: -moz-linear-gradient(left, #2979ff 0%, #6200ea 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #2979ff), color-stop(100%, #6200ea));
+    background: -webkit-linear-gradient(left, #2979ff 0%, #6200ea 100%);
+    background: -o-linear-gradient(left, #2979ff 0%, #6200ea 100%);
+    background: -ms-linear-gradient(left, #2979ff 0%, #6200ea 100%);
+    background: linear-gradient(to right, #2979ff 0%, #6200ea 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#hex-left', endColorstr='$hex-right', GradientType=1 ); }
+
+/**
+ * c-tomain - Base
  * ======================================== */
 /**
  * c-branding - Base
