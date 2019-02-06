@@ -3,11 +3,16 @@
  * @author Frédéric BISSON <zigazou@free.fr>
  * @version 1.0
  *
- * Accessible Accordion system, using ARIA
+ * WIA-ARIA  based on Accessible Accordion Plugin
  * @link https://www.cssscript.com/accessible-accordion-ariaaccordion/
  *
- * Based on the jQuery plugin by Nicolas Hoffmann.
- * @link https://github.com/nico3333fr/jquery-accessible-accordion-aria/
+ * getHeight based on Chris Ferdinandi's work on Go Make Things
+ * @link https://gomakethings.com/how-to-add-transition-animations-to-vanilla-javascript-show-and-hide-methods/
+ *
+ * Timing functions based on 
+ *
+ *
+ *
  */
 
 /**
@@ -191,16 +196,47 @@ class AriaAccordion {
 
         currentButton.setAttribute('aria-selected', 'true')
 
-        // opened or closed?
-        if(currentButton.getAttribute('aria-expanded') === 'false') {
-            // closed
-            currentButton.setAttribute('aria-expanded', 'true')
+    // START Customizations
+        // Get panel height
+        var panelInfo = function () {
+            // Temp unhide so we can get info
             currentPanel.setAttribute('aria-hidden', 'false')
-        } else {
-            // opened
-            currentButton.setAttribute('aria-expanded', 'false')
+            // Grab the info
+            var isHeight = currentPanel.scrollHeight + 'px'
+            // Re-hide panel
             currentPanel.setAttribute('aria-hidden', 'true')
+            // Return info  
+            return isHeight       
         }
+
+        // Store panel height as variable so we can use it below
+        var panelHeight = panelInfo() 
+
+        // if closed
+        if(currentButton.getAttribute('aria-expanded') === 'false') {
+            currentPanel.velocity({ 
+                height: [ panelHeight, 0 ],
+                transform: [ "scaleY(1)", "scaleY(0)" ],
+                opacity: [ 1, 0 ],  
+            }, { duration: 400 })
+
+            // Switch classes
+            currentButton.setAttribute('aria-expanded', 'true')
+            currentPanel.setAttribute('aria-hidden', 'false')  
+
+        // if opened
+        } else {
+            currentPanel.velocity({ 
+                opacity: [ 0, 1 ], 
+                transform: [ "scaleY(0)", "scaleY(1)" ],               
+                height: [ 0, panelHeight ], 
+            }, { duration: 400 })
+
+            // delay these?
+            currentButton.setAttribute('aria-expanded', 'false')
+            currentPanel.setAttribute('aria-hidden', 'true')    
+        }
+        // END Customizations
 
         if(this.options.multiselectable === false) {
             this.panels.forEach(panel => {

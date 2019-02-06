@@ -14,11 +14,10 @@
 	&__panel {}	
 	&__header {}
 	&__btn {}
-
 } //
 
 
-button.c-accordion__btn {
+.c-accordion__btn {
 	@include display-flex;
 	@include align-items(baseline);
 	width: 100%;
@@ -42,26 +41,25 @@ button.c-accordion__btn {
 
 .c-accordion__panel {
 
-	// -webkit-transform-origin: top;
-	//     -ms-transform-origin: top;
-	//         transform-origin: top;
-
-	// -webkit-transition: transform 1000ms linear, opacity 1000ms linear;
-	//      -o-transition: transform 1000ms linear, opacity 1000ms linear;
-	//         transition: transform 1000ms linear, opacity 1000ms linear;
+	-webkit-transform-origin: top;
+	    -ms-transform-origin: top;
+	        transform-origin: top;
 
 	&[aria-hidden="true"] { 
-		display: none;
-		// opacity: 0;	
-		// -webkit-transform: scale(0);
-		//     -ms-transform: scale(0);
-		//         transform: scale(0);
+		overflow: hidden;
+		height: 0px;
+		transform: scale(0);
+		opacity: 0;
+		padding: 0;
+		margin: 0;
 	}
+
 	&[aria-hidden="false"] {
+		// handled in JS
+		// height: auto;
+		// transform: scale(1);
 		// opacity: 1;
-		// -webkit-transform: scale(1);
-		//     -ms-transform: scale(1);
-		//         transform: scale(1);
+		padding: 1rem 0.5rem 0 0.5rem;
 	}
 
 } //
@@ -79,7 +77,6 @@ button.c-accordion__btn {
 		margin: 2px 0;	
 	}
 	&__panel {
-		padding: 0 0.5rem;
 		border: 1px solid $mc__gray-300;
 	}
 	&__panel :first-child {
@@ -105,10 +102,10 @@ button.c-accordion__btn {
 		@include bg-linear-h($color__secondary, 1, $color__secondary-a, 1);
 	}	
 	
-	&[aria-expanded="true"] {}
-	&[aria-expanded="false"] {}
-	&[aria-selected="true"] {}
-	&[aria-selected="false"] {}
+	// &[aria-expanded="true"] {}
+	// &[aria-expanded="false"] {}
+	// &[aria-selected="true"] {}
+	// &[aria-selected="false"] {}
 
 } //
 

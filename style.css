@@ -924,7 +924,7 @@ video {
 /**
  * c-accordion - Base
  * ======================================== */
-button.c-accordion__btn {
+.c-accordion__btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -933,21 +933,32 @@ button.c-accordion__btn {
   align-items: baseline;
   width: 100%;
   text-align: left; }
-  button.c-accordion__btn[aria-expanded="true"]::before {
+  .c-accordion__btn[aria-expanded="true"]::before {
     content: "\f107";
     font-family: "Font Awesome 5 Free";
     font-weight: 900; }
-  button.c-accordion__btn[aria-expanded="false"]::before {
+  .c-accordion__btn[aria-expanded="false"]::before {
     content: "\f105";
     font-family: "Font Awesome 5 Free";
     font-weight: 900; }
-  button.c-accordion__btn[aria-expanded="true"]:before {
+  .c-accordion__btn[aria-expanded="true"]:before {
     margin: 0 0.25rem; }
-  button.c-accordion__btn[aria-expanded="false"]:before {
+  .c-accordion__btn[aria-expanded="false"]:before {
     margin: 0 0.25rem; }
 
-.c-accordion__panel[aria-hidden="true"] {
-  display: none; }
+.c-accordion__panel {
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top; }
+  .c-accordion__panel[aria-hidden="true"] {
+    overflow: hidden;
+    height: 0px;
+    transform: scale(0);
+    opacity: 0;
+    padding: 0;
+    margin: 0; }
+  .c-accordion__panel[aria-hidden="false"] {
+    padding: 1rem 0.5rem 0 0.5rem; }
 
 /**
  * c-accordion - Styles
@@ -958,7 +969,6 @@ button.c-accordion__btn {
   .c-accordion__header {
     margin: 2px 0; }
   .c-accordion__panel {
-    padding: 0 0.5rem;
     border: 1px solid #E0E0E0; }
   .c-accordion__panel :first-child {
     margin-top: 1rem; }

@@ -61,7 +61,7 @@ function unpin() {
 
 window.onload = function(){
   eleHeader = document.getElementById(idOfHeader);
-  console.log(eleHeader);
+  // console.log(eleHeader);
   document.addEventListener('scroll', onScroll, false);
 }
 
