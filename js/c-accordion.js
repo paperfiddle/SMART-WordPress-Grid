@@ -214,25 +214,26 @@ class AriaAccordion {
 
         // if closed
         if(currentButton.getAttribute('aria-expanded') === 'false') {
+            // Add Velocity animation
+            // Note `forcefed` is best way to approach transforms
+            // TODO Move `transform-origin` from CSS to here
             currentPanel.velocity({ 
                 height: [ panelHeight, 0 ],
                 transform: [ "scaleY(1)", "scaleY(0)" ],
                 opacity: [ 1, 0 ],  
             }, { duration: 400 })
-
             // Switch classes
             currentButton.setAttribute('aria-expanded', 'true')
             currentPanel.setAttribute('aria-hidden', 'false')  
-
         // if opened
         } else {
+            // Add Velocity animation
             currentPanel.velocity({ 
                 opacity: [ 0, 1 ], 
                 transform: [ "scaleY(0)", "scaleY(1)" ],               
                 height: [ 0, panelHeight ], 
             }, { duration: 400 })
-
-            // delay these?
+            // Switch classes
             currentButton.setAttribute('aria-expanded', 'false')
             currentPanel.setAttribute('aria-hidden', 'true')    
         }
@@ -420,7 +421,7 @@ AriaAccordion.defaultConfig = {
     panelsSelector: '.c-accordion__panel',
     buttonsSelector: 'button.c-accordion__btn',
     button: AriaAccordion.defaultButton(),
-    buttonSuffixId: '-tab',
+    buttonSuffixId: '__btn',
     multiselectable: true,
     prefixClass: 'c-accordion',
     headerSuffixClass: '__header',
