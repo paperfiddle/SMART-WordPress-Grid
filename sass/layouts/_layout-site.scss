@@ -18,7 +18,7 @@
 	// top edge and being hidden by sticky header. 
 	// Brute force, but more viable than JS scrollTo because of
 	// catch-22s related to smooth-scroll and c-site-head. 
-	&__main-target {height: 5rem;}	
+	// &__main-target {height: 5rem;}	
 
 } // .site
 

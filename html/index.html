@@ -63,10 +63,9 @@
 
 		<div id="site__main-target" role="separator" aria-label="Start main content"></div>
 
-		<div class="test-div"></div>
-
 		<h1>Some Content</h1>
 		<p>Aliquam erat volutpat. Nulla facilisi. Nunc porttitor, elit non eleifend aliquam, est leo scelerisque nibh, nec faucibus odio urna ac nulla.</p> 
+		<p><a href="https://google.com" target="_blank">A link to Google</a></p>
 		<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>
 
 		<!-- START Accordion -->
@@ -94,7 +93,7 @@
 
 	</main><!-- #site__main -->
 
-	<a id="c-totop" title="Scroll to top" aria-label="Scroll to top" rel="bookmark" href="#site__main-target"><span class="c-totop__icon"></span></a>
+	<a id="c-totop" title="Scroll to top" aria-label="Scroll to top" rel="bookmark" href="#site"><span class="c-totop__icon"></span></a>
 	
 	<footer id="site__foot">			
 	</footer><!-- #site__ footer -->
@@ -113,7 +112,10 @@
 <script type="text/javascript" src="../js/velocity.2.0.3.min.js"></script>
 <!-- <script type="text/javascript" src="../js/velocity.ui.min.js"></script> -->
 
-<script type="text/javascript" src="../js/smooth-scroll.min.js"></script>
+<!-- <script type="text/javascript" src="../js/smooth-scroll.min.js"></script> -->
+
+<script type="text/javascript" src="../js/velocity-smooth-scroll.js"></script>
+
 <script type="text/javascript" src="../js/c-site-head.js"></script>
 <script type="text/javascript" src="../js/c-totop.js"></script>
 <script type="text/javascript" src="../js/c-accordion.js"></script>
@@ -121,10 +123,8 @@
 
 
 <script type="text/javascript">
-	var scroll = new SmoothScroll('a[href*="#"]', {
-		speed: 1000,
-		easing: 'easeOutQuad'
-	});
+
+
 
 	AriaAccordion.init('.c-accordion')
 

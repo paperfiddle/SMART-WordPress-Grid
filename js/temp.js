@@ -1,4 +1,13 @@
 
+	var scroll = new SmoothScroll('a[href*="#"]', {
+		speed: 1000,
+		easing: 'easeOutQuad'
+	});
+
+
+
+
+
 // START Customizations
 var panelInfo = function () {
     // Temp unhide so we can get info
