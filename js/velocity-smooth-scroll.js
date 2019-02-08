@@ -1,6 +1,28 @@
 
 // @link https://stackoverflow.com/a/29223563
 
+// 
+// A helper function to get an element's exact position
+// @link https://www.kirupa.com/html5/get_element_position_using_javascript.htm
+//
+
+function getYPosition(el) {
+	var yPos = 0; 
+	while (el) {
+		// deal with browser quirks with body/window/document and page scroll		
+		if (el.tagName == "BODY") {
+		var yScroll = el.scrollTop || document.documentElement.scrollTop;
+		yPos += (el.offsetTop - yScroll + el.clientTop);
+		// for all other non-BODY elements
+		} else {	
+			yPos += (el.offsetTop - el.scrollTop + el.clientTop);
+		}
+		el = el.offsetParent;
+	} // while
+	return yPos
+} // function
+
+
 //
 // Figure out if site has sticky header
 // This lets us add px on scroll up so 
@@ -8,23 +30,32 @@
 // Hanky - won't work in every scenario - adjust selector
 //
 
-// Find first header in markup
-var headerElement = document.querySelector('body header:first-child')
-console.log('smooth-scroll header element is:', headerElement)
+function calcHeaderHeight() {
 
-// Get header's rendered display property
-var headerPosition = window.getComputedStyle(headerElement).position
-console.log('smooth-scroll header position is: ', headerPosition)
+	// Find first header in markup
+	var headerElement = document.querySelector('body header:first-child')
+	console.log('smooth-scroll headerElement:', headerElement)
 
-// If header's display = fixed, get its rendered height.
-// Else set value to '0px' because we don't need a top buffer.
-if (headerPosition === 'fixed') {
-	var headerHeight = window.getComputedStyle(headerElement).height
-	console.log('smooth-scroll header height is: ', headerHeight)
-} else {
-	var headerHeight = '0px'
-	console.log('smooth-scroll header is not fixed, so height is:', headerHeight)
-}
+	// Get header's rendered position property
+	var headerPosition = window.getComputedStyle(headerElement).position
+	console.log('smooth-scroll headerPosition: ', headerPosition)
+
+	// If header's position = fixed, get its rendered height.
+	// Else set value to '0px' because we don't need a top buffer.
+	if (headerPosition === 'fixed') {
+		var calculatedHeight = window.getComputedStyle(headerElement).height
+		console.log('smooth-scroll calculatedHeight: ', calculatedHeight)
+	} else {
+		var calculatedHeight = '0px'
+		console.log('smooth-scroll headerPosition is not fixed, so height is:', calculatedHeight)
+	}	
+
+	return calculatedHeight	
+
+} // function
+
+var headerHeight = calcHeaderHeight()
+console.log('smooth-scroll final headerHeight:', headerHeight)
 
 
 //
@@ -57,16 +88,28 @@ for (var i = 0, length = pageLinks.length; i < length; i++) {
 		} // ife
  
  		// Because the link's `href` matches the
- 		// target's `id`, we can use it as `querySelector`
- 		// but not as `getElementById`.
- 		var thisTarget = document.querySelector(thisHref)
- 		console.log('smooth-scroll target element is:', thisTarget)
-		// console.log(thisLink)
-		// console.log(thisUrl)
-		// console.log(thisHref)
+ 		// target's `id`, we can use it as `querySelector`.
+ 		// Because string includes `#`, we can't use `getElementById`.
+ 		var scrollToElement = document.querySelector(thisHref)
+ 		console.log('smooth-scroll target element is:', scrollToElement)
+
+ 		// Use helper function to get element's position
+ 		var scrollToElementPosition = getYPosition(scrollToElement)
+ 		console.log('smooth-scroll to element postion is:', scrollToElementPosition)
+
+ 		// Get current postion
+ 		var currentPosition = window.pageYOffset
+ 		console.log('smooth-scroll current position is:', currentPosition)
+
 
 
 	}, true) // Listener
 
 } // for
+
+
+
+
+
+
 
