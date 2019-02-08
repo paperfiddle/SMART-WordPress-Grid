@@ -26,24 +26,23 @@
 	// style
 	text-decoration: none;	
 
+
 } //
 
-
 /**
- * .c-totop - JS Support
+ * .c-totop - No JS
  * ======================================== */
 
 #c-totop {
 
 	// will-change: transform;
-
 	-webkit-transform-origin: center;
 	    -ms-transform-origin: center;
 	        transform-origin: center;
 
-	-webkit-transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear;
-	     -o-transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear;
-	        transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear;
+	// -webkit-transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear;
+	//      -o-transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear;
+	//         transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear;
 
 	&.is-unpin {
 		opacity: 0;	
@@ -58,9 +57,9 @@
 		-webkit-transform: scale(1);
 		    -ms-transform: scale(1);
 		        transform: scale(1);
-	}
+	}	
 
-}  //
+} // 
 
 
 /**

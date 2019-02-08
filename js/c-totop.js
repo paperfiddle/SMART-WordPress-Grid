@@ -1,5 +1,5 @@
 //
-// @file /js/c-totop.js
+// @file /js/velocity-totop.js
 //
 // This component also uses, but does not require: 
 // @file /js/smooth-scroll.js 
@@ -12,7 +12,26 @@
  * Meaning this element serves position + visibility + clicks
  */
 
-var linkID = document.getElementById('c-totop');
+var linkId = document.getElementById('c-totop');
+
+
+/**
+ * Get the link's width + height attributes
+ */
+
+var linkHeight = window.getComputedStyle(linkId).height
+console.log('linkHeight', linkHeight)
+
+var linkWidth = window.getComputedStyle(linkId).width
+console.log('linkWidth', linkWidth)
+
+/**
+ * Let CSS know JS has taken over
+ */
+
+linkId.setAttribute('data-js-loaded', 'true')
+
+
 
 /**
  * The user's viewport height
@@ -47,7 +66,7 @@ var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHei
  * For prod, 1-2 is reasonable.
  */
 
-var switchAt = viewHeight * 0.4;
+var switchAtPosition = viewHeight * 0.4;
 
 
 /**
@@ -57,7 +76,7 @@ var switchAt = viewHeight * 0.4;
  *  and fades out according to CSS transitons only if JS is enabled.
  */
 
-linkID.classList.add('is-unpin');
+linkId.classList.add('is-unpin');
 
 
 /**
@@ -67,17 +86,37 @@ linkID.classList.add('is-unpin');
 
 window.onscroll = function toTop(){
 			
-	var currentPos = window.pageYOffset | document.body.scrollTop;
+	var currentPosition = window.pageYOffset | document.body.scrollTop;
 
-	if(currentPos > switchAt) {
+	// Show totop link
+	if(currentPosition > switchAtPosition) {
 
-		linkID.classList.remove('is-unpin');
-		linkID.classList.add('is-pin');
-		
-	} else if(currentPos <= switchAt) {
 
-		linkID.classList.remove('is-pin');
-		linkID.classList.add('is-unpin');
+
+		linkId.velocity({ 
+
+		    top: 50, // Defaults to the px unit type
+		    left: "50%",
+		    height: "*=2" // Double the current height
+		    
+
+			// height: [ linkHeight, 0 ],
+			// width: [ linkWidth, 0],
+			transform: [ "stop", "scale(1)", "scale(1.602)", "scale(0)" ],
+			opacity: [ "stop", 1, 0 ],  
+			}, { duration: 1200 })
+
+		// linkId.velocity("stop", true);
+
+		linkId.classList.remove('is-unpin');
+		linkId.classList.add('is-pin');
+
+	// hide totop link	
+	} else if(currentPosition <= switchAtPosition) {
+
+
+		linkId.classList.remove('is-pin');
+		linkId.classList.add('is-unpin');
 
 	}
 

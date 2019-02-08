@@ -9,7 +9,7 @@
 
 #site {
 	&__head {}
-	&__main {}
+	&__main {max-width: 810px; margin: 0 auto;}
 	&__foot {}
 	&__bottom {}
 	&__cookies {}

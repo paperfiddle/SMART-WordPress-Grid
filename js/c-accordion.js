@@ -1,17 +1,22 @@
-/**
- * @file aria-accordion.js
- * @author Frédéric BISSON <zigazou@free.fr>
+/*!
+ * Va11y Velocity V2 Accordion
+ * @file /js/c-accordion.js
+ *
+ * @credit AriaAccordion
+ * @author Frédéric Bisson <zigazou@free.fr>
  * @version 1.0
+ * @licence MIT
+ * @URL https://www.cssscript.com/accessible-accordion-ariaaccordion/
  *
- * WIA-ARIA  based on Accessible Accordion Plugin
- * @link https://www.cssscript.com/accessible-accordion-ariaaccordion/
+ * @credit `getHeight()`
+ * @author Chris Ferdinandi
+ * @licence MIT
+ * @URL https://gomakethings.com/how-to-add-transition-animations-to-vanilla-javascript-show-and-hide-methods/
  *
- * getHeight based on Chris Ferdinandi's work on Go Make Things
- * @link https://gomakethings.com/how-to-add-transition-animations-to-vanilla-javascript-show-and-hide-methods/
- *
- * Timing functions based on 
- *
- *
+ * @credit Velocity V2
+ * @author
+ * @licence
+ * @URL
  *
  */
 

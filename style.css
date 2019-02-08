@@ -89,6 +89,10 @@ textarea,
 /**
  * .site - Layout
  * ======================================== */
+#site__main {
+  max-width: 810px;
+  margin: 0 auto; }
+
 /**
  * .site - Backgrounds
  * ======================================== */
@@ -877,15 +881,12 @@ video {
   text-decoration: none; }
 
 /**
- * .c-totop - JS Support
+ * .c-totop - No JS
  * ======================================== */
 #c-totop {
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
-  transform-origin: center;
-  -webkit-transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear;
-  -o-transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear;
-  transition: transform 1000ms linear, opacity 1000ms linear, background 400ms linear; }
+  transform-origin: center; }
   #c-totop.is-unpin {
     opacity: 0;
     -webkit-transform: scale(0);
