@@ -55,15 +55,15 @@ This theme uses `@mixin`s to add vendor prefixes for `display: flex`. Some mixin
 
 ### `order` - Flex
 
- @include flex-order($order);
+	@include flex-order($order);
 
 ### `flex` - Flex
 
-Replaces `flex`, `flex-grow`, `flex-shrink`, `flex-basis`
+Replaces `flex` + `flex-grow` + `flex-shrink` + `flex-basis`
 
 	@include flex-flex($grow, $shrink, $basis);
 
-## `align-self`
+### `align-self`
 
 	@include align-self(start);
 	@include align-self(end);

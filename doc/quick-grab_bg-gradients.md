@@ -2,8 +2,6 @@
 
 This theme includes `@mixin`s for adding gradient backgrounds. Below are suggestions based on the current theme colors. 
 
-* @file /doc/quick-grab_bg-color.scss
-
 ## Linear - Brand 
 	@include bg-linear-h($color__primary-a,$color__secondary);
 
