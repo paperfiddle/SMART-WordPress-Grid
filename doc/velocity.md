@@ -1,8 +1,10 @@
 # Velocity 2.0.3
 
-This theme is written using vanilla JavaScript and animated using Velocity.
+This theme is written using vanilla JavaScript and animated using Velocity.js.
 
 * @file /js/velocity.2.0.3.min.js
+* @author Julian Shapiro
+* @licence MIT
 * @link https://github.com/julianshapiro/velocity
 
 
@@ -19,14 +21,13 @@ This theme is written using vanilla JavaScript and animated using Velocity.
 	Velocity(elements, {"color": "red"})
 
 
-##Chaining
+## Chaining
 
 	document.querySelector("div").velocity({"color": "red"});
 
 
 
 ## Properties + Options
-
 
 	element.velocity({
 	    width: "500px"
