@@ -1,0 +1,54 @@
+//
+// @file /sass/icons/_base.scss
+// 
+// Some icons require: 
+// @file /sass/boxes/_mix-rotate.scss 
+// 
+
+
+/**
+ * Icons - Base
+ * ================================================== */
+
+[class*="__icon"],
+[class*="icon-"] {
+	border-radius: $border-radius__icon;
+	line-height: 1.3em; // make square
+
+	&::before {
+		// change to `content-box` if styles cause icon to shift
+		box-sizing: border-box;		
+		display: inline-block;
+		line-height: 1.3em; // make square
+		width: 1.3em; // make square
+		height: 1.3em; // make square
+		text-align: center;		
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		-moz-osx-font-smoothing: grayscale;	    
+		-webkit-font-smoothing: antialiased;
+		background-image: none; // for jQuery
+	}
+
+} // .ui-icon
+
+
+
+//
+// Icons - Default
+//
+
+[class*="__icon"],
+[class*="icon-"] { 
+
+	// Styles that apply to all icons go here.
+	// Rare as we usually want icons to inherit 
+	// size and color from parent elements.
+
+	&:before {
+		// NO STYLES GO HERE!!!
+	}
+
+} // .ui-icon
+

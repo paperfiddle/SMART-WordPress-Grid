@@ -1,0 +1,292 @@
+//
+// @file /sass/bits/_inputs.scss
+// 
+
+
+/**
+ * Input - Wrappers - Base
+ * ======================================== */
+
+fieldset {
+	// display: inline-block;
+	margin: 1rem 0 ;	
+	padding: 0.4em;	
+	border: 1px solid $mc__gray-300;
+	border-radius: $border-radius__input;
+	box-shadow: 2px 2px 2px 0px rgba($color__black,0.1);
+	&:hover,
+	&:active,
+	&:focus {@include focus;}
+}
+
+label,
+legend {
+	@include sans-700;
+	@include font-size(0.79);	
+	line-height: 1;	
+}
+
+legend {
+	background-color: $color__content-bg;	
+}
+
+label {
+	display: block;	
+	padding: 0.3em 0;
+	&.label-inline {display: inline;}
+}
+
+
+/**
+ * Input + Select + Textarea - Base
+ * ======================================== */
+
+input:not([type="button"]):not([type="reset"]):not([type="submit"]):not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+	@include sans-400;
+	@include font-size(1);	
+	border: 1px solid $mc__gray-400;
+	border-radius: $border-radius__input;
+	box-shadow: 2px 2px 2px 0px rgba($color__black,0.1);
+
+	&::placeholder,
+	&::-webkit-input-placeholder {
+		color: $mc__gray-400;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		@include focus;
+	}
+
+} // input
+
+
+/**
+ * Input - Base
+ * ======================================== */
+
+input:not([type="button"]):not([type="reset"]):not([type="submit"]):not([type="radio"]):not([type="checkbox"]),
+select {
+	line-height: 1.424;
+	margin: 0 0 1rem 0;
+	height: 2em;
+}
+
+
+/**
+ * Readonly - Base
+ * ======================================== */
+
+[type="readonly"] {
+	// width: auto;	
+	cursor: not-allowed;	
+	color: $color__alt;
+}
+
+
+/**
+ * Text Inputs - Base
+ * ======================================== */
+
+[type="email"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="url"] {
+	padding: 0 0.4em;
+	cursor: text;
+	width: 10em; // about 20 characters
+}
+
+[type="search"] {
+	-webkit-appearance: textfield; 
+	&::-webkit-search-decoration {
+		-webkit-appearance: none;
+	}
+}
+
+
+/**
+ * Input - Date + Time Base
+ * ======================================== */
+
+ // TODO - In Chrome, fix `number` spinner
+ // Why is it different than others - no `height: auto;`?
+
+// With Spinners
+[type="time"],
+[type="number"],
+// With Spiners + Drop arrows
+[type="date"], 
+[type="datetime-local"],
+[type="month"],
+[type="week"] {
+
+	padding: 0 0 0 0.4em;
+	cursor: text;
+
+}
+
+::-webkit-outer-spin-button,
+::-webkit-inner-spin-button {
+	height: auto;
+	cursor: pointer;
+}
+
+
+/**
+ * Input - Radio + Checkbox Base
+ * ======================================== */
+
+[type="radio"],
+[type="checkbox"] {
+	// hide default button
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+
+	@include font-size(1);
+	line-height: 1; // make square	
+   	margin: 0 0.25em 0 0; 
+    padding: 0; 
+    cursor: pointer;  
+
+	&::before {
+		// Uncomment if styles cause icon to shift
+		// @include box-sizing(content-box); 
+		display: inline-block;
+		line-height: 1; // make square
+		width: 1em; // make square
+		height: 1em; // make square
+		text-align: center;		
+		font-family: "Font Awesome 5 Free";
+		font-weight: normal;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		@include focus;
+	}  
+
+	&:checked {
+		color: $color__msg-success;
+	}
+
+} // radio checkbox
+
+
+[type="radio"] {
+	border-radius: 100%;
+	&:checked {}
+	// <i class="far fa-circle"></i>
+	&::before {content: '\f111';}
+	// <i class="far fa-dot-circle"></i>
+	&:checked::before {content: '\f192';}
+}
+
+[type="checkbox"] {
+	&:checked {}
+	// <i class="far fa-square"></i>
+	&::before {content: '\f0c8';}
+	// <i class="far fa-check-square"></i>
+	&:checked::before {content: '\f14a';}
+}
+
+
+/**
+ * Input - Color Base
+ * ======================================== */
+
+[type="color"] {	
+	cursor: pointer;
+	padding: 0;
+	background-color: transparent;
+}
+
+
+/**
+ * Input - Range Base
+ * ======================================== */
+
+ // TODO: Fix border in Chrome
+
+[type="range"] {
+	cursor: pointer;
+}	
+
+
+/**
+ * Input - File Base
+ * ======================================== */
+
+[type="file"] {
+	cursor: pointer;	
+
+	&::-webkit-file-upload-button {
+		-webkit-appearance: button; 
+		height: 100%;
+		cursor: pointer;	
+		@include sans-700;
+		color: #fff;
+		border: 0;
+		border-radius: $border-radius__input, 0px, 0px, $border-radius__input;
+		transition: background-color, 250ms;
+	} // webkit
+
+	&:hover {
+		&::-webkit-file-upload-button {
+				background-color: $color__black;
+			} // webkit	
+	} // :hover
+
+} // file
+
+
+/**
+ * Textarea - Base
+ * ======================================== */
+
+textarea {
+	width: 100%;
+	overflow: auto; 
+	resize: vertical; 
+	cursor: text;
+	line-height: 1.266;
+	margin: 0 0 1rem 0;
+	padding: 0.4em;
+}
+
+
+/**
+ * Input - Icons in Placeholder 
+ * ======================================== */
+
+// Types uising FA icon class `far`
+textarea,
+.contact-name {
+	&::placeholder,
+	&::-webkit-input-placeholder {
+		font-family: "Font Awesome 5 Free";
+		font-weight: 400;
+	}	
+}
+
+// Types using FA icon class `fas`
+[type="email"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="url"],
+.contact-phone {
+	&::placeholder,
+	&::-webkit-input-placeholder {
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+	}	
+}
+ 

@@ -1,0 +1,29 @@
+/**
+ * .site - Layout
+ * ======================================== */
+
+.site {
+	&__header {}
+	&__main {max-width: 810px; margin: 0 auto;}
+	&__footer {}
+	&__bottom {}
+	&__cookies {}
+
+} // .site
+
+/**
+ * .site - Backgrounds
+ * ======================================== */
+
+.site {
+	&__header {}
+	&__main {}
+	&__footer {
+		min-height: 2rem; 
+		@include bg-linear-v($color__black-a, 1, $color__black, 1);}
+	&__bottom {
+		min-height: 2rem; 
+		@include bg-slash-v($color__primary, 1, $color__primary-a, 1);}
+
+} // .site
+

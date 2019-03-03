@@ -1,0 +1,110 @@
+//
+// @file /sass/components/_branding.scss
+//
+
+
+/**
+ * branding - Base
+ * ======================================== */
+
+.branding {
+
+	line-height: 1.266;
+	a {text-decoration: none;}
+	&__icon {@include icon-fas(f520);}	// Temporary fa icon
+	
+} // .branding
+
+
+/**
+ * branding--full - Base
+ * ======================================== */
+
+.branding--full {
+
+	display: grid;
+	justify-content: start;
+	grid-template-areas:
+	"logo name"
+	"logo slogan";	
+
+	.branding__name {
+		grid-area: name;
+		align-self: end;
+	}
+
+	.branding__slogan {
+		grid-area: slogan;
+		align-self: start;
+	}	
+
+	.branding__logo {
+		grid-area: logo;
+		align-self: center;
+		@include font-size(2.565); // when fa icon
+		// max-height: 2.565rem; // when img
+		// margin-right: 0.25rem;
+	}
+
+} // --full
+
+
+/**
+ * branding--compact - Base
+ * ======================================== */
+.branding--compact {
+	display: flex;
+	align-items: center;
+	.branding__logo {
+		order: 1;
+		@include font-size(1.424); // when fa icon
+		// max-height: 1.242rem; // when img
+		// margin-right: 0.25rem;
+	}
+
+	.branding__name {
+		order: 2;
+	}
+
+} // --compact
+
+
+/**
+ * branding--mobile - Base
+ * ======================================== */
+.branding--mobile {
+
+	.branding__name,
+	.branding__slogan {display: none;}
+
+	.branding__logo {
+		@include font-size(1.602); // when fa icon
+		// max-height: 4rem; // when img
+	}
+
+} // --mobile
+
+
+ /**
+ * branding - Styles
+ * ======================================== */
+
+.branding {	
+
+	color: $color__white;
+
+	&__name {
+		@include serif-700;
+		@include font-size(1.125);		
+	}
+
+	&__slogan {
+		@include sans-400i;
+		@include font-size(0.79);
+	}
+
+	&__logo {}
+	&__icon {}
+
+} // .branding
+

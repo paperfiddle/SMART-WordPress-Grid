@@ -1,0 +1,54 @@
+//
+// @file /sass/components/_follow.scss
+//
+
+
+/**
+ * follow - Base
+ * ======================================== */
+
+.follow {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	@include font-size(1);
+	text-align: center;
+	// background-color: $mc__red-200;
+
+	&__item { 
+		margin: 0;
+		// background-color: $mc__blue-200; 
+	}
+
+	&__link { 
+		text-decoration: none; 
+	}
+
+	&__icon {}
+
+	&--horizontal {
+		display: flex;
+		flex-flow: row, nowrap;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&--horizontal &__item {padding: 0 0.35rem;}
+
+	&--vertical {}
+
+	&--vertical &__item {padding: 0.35rem;}
+
+} // .follow
+
+
+/**
+ * follow - Styles
+ * ======================================== */
+ .follow {
+	&__item {}
+	&__link {}
+	&__icon {}
+	&__text {}
+}
+
