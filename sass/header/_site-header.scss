@@ -1,16 +1,11 @@
 //
-// @file /sass/components/_site__header.scss
+// @file /sass/components/_site-header.scss
+// @file /js/site-header.js
 //
 
-.site__header {}
-.site__header--full {}
-.site__header--compact {}
-.site__header--mobile {}
-
-
-/**
- * .site__header - Base
- * ======================================== */
+//
+// Base
+//
 
 .site__header {
 	// position
@@ -19,17 +14,12 @@
 	top: 0;
 	left: 0;
 	right: 0;
-
 	// layout
 	display: grid;
 	grid-template-areas: 'head-brand head-foll head-nav';
-	padding: 4px 0.5rem;
-	
+	padding: 4px 0.5rem;	
 	// JS support
-	will-change: transform;
-	transition: transform 600ms ease;
-	&.is-unpin {transform: translateY(-100%);}
-	&.is-pin {transform: translateY(0);}
+	transform-origin: top;
 
 } //
 
@@ -38,9 +28,9 @@
 .site__header .main-nav {grid-area: head-nav; justify-self: end; }
 
 
-/**
- * .site__header - Styles
- * ======================================== */
+//
+// Styles
+//
 
  .site__header,
  .main-nav__nav {

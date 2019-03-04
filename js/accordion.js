@@ -20,6 +20,8 @@
  *
  */
 
+console.log('LOADED accordion.js');
+
 /**
  * The AriaAccordionOptions holds all the options used by the AriaAccordion
  * class.

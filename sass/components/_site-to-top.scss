@@ -1,0 +1,53 @@
+//
+// @file /sass/components/_site-to-top.scss
+//
+// @file /js/site-to-top.js - switch visibility classes on scroll
+// @file /js/smooth-scroll.js - smooth scrolling for all `href=#`
+//
+
+ 
+//
+// Base
+//
+
+.to-top {
+	// position
+	z-index: 2;
+	position: fixed;
+	bottom: 0.493rem;
+	right: 0.493rem;	
+	display: inline-block;
+	width: 1.802rem;
+	height: 1.802rem;
+	line-height: 1.802;	
+	// will-change: transform;
+	transform-origin: center;			
+	text-decoration: none;
+	text-align: center;	
+	border-radius: $border-radius__icon;
+	
+	&__icon {
+		@include icon-fas(f106);
+	}
+
+} // .to-top
+
+
+//
+// Style
+// 
+
+ .to-top {
+	color: $color__white-a;
+	background: rgba($color__black, 0.4);
+	&:hover,
+	&:active,
+	&:focus {
+		color: $color__white;
+		background: rgba($color__black, 0.8);
+	}
+
+	&__icon {}
+
+ } //
+
