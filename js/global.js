@@ -31,7 +31,6 @@ var scroll_y_current;
 // Scroll update
 var scrollUpdate = function () {
     scroll_y_last = scroll_y_current;
-
 }
 
 
@@ -91,6 +90,37 @@ function headerUnpin() {
     }
 } // unpin
 
+
+// Add top margin to #site-main and accounts for fixed header
+// so that content isn't hidden under header
+function headerAdjustFixed() {
+
+    // Get header's rendered position property
+    var header_position = window.getComputedStyle(header_ele).position;
+    // Header height as an integer
+    var header_ht;
+
+    // If header's position = fixed, get its rendered height.	
+    if (header_position == 'fixed') {
+        // get height as string
+        var header_ht_px = window.getComputedStyle(header_ele).height
+        // convert height to integer
+        header_ht = parseInt(header_ht_px, 10);   
+    // Else set value to '0' because we don't need a top buffer.	
+    } else {
+        header_ht = 0
+    }
+
+    // Element to recieve margin-top
+    var main_ele = document.getElementById('site-main');
+    // Size of margin-top
+    var margin_top = header_ht + 40 + 'px';
+    // Add margin to element
+    main_ele.style.marginTop = margin_top;
+
+    console.log('Site header position =', header_position, '| Height =', header_ht, '| margin-top =', margin_top, 'added to', main_ele);
+
+} // function
 
 
 // To Top Variables
@@ -169,6 +199,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     console.log('LOADED global.js');
     viewportUpdate();
+    headerAdjustFixed();
 }) // loaded   
 
 
