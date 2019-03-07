@@ -33,96 +33,6 @@ var scrollUpdate = function () {
     scroll_y_last = scroll_y_current;
 }
 
-
-
-// Header variables
-var header_id = 'site-header';
-var header_ele = null;
-
-// Header update
-function headerUpdate() {
-    if (scroll_y_current < scroll_y_last) {
-        headerPin();
-    } else if (scroll_y_current > scroll_y_last) {
-        headerUnpin();
-    }
-}
-
-// Header Pin
-function headerPin() {
-    // If is-unpin, then make is-pin
-    if (header_ele.getAttribute('data-header') === 'is-unpin') {
-        header_ele.setAttribute("data-header", "is-pin");
-        console.log('UPDATE site header is-pin');
-
-        header_ele.velocity({
-            transform: ["scaleY(1)", "scaleY(0)"],
-            opacity: [1, 0],
-        }, {
-                duration: 400,
-                easing: "linear",
-            }) //  
-
-    } else {
-        // Implied else is that attribute already = is-pin and no action is needed
-        return;
-    }
-} // pin 
-
-// Header Unpin
-function headerUnpin() {
-    // If is-pin, then make is-upin
-    if (header_ele.getAttribute('data-header') === 'is-pin') {
-        header_ele.setAttribute("data-header", "is-unpin");
-        console.log('UPDATE site header is-UNpin');
-
-        header_ele.velocity({
-            transform: ["scaleY(0)", "scaleY(1)"],
-            opacity: [0, 1],
-        }, {
-                duration: 400,
-                easing: "linear",
-            }) //  
-
-    } else {
-        // Implied else is that attribute already = is-unpin and no action is needed
-        return;
-    }
-} // unpin
-
-
-// Add top margin to #site-main and accounts for fixed header
-// so that content isn't hidden under header
-function headerAdjustFixed() {
-
-    // Get header's rendered position property
-    var header_position = window.getComputedStyle(header_ele).position;
-    // Header height as an integer
-    var header_ht;
-
-    // If header's position = fixed, get its rendered height.	
-    if (header_position == 'fixed') {
-        // get height as string
-        var header_ht_px = window.getComputedStyle(header_ele).height
-        // convert height to integer
-        header_ht = parseInt(header_ht_px, 10);   
-    // Else set value to '0' because we don't need a top buffer.	
-    } else {
-        header_ht = 0
-    }
-
-    // Element to recieve margin-top
-    var main_ele = document.getElementById('site-main');
-    // Size of margin-top
-    var margin_top = header_ht + 40 + 'px';
-    // Add margin to element
-    main_ele.style.marginTop = margin_top;
-
-    console.log('Site header position =', header_position, '| Height =', header_ht, '| margin-top =', margin_top, 'added to', main_ele);
-
-} // function
-
-
 // To Top Variables
 var toTop_link
 
@@ -188,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     header_ele.setAttribute('data-header', 'is-pin'); 
     toTop_link = document.getElementById('site-to-top');
     toTop_link.setAttribute('data-to-top', 'is-unpin');
+    main_ele = document.getElementById('site-main');
 
     toTop_link.velocity({
         transform: ["scale(0)", "scale(1)"],
