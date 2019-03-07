@@ -126,7 +126,7 @@
 <!-- VENDOR Scripts -->
 <script type="text/javascript" src="./vendors/velocity.2.0.5.min.js"></script>
 <!-- <script type="text/javascript" src="../js/velocity.ui.min.js"></script> -->
-
+<script type="text/javascript" src="./vendors/smooth-scroll.polyfills.15.2.1.min.js"></script>
 <!-- GLOBAL Scripts -->
 <script type="text/javascript" src="./js/global.js"></script>
 
@@ -135,6 +135,10 @@
 
 
 <script type="text/javascript">
+	var scroll = new SmoothScroll('a[href*="#"]', {
+		speed: 500
+	});
+
 	AriaAccordion.init('.c-accordion')
 </script>
 
