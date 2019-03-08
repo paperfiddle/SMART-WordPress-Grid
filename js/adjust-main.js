@@ -1,6 +1,6 @@
 /*!
  * @file adjust-top.js
- * Adds 'margin-top' to '#site-main'
+ * Adds 'padding-top' to '#site-main'
  * Adds additional px when header positiion is fixed
  * so that page content is not hidden under header
  */
@@ -16,20 +16,19 @@
 
     function adjustMain() {
 
-        var margin_top;
+        var padding_top;
     
         if (header_position == 'fixed') {
-            margin_top = header_ht + 40 + 'px';           	
+            padding_top = header_ht + 40 + 'px';           	
         } else {
-            margin_top = 40 + 'px';
+            padding_top = 40 + 'px';
         }
 
-        main_ele.style.marginTop = margin_top;
+        main_ele.style.paddingTop = padding_top;
 
-        console.log('Site header position =', header_position, '| Height =', header_ht, '| margin-top =', margin_top, 'added to', main_ele);
+        console.log('Site header position =', header_position, '| Height =', header_ht, '| margin-top =', padding_top, 'added to', main_ele);
 
     } // function
-
 
     document.addEventListener("DOMContentLoaded", function (event) {
         console.log('LOADED adjust-top.js');
@@ -47,6 +46,5 @@
         adjustMain();
 
     }) // loaded  
-
 
 })();

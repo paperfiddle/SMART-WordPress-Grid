@@ -1,6 +1,6 @@
 /*!
  * Va11y Velocity V2 Accordion
- * @file /js/c-accordion.js
+ * @file /js/accordion.js
  *
  * @credit AriaAccordion
  * @author Frédéric Bisson <zigazou@free.fr>
@@ -12,11 +12,6 @@
  * @author Chris Ferdinandi
  * @licence MIT
  * @URL https://gomakethings.com/how-to-add-transition-animations-to-vanilla-javascript-show-and-hide-methods/
- *
- * @credit Velocity V2
- * @author
- * @licence
- * @URL
  *
  */
 
@@ -98,6 +93,7 @@ class AriaAccordion {
      * Initializes attributes and classes of the accordion elements.
      */
     initAttributes() {
+        this.root.setAttribute('data-accordion', 'true')
         this.root.setAttribute('role', 'presentation')
         this.root.setAttribute(
             'aria-multiselectable',
@@ -140,6 +136,13 @@ class AriaAccordion {
                 button.setAttribute('aria-expanded', 'true')
                 button.dataset.accordionOpen = null
                 panel.setAttribute('aria-hidden', 'false')
+                panel.style.height = 'auto'
+                panel.style.visibility = 'visible'
+                panel.style.opacity = 1
+            } else {
+                panel.style.height = '0px'
+                panel.style.visibility = 'hidden'
+                panel.style.opacity = 0
             }
         })
     }
@@ -185,6 +188,7 @@ class AriaAccordion {
         currentButton.setAttribute('aria-selected', 'true')
     }
 
+
     /**
      * Handles button click event.
      *
@@ -196,14 +200,14 @@ class AriaAccordion {
         const currentPanel = document.getElementById(
             currentButton.getAttribute('aria-controls')
         )
-
+        
         this.buttons.forEach(
             button => button.setAttribute('aria-selected', 'false')
         )
 
         currentButton.setAttribute('aria-selected', 'true')
 
-    // START Customizations
+    // START LJB Customizations
         // Get panel height
         var panelInfo = function () {
             // Temp unhide so we can get info
@@ -221,30 +225,45 @@ class AriaAccordion {
 
         // if closed
         if(currentButton.getAttribute('aria-expanded') === 'false') {
+            currentPanel.style.visibility = 'visible'
             // Add Velocity animation
-            // Note `forcefed` is best way to approach transforms
-            // TODO Move `transform-origin` from CSS to here
+
             currentPanel.velocity({ 
-                height: [ panelHeight, 0 ],
-                transform: [ "scaleY(1)", "scaleY(0)" ],
-                opacity: [ 1, 0 ],  
-            }, { duration: 400 })
+                    height: [ panelHeight, 0 ], 
+                    transform: ["scaleY(1)", "scaleY(0)"], 
+                    opacity: [ 1, 0 ],
+                }, {
+                        duration: 300,
+                        easing: "linear",
+                    }) // 
+
+            setTimeout(() => {
+                currentButton.setAttribute('aria-expanded', 'true')
+                currentPanel.setAttribute('aria-hidden', 'false') 
+                currentPanel.style.height = 'auto'
+            }, 320);
             // Switch classes
-            currentButton.setAttribute('aria-expanded', 'true')
-            currentPanel.setAttribute('aria-hidden', 'false')  
+
+
         // if opened
         } else {
-            // Add Velocity animation
+
             currentPanel.velocity({ 
-                opacity: [ 0, 1 ], 
-                transform: [ "scaleY(0)", "scaleY(1)" ],               
-                height: [ 0, panelHeight ], 
-            }, { duration: 400 })
-            // Switch classes
-            currentButton.setAttribute('aria-expanded', 'false')
-            currentPanel.setAttribute('aria-hidden', 'true')    
-        }
-        // END Customizations
+                opacity: [ 0, 1 ],                 
+                transform: [ "scaleY(0)", "scaleY(1)" ],  
+                height: [ 0, panelHeight ],                                 
+            }, {
+                    duration: 300,
+                    easing: "linear",
+                }) // 
+
+            setTimeout(() => {
+                currentButton.setAttribute('aria-expanded', 'false')
+                currentPanel.setAttribute('aria-hidden', 'true')  
+                currentPanel.style.visibility = 'hidden'
+            }, 320); 
+            
+        }  // END LJB Customizations
 
         if(this.options.multiselectable === false) {
             this.panels.forEach(panel => {
@@ -412,7 +431,7 @@ AriaAccordion.allKeys = [].concat(
  */
 AriaAccordion.defaultButton = function() {
     const button = document.createElement('button')
-    button.classList.add('c-accordion__btn')
+    button.classList.add('accordion__btn')
     button.setAttribute('type', 'button')
 
     return button
@@ -424,18 +443,18 @@ AriaAccordion.defaultButton = function() {
  * @member {AriaAccordionOptions}
  */
 AriaAccordion.defaultConfig = {
-    headersSelector: '.c-accordion__header',
-    panelsSelector: '.c-accordion__panel',
-    buttonsSelector: 'button.c-accordion__btn',
+    headersSelector: '.accordion__header',
+    panelsSelector: '.accordion__panel',
+    buttonsSelector: 'button.accordion__btn',
     button: AriaAccordion.defaultButton(),
     buttonSuffixId: '__btn',
     multiselectable: true,
-    prefixClass: 'c-accordion',
+    prefixClass: 'accordion',
     headerSuffixClass: '__header',
     buttonSuffixClass: '__btn',
     panelSuffixClass: '__panel',
     direction: 'ltr',
-    accordionPrefixId: 'c-accordion'
+    accordionPrefixId: 'accordion'
 }
 
 /**

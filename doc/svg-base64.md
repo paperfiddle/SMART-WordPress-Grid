@@ -23,7 +23,7 @@ However, the optomized URLs make it easy to locate and change the colors - you j
 
 ## Plus and Minus Icons
 
-	.c-accordion__btn {
+	.accordion__btn {
 		&[aria-expanded="true"]:before {
 			background: no-repeat center center
 				url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23ffffff' d='M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z'%3E%3C/path%3E%3C/svg%3E");
@@ -37,7 +37,7 @@ However, the optomized URLs make it easy to locate and change the colors - you j
 
 ## Angle Icons
 
-	.c-accordion__btn {
+	.accordion__btn {
 		&[aria-expanded="true"]:before {
 			background: no-repeat center center
 				url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23ffffff' d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'%3E%3C/path%3E%3C/svg%3E");

@@ -1,63 +1,57 @@
 //
-// @file /sass/components/_c-accordion.scss
+// @file /sass/components/_accordion.scss
 //
-// @file /js/c-accordion.js
+// @file /js/accordion.js
 // @file /js/velocity.js
 // @file /doc/svg-base64.scss
 // @link https://www.cssscript.com/accessible-accordion-ariaaccordion/
 // 
 
 
-//
-// .c-accordion - Base 
-// Nothing here - Allows no-JS fallback
+// 
+// Accordion - Base when JS takes over
 // 
 
-.c-accordion {	
-	&__header {}
-	&__btn {}	
-	&__panel {}		
-} //
+.accordion {
 
-
-/**
- * c-accordion - Button Base
- * ======================================== */
-
- // Button is added via JS to inside of `__header`
- // Okay to fully style - no fallback needed. 
-
-.c-accordion__btn {
-	display: flex;
-	align-items: baseline;
-	width: 100%;
-	text-align: left;
-
-	// &[aria-selected="true"] {}
-	// &[aria-selected="false"] {}
-
-	&:before,
-	&:after {
-		content: '';
-		display: flex;
-		width: 1.266rem; 
-		height: 1.266rem; 		
+	&[data-accordion="true"] {
+		margin: 1rem auto;
 	}
 
-	&:before {margin: 0 0.5rem 0 0.25rem;}
+	&[data-accordion="true"] &__header {
+		margin: 4px 0 0 0;
+		padding: 0;
+	}
 
-	// TODO work out `display` to support icons on right
-	// &:after {
-	// 	margin: 0 0.25rem 0 0.5rem;		
-	// }
+	&[data-accordion="true"] &__btn {}	
+	&[data-accordion="true"] &__panel {}
 
-} // 
+} //
+ 
+// 
+// Accordion - Buton base
+// Button added via JS to inside of `__header`
+// Okay to fully style - no fallback needed. 
+// 
 
+.accordion__btn {
 
-// Angle Icons
-// We could also switch to `:after`?
+	display: flex;
+	width: 100%;
+	text-align: left;
+	@include font-size(1.125);
+	line-height: 1.424;
+	padding: 0.25em 0.3em 0.4em 0.3em;	
 
-.c-accordion__btn {
+	&:before {
+		content: '';
+		width: 1em; 
+		height: 1em; 
+		margin: 0.25em 0.25em 0 0;			
+	}
+
+	// &[aria-selected="true"] {}
+	// &[aria-selected="false"] {}	
 
 	&[aria-expanded="true"]:before {
 		background: no-repeat center center
@@ -71,73 +65,45 @@
 
 } //
 
+// 
+// Accordion - Panel base
+// Height, scale and opacity toggled via JS
+// 
 
-/**
- * c-accordion - Panel Base
- * ======================================== */
+.accordion__panel {
 
-// Note we do not use `display: none`
-// Instead, we toggle `height` + `opacity` + `scale` 
-// Animations provided by `c-accordion.js` via `velocity.js` 
-
-.c-accordion__panel {
-	// Velocity.js support
 	transform-origin: top;
+	margin: 0;
 
 	&[aria-hidden="true"] { 
 		overflow: hidden;
-		height: 0px;
-		transform: scale(0);
-		opacity: 0;
-		padding: 0;
-		margin: 0;
+		padding: 0;		
 	}
 
 	&[aria-hidden="false"] {
 		padding: 1rem 0.5rem;
 	}
+
 	&[aria-hidden="false"] :first-child {
 		margin-top: 0;
 		padding-top: 0;
 	}
 
-	// TODO: Velocity hink on 2nd+ click
-	// &[aria-hidden="false"] :last-child {
-	// 	margin-bottom: 0;
-	// 	padding-bottom: 0;
-	// }
-
 } //
 
 
-/**
- * c-accordion - Styles
- * ======================================== */
+// 
+// Accordion - Styles
+// 
 
-// Use `[role]` to apply styles only when JS has loaded. 
-// Graceful fallback to default typography. 
+.accordion__panel {
+	border: 2px solid $mc__gray-300;
+	border-top: 0;
+}
 
-.c-accordion {
-
-	&[role="presentation"] {
-		max-width: 810px;
-		margin: 1rem auto;
-	}
-	&[role="presentation"] &__header {
-		margin: 2px 0;	
-	}
-	&[role="presentation"] &__panel {
-		border: 1px solid $mc__gray-300;
-	}
-
-} //
-
-
-.c-accordion__btn {
+.accordion__btn {
 
 	@include sans-400;
-	@include font-size(1.424);
-	padding: 0.25rem 0.4rem;
 	border: none;
 
 	@include bg-linear-h($color__black-a, 1, $color__black, 1);
@@ -149,16 +115,6 @@
 		@include bg-linear-h($color__secondary, 1, $color__secondary-a, 1);
 	}	
 	
-	// &[aria-expanded="true"] {}
-	// &[aria-expanded="false"] {}
-	// &[aria-selected="true"] {}
-	// &[aria-selected="false"] {}
-
 } //
 
-
-// .c-accordion__panel {
-// 	&[aria-hidden="true"] {}
-// 	&[aria-hidden="false"] {}
-// } //
 

@@ -1,23 +1,29 @@
-/**
- * .site - Layout
- * ======================================== */
+// 
+// Site Layout - Functional
 
 .site {
 	&__header {}
-	&__main {max-width: 810px; margin: 0 auto;}
+	&__main {
+		max-width: 810px; 
+		margin: 0 auto;
+		min-height: 100vh;
+	}
 	&__footer {}
 	&__bottom {}
 	&__cookies {}
 
 } // .site
 
-/**
- * .site - Backgrounds
- * ======================================== */
+// 
+// Site Layout - Styles
+// 
+
+
 
 .site {
+	@include bg-linear-v($color__white, 1, $color__white-a, 1);	
 	&__header {}
-	&__main {}
+	&__main {background: $color__white; padding-bottom: 1.602rem;}
 	&__footer {
 		min-height: 2rem; 
 		@include bg-linear-v($color__black-a, 1, $color__black, 1);}

@@ -3,10 +3,6 @@
 // 
 
 
-/**
- * SVG
- * =======================================*/
-
 svg:not([fill]) {
 	fill: currentColor;
 }
@@ -18,5 +14,4 @@ svg:not(:root) {
 svg {
 	vertical-align: middle;
 }
-
 

@@ -75,9 +75,6 @@ textarea,
   -ms-touch-action: manipulation;
   touch-action: manipulation; }
 
-/** 
- * Base HTML
- * ========================================*/
 html {
   cursor: default;
   box-sizing: border-box;
@@ -106,9 +103,6 @@ html {
 :focus {
   outline: 4px dashed #2979FF; }
 
-/** 
- * Body - Base
- * ========================================*/
 body {
   margin: 0;
   padding: 0;
@@ -119,12 +113,8 @@ body {
   font-size: 20px;
   font-size: 1rem;
   line-height: 1.602;
-  color: #757575;
-  background-color: #fff; }
+  color: #757575; }
 
-/**
- * Code
- * ========================================*/
 code,
 kbd,
 samp,
@@ -138,49 +128,32 @@ pre {
   font-weight: normal;
   padding: 0.1em 0.2em; }
 
-/**
- * Headings
- * ========================================*/
 h1, h2, h3, h4 {
+  font-family: "Georgia", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 1px;
   line-height: 1.226;
   margin: 0 0 1em 0; }
 
 h1 {
-  font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-style: normal;
-  font-weight: 900;
   font-size: 28px;
   font-size: 1.42rem;
   color: #212121; }
 
 h2 {
-  font-family: "Georgia", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: 1px;
   font-size: 25px;
   font-size: 1.27rem;
   color: #AEEA00; }
 
 h3 {
-  font-family: "Georgia", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: 1px;
   font-size: 20px;
   font-size: 1rem; }
 
 h4 {
-  font-family: "Georgia", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: 1px;
   font-size: 18px;
   font-size: 0.89rem; }
 
-/**
- * Links
- * ========================================*/
 a {
   color: #212121;
   text-decoration: underline;
@@ -191,9 +164,6 @@ a {
     color: #AEEA00;
     text-decoration: none; }
 
-/**
- * Lists
- * ========================================*/
 ul, ol {
   margin: 0 0 1.602em 0;
   padding: 0 2em;
@@ -204,16 +174,10 @@ ul, ol {
 li {
   margin-bottom: 0.889em; }
 
-/**
- * Paragraphs
- * ========================================*/
 p {
   line-height: 1.602;
-  margin: 0 0 1.602em 0; }
+  margin: 0 0 1.424em 0; }
 
-/**
- * Inline & Spans
- * ========================================*/
 abbr[title] {
   text-decoration: underline;
   text-decoration: underline dotted; }
@@ -547,32 +511,39 @@ sup {
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
 
-/**
- * .site - Layout
- * ======================================== */
 .site__main {
   max-width: 810px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  min-height: 100vh; }
 
-/**
- * .site - Backgrounds
- * ======================================== */
-.site__footer {
-  min-height: 2rem;
-  background: #616161;
-  background: -moz-linear-gradient(top, #616161 0%, #212121 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, #616161), color-stop(100%, #212121));
-  background: -webkit-linear-gradient(top, #616161 0%, #212121 100%);
-  background: -o-linear-gradient(top, #616161 0%, #212121 100%);
-  background: -ms-linear-gradient(top, #616161 0%, #212121 100%);
-  background: linear-gradient(to bottom, #616161 0%, #212121 100%);
+.site {
+  background: white;
+  background: -moz-linear-gradient(top, white 0%, whitesmoke 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(100%, whitesmoke));
+  background: -webkit-linear-gradient(top, white 0%, whitesmoke 100%);
+  background: -o-linear-gradient(top, white 0%, whitesmoke 100%);
+  background: -ms-linear-gradient(top, white 0%, whitesmoke 100%);
+  background: linear-gradient(to bottom, white 0%, whitesmoke 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$hex-top', endColorstr='$hex-bottom', GradientType=0 ); }
-.site__bottom {
-  min-height: 2rem;
-  background: #aeea00;
-  background: -webkit-linear-gradient(332deg, #aeea00 0%, #aeea00 45%, #00c853 45%, #00c853 100%);
-  background: -o-linear-gradient(332deg, #aeea00 0%, #aeea00 45%, #00c853 45%, #00c853 100%);
-  background: linear-gradient(118deg, #aeea00 0%, #aeea00 45%, #00c853 45%, #00c853 100%); }
+  .site__main {
+    background: #fff;
+    padding-bottom: 1.602rem; }
+  .site__footer {
+    min-height: 2rem;
+    background: #616161;
+    background: -moz-linear-gradient(top, #616161 0%, #212121 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #616161), color-stop(100%, #212121));
+    background: -webkit-linear-gradient(top, #616161 0%, #212121 100%);
+    background: -o-linear-gradient(top, #616161 0%, #212121 100%);
+    background: -ms-linear-gradient(top, #616161 0%, #212121 100%);
+    background: linear-gradient(to bottom, #616161 0%, #212121 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$hex-top', endColorstr='$hex-bottom', GradientType=0 ); }
+  .site__bottom {
+    min-height: 2rem;
+    background: #aeea00;
+    background: -webkit-linear-gradient(332deg, #aeea00 0%, #aeea00 45%, #00c853 45%, #00c853 100%);
+    background: -o-linear-gradient(332deg, #aeea00 0%, #aeea00 45%, #00c853 45%, #00c853 100%);
+    background: linear-gradient(118deg, #aeea00 0%, #aeea00 45%, #00c853 45%, #00c853 100%); }
 
 .to-top {
   z-index: 2;
@@ -599,63 +570,50 @@ sup {
     color: #fff;
     background: rgba(33, 33, 33, 0.8); }
 
-/**
- * c-accordion - Button Base
- * ======================================== */
-.c-accordion__btn {
+.accordion[data-accordion="true"] {
+  margin: 1rem auto; }
+.accordion[data-accordion="true"] .accordion__header {
+  margin: 4px 0 0 0;
+  padding: 0; }
+
+.accordion__btn {
   display: flex;
-  align-items: baseline;
   width: 100%;
-  text-align: left; }
-  .c-accordion__btn:before, .c-accordion__btn:after {
+  text-align: left;
+  font-size: 23px;
+  font-size: 1.13rem;
+  line-height: 1.424;
+  padding: 0.25em 0.3em 0.4em 0.3em; }
+  .accordion__btn:before {
     content: '';
-    display: flex;
-    width: 1.266rem;
-    height: 1.266rem; }
-  .c-accordion__btn:before {
-    margin: 0 0.5rem 0 0.25rem; }
+    width: 1em;
+    height: 1em;
+    margin: 0.25em 0.25em 0 0; }
+  .accordion__btn[aria-expanded="true"]:before {
+    background: no-repeat center center url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23ffffff' d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'%3E%3C/path%3E%3C/svg%3E"); }
+  .accordion__btn[aria-expanded="false"]:before {
+    background: no-repeat center center url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3E%3Cpath fill='%23ffffff' d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'%3E%3C/path%3E%3C/svg%3E"); }
 
-.c-accordion__btn[aria-expanded="true"]:before {
-  background: no-repeat center center url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23ffffff' d='M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z'%3E%3C/path%3E%3C/svg%3E"); }
-.c-accordion__btn[aria-expanded="false"]:before {
-  background: no-repeat center center url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3E%3Cpath fill='%23ffffff' d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'%3E%3C/path%3E%3C/svg%3E"); }
-
-/**
- * c-accordion - Panel Base
- * ======================================== */
-.c-accordion__panel {
-  transform-origin: top; }
-  .c-accordion__panel[aria-hidden="true"] {
+.accordion__panel {
+  transform-origin: top;
+  margin: 0; }
+  .accordion__panel[aria-hidden="true"] {
     overflow: hidden;
-    height: 0px;
-    transform: scale(0);
-    opacity: 0;
-    padding: 0;
-    margin: 0; }
-  .c-accordion__panel[aria-hidden="false"] {
+    padding: 0; }
+  .accordion__panel[aria-hidden="false"] {
     padding: 1rem 0.5rem; }
-  .c-accordion__panel[aria-hidden="false"] :first-child {
+  .accordion__panel[aria-hidden="false"] :first-child {
     margin-top: 0;
     padding-top: 0; }
 
-/**
- * c-accordion - Styles
- * ======================================== */
-.c-accordion[role="presentation"] {
-  max-width: 810px;
-  margin: 1rem auto; }
-.c-accordion[role="presentation"] .c-accordion__header {
-  margin: 2px 0; }
-.c-accordion[role="presentation"] .c-accordion__panel {
-  border: 1px solid #E0E0E0; }
+.accordion__panel {
+  border: 2px solid #E0E0E0;
+  border-top: 0; }
 
-.c-accordion__btn {
+.accordion__btn {
   font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
-  font-size: 28px;
-  font-size: 1.42rem;
-  padding: 0.25rem 0.4rem;
   border: none;
   background: #616161;
   background: -moz-linear-gradient(left, #616161 0%, #212121 100%);
@@ -666,7 +624,7 @@ sup {
   background: linear-gradient(to right, #616161 0%, #212121 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#hex-left', endColorstr='$hex-right', GradientType=1 );
   color: white; }
-  .c-accordion__btn:hover, .c-accordion__btn:active, .c-accordion__btn:focus, .c-accordion__btn[aria-expanded="true"], .c-accordion__btn[aria-selected="true"] {
+  .accordion__btn:hover, .accordion__btn:active, .accordion__btn:focus, .accordion__btn[aria-expanded="true"], .accordion__btn[aria-selected="true"] {
     background: #2979ff;
     background: -moz-linear-gradient(left, #2979ff 0%, #6200ea 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, #2979ff), color-stop(100%, #6200ea));
@@ -1130,40 +1088,13 @@ textarea::placeholder, textarea::-webkit-input-placeholder,
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
 
-/**
- * Audio
- * =======================================*/
-audio {
-  display: inline-block;
-  vertical-align: middle; }
-
-audio:not([controls]) {
-  display: none;
-  height: 0; }
-
-/**
- * Canvas
- * =======================================*/
-canvas {
-  display: inline-block;
-  vertical-align: middle; }
-
-/**
- * iframe
- * =======================================*/
 iframe {
   vertical-align: middle; }
 
-/**
- * IMG
- * =======================================*/
 img {
   border-style: none;
   vertical-align: middle; }
 
-/**
- * SVG
- * =======================================*/
 svg:not([fill]) {
   fill: currentColor; }
 
@@ -1173,9 +1104,6 @@ svg:not(:root) {
 svg {
   vertical-align: middle; }
 
-/**
- * Video
- * =======================================*/
 video {
   vertical-align: middle;
   display: inline-block; }

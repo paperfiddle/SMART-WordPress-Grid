@@ -3,10 +3,6 @@
 //
 
 
-/** 
- * Base HTML
- * ========================================*/
- 
 html {
 	cursor: default; 	
 	box-sizing: border-box;
@@ -44,9 +40,6 @@ html {
 
 :focus{@include focus;}
 
-/** 
- * Body - Base
- * ========================================*/
 
 body {
 	margin: 0;
@@ -54,7 +47,6 @@ body {
 	@include serif-400;
 	@include font-size;		
     line-height: 1.602;
-	color: $color__body-font;		
-    background-color: $color__body-bg;		
+	color: $color__body-font;			
 }
 
