@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title></title>
+</head>
+<body>
+
+
+<a id="to-main" class="screen-reader-text" href="#site__main" title="Skip to main content">Skip to main content</a>
+
+<div id="site" class="site">
+
+	<header id="site-header" class="site__header site__header--full">
+
+		<div class="branding branding--full">
+			<div class="branding__name"><a href="">site.name</a></div>		
+			<div class="branding__slogan">A nifty slogan here</div>
+			<div class="branding__logo"><a class="branding__icon" href=""></a></div>	
+		</div><!-- .branding -->
+
+		<ul class="follow follow--horizontal">
+			<li class="follow__item"><a class="follow__link" href="#" title="Find me on Etsy"><span class="follow__icon icon-etsy"></span></a></li>
+			<li class="follow__item"><a class="follow__link" href="#" title="Find me on Instagram"><span class="follow__icon icon-instagram"></span></a></li>
+			<li class="follow__item"><a class="follow__link" href="#" title="Find me on Pinterest"><span class="follow__icon icon-pinterest"></span></a></li>
+			<li class="follow__item"><a class="follow__link" href="#" title="Find me on Facebook"><span class="follow__icon icon-fb"></span></a></li>
+		</ul>
+
+		<div class="main-nav">
+			<input type="checkbox" id="main-nav-toggle" class="main-nav__toggle">
+			<label for="main-nav-toggle" class="main-nav__label" ><span></span></label>
+			<nav class="main-nav__nav">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Shop</a></li>
+					<li><a href="#">Offers</a></li>
+					<li><a href="#">Connect</a></li>
+					<li><a href="#">About</a></li>
+				</ul>			
+			</nav>
+		</div><!-- .main-nav -->		
+	</header><!-- .site__header -->
+
+	<main id="site-main" class="site__main">
+		<p>Based on examples found in <a href="https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/menubar-1.html#">WAI-ARIA Authoring Practices 1.1</a>. </p>
+
+		<nav aria-label="Mythical University">
+			<ul id="menubar1" role="menubar" aria-label="Mythical University">
+				<li role="none">
+					<a role="menuitem" aria-haspopup="true" aria-expanded="false" href="#" tabindex="0">
+						About
+					</a>
+					<ul role="menu" aria-label="About">
+						<li role="none">
+							<a role="menuitem" href="mb-about.html#overview" tabindex="-1">
+								Overview
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="mb-about.html#admin" tabindex="-1">
+								Administration
+							</a>
+						</li>
+						<li role="none">
+							<a id="menubar113" role="menuitem" href="#" aria-haspopup="true" aria-expanded="false"
+								tabindex="-1">
+								Facts
+							</a>
+							<ul role="menu" aria-label="Facts">
+								<li role="none">
+									<a role="menuitem" href="mb-about.html#facts" tabindex="-1">
+										History
+									</a>
+								</li>
+								<li role="none">
+									<a role="menuitem" href="mb-about.html#facts" tabindex="-1">
+										Current Statistics
+									</a>
+								</li>
+								<li role="none">
+									<a role="menuitem" href="mb-about.html#facts" tabindex="-1">
+										Awards
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="#" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+								Campus
+								Tours
+							</a>
+							<ul role="menu" aria-label="Campus Tours">
+								<li role="none">
+									<a role="menuitem" href="mb-about.html#tours" tabindex="-1">
+										For prospective students
+									</a>
+								</li>
+								<li role="none">
+									<a role="menuitem" href="mb-about.html#tours" tabindex="-1">
+										For alumni
+									</a>
+								</li>
+								<li role="none">
+									<a role="menuitem" href="mb-about.html#tours" tabindex="-1">
+										For visitors
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li role="none">
+					<a role="menuitem" aria-haspopup="true" aria-expanded="false" href="#" tabindex="-1">
+						Admissions
+					</a>
+					<ul role="menu" aria-label="Admissions">
+						<li role="none">
+							<a role="menuitem" href="mb-admissions.html#apply" tabindex="-1">
+								Apply
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="#" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+								Tuition
+							</a>
+							<ul role="menu" aria-label="Tuition Information">
+								<li role="none">
+									<a role="menuitem" href="mb-admissions.html#tuition" tabindex="-1">
+										Undergraduate
+									</a>
+								</li>
+								<li role="none">
+									<a role="menuitem" href="mb-admissions.html#tuition" tabindex="-1">
+										Graduate
+									</a>
+								</li>
+								<li role="none">
+									<a role="menuitem" href="mb-admissions.html#tuition" tabindex="-1">
+										Professional Schools
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="mb-admissions.html#signup" tabindex="-1">
+								Sign Up
+							</a>
+						</li>
+						<li role="separator"></li>
+						<li role="none">
+							<a role="menuitem" href="mb-admissions.html#visit" tabindex="-1">
+								Visit
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="mb-admissions.html#photo" tabindex="-1">
+								Photo Tour
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="mb-admissions.html#connect" tabindex="-1">
+								Connect
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li role="none">
+					<a role="menuitem" aria-haspopup="true" aria-expanded="false" href="#" tabindex="-1">
+						Academics
+					</a>
+					<ul role="menu" aria-label="Academics">
+						<li role="none">
+							<a role="menuitem" href="mb-academics.html#colleges" tabindex="-1">
+								Colleges & Schools
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="mb-academics.html#programs" tabindex="-1">
+								Programs of Study
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="mb-academics.html#honors" tabindex="-1">
+								Honors Programs
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="mb-academics.html#online" tabindex="-1">
+								Online Courses
+							</a>
+						</li>
+						<li role="separator"></li>
+						<li role="none">
+							<a role="menuitem" href="mb-academics.html#explorer" tabindex="-1">
+								Course Explorer
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="mb-academics.html#register" tabindex="-1">
+								Register for Class
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="mb-academics.html#academic" tabindex="-1">
+								Academic Calendar
+							</a>
+						</li>
+						<li role="none">
+							<a role="menuitem" href="mb-academics.html#tanscripts" tabindex="-1">
+								Transcripts
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+
+
+
+	</main><!-- .site__main -->
+
+	<a id="site-to-top" class="to-top" title="Scroll to top" aria-label="Scroll to top" rel="bookmark" href="#site-main">
+		<span class="to-top__icon"></span>
+	</a>
+
+	<footer id="site-footer" class="site__footer">	
+	</footer><!-- #site__ footer -->
+
+	<div id="site-bottom" class="site__bottom">
+	</div><!-- #site__bottom -->
+
+	<div id="site-cookies" class="site__cookies">
+	</div><!-- .cookies -->	
+
+</div><!-- #site -->
+
+
+
+
+<!-- VENDOR Scripts -->
+<script type="text/javascript" src="./vendors/velocity.2.0.5.min.js"></script>
+<!-- <script type="text/javascript" src="../js/velocity.ui.min.js"></script> -->
+<script type="text/javascript" src="./vendors/smooth-scroll.polyfills.15.2.1.min.js"></script>
+
+<!-- GLOBAL Scripts -->
+<script type="text/javascript" src="./js/adjust-main.js"></script>
+<script type="text/javascript" src="./js/site-header.js"></script>
+<script type="text/javascript" src="./js/site-to-top.js"></script>
+
+<!-- ARIA NAVIGATION Scripts -->
+<script src="./js/MenubarLinks.js" type="text/javascript"></script>
+<script src="./js/MenubarItemLinks.js" type="text/javascript"></script>
+<script src="./js/PopupMenuLinks.js" type="text/javascript"></script>
+<script src="./js/PopupMenuItemLinks.js" type="text/javascript"></script>
+
+
+<!-- VARIABLE Scripts -->
+<script type="text/javascript">
+	var scroll = new SmoothScroll('a[href*="#"]', {
+		speed: 500
+	});
+</script>
+
+<script type="text/javascript">
+	var menubar = new Menubar(document.getElementById('menubar1'));
+	menubar.init();
+</script>
+
+
+<!-- END Scripts -->
+
+</body>
+</html>
