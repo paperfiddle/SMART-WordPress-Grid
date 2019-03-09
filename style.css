@@ -619,6 +619,29 @@ sup {
   .nav-mobile ul[role="menu"] a[role="menuitem"]:hover {
     color: #000000; }
 
+.nav-follow ul[role="menu"] {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-size: 1rem;
+  text-align: center; }
+.nav-follow--horizontal ul[role="menu"] {
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center; }
+.nav-follow--vertical ul[role="menu"] {
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center; }
+.nav-follow ul[role="menu"] li {
+  margin: 0;
+  padding: 0; }
+.nav-follow ul[role="menu"] a[role="menuitem"] {
+  text-decoration: none;
+  padding: 0.5em; }
+
 .accordion[data-accordion="true"] {
   margin: 1rem auto; }
 .accordion[data-accordion="true"] .accordion__header {
@@ -686,56 +709,24 @@ sup {
 .card {
   background: red; }
 
-/**
- * follow - Base
- * ======================================== */
-.follow {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 20px;
-  font-size: 1rem;
-  text-align: center; }
-  .follow__item {
-    margin: 0; }
-  .follow__link {
-    text-decoration: none; }
-  .follow--horizontal {
-    display: flex;
-    flex-flow: row, nowrap;
-    align-items: center;
-    justify-content: center; }
-  .follow--horizontal .follow__item {
-    padding: 0 0.35rem; }
-  .follow--vertical .follow__item {
-    padding: 0.35rem; }
-
-/**
- * follow - Styles
- * ======================================== */
 .site__header {
   z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  transform-origin: top;
   display: grid;
-  grid-template-areas: 'head-brand head-foll head-nav';
+  grid-template-columns: max-content 1fr max-content;
+  grid-column-gap: 0.5rem;
   align-items: center;
-  padding: 4px 0.5rem;
-  transform-origin: top; }
-
-.site__header .branding {
-  grid-area: head-brand;
-  justify-self: start; }
-
-.site__header .follow {
-  grid-area: head-foll;
-  justify-self: center; }
-
-.site__header .nav-mobile {
-  grid-area: head-nav;
-  justify-self: end; }
+  padding: 4px 0.5rem; }
+  .site__header .branding {
+    justify-self: start; }
+  .site__header .nav-follow {
+    justify-self: center; }
+  .site__header .nav-mobile {
+    justify-self: end; }
 
 .site__header {
   background: #ffab00;

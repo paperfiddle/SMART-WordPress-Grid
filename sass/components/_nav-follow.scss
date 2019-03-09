@@ -1,0 +1,57 @@
+//
+// @file /sass/components/_nav-follow.scss
+//
+
+// 
+// Follow - Base
+//
+
+.nav-follow {
+
+	ul[role="menu"] {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		@include font-size(1);
+		text-align: center;
+
+	}
+
+	&--horizontal ul[role="menu"] {
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&--vertical ul[role="menu"] {
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: center;		
+	}
+
+	ul[role="menu"] li {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul[role="menu"] a[role="menuitem"] {
+		text-decoration: none;
+		padding: 0.5em;
+	}
+
+}
+
+
+// 
+// Styles
+// 
+
+.nav-follow ul[role="menu"] a[role="menuitem"] {
+
+	&:hover,
+	&:active,
+	&:focus {}
+
+}
+

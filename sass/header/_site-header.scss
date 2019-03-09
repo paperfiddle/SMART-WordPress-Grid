@@ -14,19 +14,20 @@
 	top: 0;
 	left: 0;
 	right: 0;
+	// JS support
+	transform-origin: top;	
 	// layout
 	display: grid;
-	grid-template-areas: 'head-brand head-foll head-nav';
+	grid-template-columns: max-content 1fr max-content;
+	grid-column-gap: 0.5rem;
 	align-items: center;
 	padding: 4px 0.5rem;	
-	// JS support
-	transform-origin: top;
+
+	.branding {justify-self: start; }
+	.nav-follow {justify-self: center;}
+	.nav-mobile {justify-self: end;}
 
 } //
-
-.site__header .branding {grid-area: head-brand; justify-self: start; }
-.site__header .follow   {grid-area: head-foll; justify-self: center; }
-.site__header .nav-mobile {grid-area: head-nav; justify-self: end; }
 
 
 //
