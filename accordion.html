@@ -13,34 +13,62 @@
 <div id="site" class="site">
 
 	<header id="site-header" class="site__header site__header--full">
-
+	
 		<div class="branding branding--full">
-			<div class="branding__name"><a href="">site.name</a></div>		
+			<div class="branding__name"><a href="">site.name</a></div>
 			<div class="branding__slogan">A nifty slogan here</div>
-			<div class="branding__logo"><a class="branding__icon" href=""></a></div>				
-		</div>
-		<!-- .branding -->
-
+			<div class="branding__logo"><a class="branding__icon" href=""></a></div>
+		</div><!-- .branding -->
+	
 		<ul class="follow follow--horizontal">
-			<li class="follow__item"><a class="follow__link" href="#" title="Find me on Etsy"><span class="follow__icon icon-etsy"></span></a></li>
-			<li class="follow__item"><a class="follow__link" href="#" title="Find me on Instagram"><span class="follow__icon icon-instagram"></span></a></li>
-			<li class="follow__item"><a class="follow__link" href="#" title="Find me on Pinterest"><span class="follow__icon icon-pinterest"></span></a></li>
-			<li class="follow__item"><a class="follow__link" href="#" title="Find me on Facebook"><span class="follow__icon icon-fb"></span></a></li>
+			<li class="follow__item"><a class="follow__link" href="#" title="Find me on Etsy"><span
+						class="follow__icon icon-etsy"></span></a></li>
+			<li class="follow__item"><a class="follow__link" href="#" title="Find me on Instagram"><span
+						class="follow__icon icon-instagram"></span></a></li>
+			<li class="follow__item"><a class="follow__link" href="#" title="Find me on Pinterest"><span
+						class="follow__icon icon-pinterest"></span></a></li>
+			<li class="follow__item"><a class="follow__link" href="#" title="Find me on Facebook"><span
+						class="follow__icon icon-fb"></span></a></li>
 		</ul>
-
-		<div class="main-nav">
-			<input type="checkbox" id="main-nav-toggle" class="main-nav__toggle">
-			<label for="main-nav-toggle" class="main-nav__label" ><span></span></label>
-			<nav class="main-nav__nav">
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Shop</a></li>
-					<li><a href="#">Offers</a></li>
-					<li><a href="#">Connect</a></li>
-					<li><a href="#">About</a></li>
-				</ul>			
-			</nav>
-		</div><!-- .main-nav -->		
+	
+		<nav id="main-nav" class="nav-mobile" aria-label="Main navigation">
+			<button id="main-nav-button" aria-haspopup="true" aria-controls="main-nav-list"
+				aria-label="Show or hide main menu">
+			</button>
+			<ul id="main-nav-list" role="menu" aria-labelledby="main-nav-button">
+				<li role="none">
+					<a role="menuitem" href="https://www.w3.org/">
+						W3C Home Page
+					</a>
+				</li>
+				<li role="none">
+					<a role="menuitem" href="https://www.w3.org/standards/webdesign/accessibility">
+						W3C Web Accessibility Initiative
+					</a>
+				</li>
+				<li role="none">
+					<a role="menuitem" href="https://www.w3.org/TR/wai-aria/">
+						Accessible Rich Internet Application Specification
+					</a>
+				</li>
+				<li role="none">
+					<a role="menuitem" href="https://www.w3.org/TR/wai-aria-practices/">
+						WAI-ARIA Authoring Practices
+					</a>
+				</li>
+				<li role="none">
+					<a role="menuitem" href="https://www.w3.org/TR/wai-aria-implementation/">
+						WAI-ARIA Implementation Guide
+					</a>
+				</li>
+				<li role="none">
+					<a role="menuitem" href="https://www.w3.org/TR/accname-aam-1.1/">
+						Accessible Name and Description
+					</a>
+				</li>
+			</ul>
+		</nav>
+	
 	</header><!-- .site__header -->
 
 	<main id="site-main" class="site__main">
@@ -96,6 +124,14 @@
 <script type="text/javascript" src="./js/adjust-main.js"></script>
 <script type="text/javascript" src="./js/site-header.js"></script>
 <script type="text/javascript" src="./js/site-to-top.js"></script>
+
+
+<script src="./js/nav-mobile.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	var menubutton = new menuButton(document.getElementById('main-nav-button'));
+	menubutton.init();
+</script>
 
 <!-- VARIABLE Scripts -->
 <script type="text/javascript" src="./js/accordion.js"></script>

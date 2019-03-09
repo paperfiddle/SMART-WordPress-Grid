@@ -17,6 +17,7 @@
 	// layout
 	display: grid;
 	grid-template-areas: 'head-brand head-foll head-nav';
+	align-items: center;
 	padding: 4px 0.5rem;	
 	// JS support
 	transform-origin: top;
@@ -25,15 +26,14 @@
 
 .site__header .branding {grid-area: head-brand; justify-self: start; }
 .site__header .follow   {grid-area: head-foll; justify-self: center; }
-.site__header .main-nav {grid-area: head-nav; justify-self: end; }
+.site__header .nav-mobile {grid-area: head-nav; justify-self: end; }
 
 
 //
 // Styles
 //
 
- .site__header,
- .main-nav__nav {
+ .site__header {
  	@include bg-linear-h($color__alt, 1, $color__alt-a, 1);
  }
 

@@ -1,0 +1,76 @@
+.nav-mobile {
+    // position: relative;
+    // font-size: 1rem;
+}
+
+.nav-mobile button {
+    width: 1.602rem;
+    height: 1.602rem;
+    padding: 0.25rem;
+    border: none;
+
+    background: no-repeat center center
+        url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23FFFFFF' d='M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z'%3E%3C/path%3E%3C/svg%3E");
+
+   &:hover, &:active, &:focus {
+     background: no-repeat center center
+        url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23000000' d='M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z'%3E%3C/path%3E%3C/svg%3E");   
+   }
+
+   background-color: transparent; 
+
+} // 
+
+.nav-mobile ul[role="menu"] {
+    display: none;
+    position: absolute; 
+    // display: flex; // set via js
+    flex-direction: column;
+    top: 100%; // start at bottom edge of header		
+    right: 0;		
+    width: 100%;  
+    
+    margin: 0;
+    padding: 0 4px 4px 0; // keep :focus styles in view
+    list-style: none;
+    font-size: 1rem;
+}
+
+.nav-mobile ul[role="menu"] li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-mobile ul[role="menu"] a[role="menuitem"] {
+    display: block;
+    max-width: 300px;
+    margin-left: auto;
+    padding: 0.35em;
+    text-decoration: none;
+    
+    
+    // width: 22em;
+}
+
+
+// 
+// Styles
+// 
+
+.nav-mobile button {}
+
+.nav-mobile ul[role="menu"] {
+
+    @include bg-linear-h($color__alt, 1, $color__alt-a, 1);
+
+    a[role="menuitem"],
+    a[role="menuitem"]:visited {
+        color: #ffffff;
+    }
+
+    a[role="menuitem"]:focus,
+    a[role="menuitem"]:hover {
+        color: #000000;
+    }  
+
+} // 
