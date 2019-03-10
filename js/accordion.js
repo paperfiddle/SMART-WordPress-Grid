@@ -1,17 +1,17 @@
 /*!
- * Va11y Velocity V2 Accordion
+ * Va11y Velocity Accordion
+ * A WAI-ARIA Accordion animated with Velocity V2
+ * 
  * @file /js/accordion.js
+ * @file /sass/components/_accordion.scss
+ * @file /vendors/velosicty.2.0.5.min.js
  *
- * @credit AriaAccordion
+ * Adapted from AriaAccordion
  * @author Frédéric Bisson <zigazou@free.fr>
  * @version 1.0
  * @licence MIT
  * @URL https://www.cssscript.com/accessible-accordion-ariaaccordion/
  *
- * @credit `getHeight()`
- * @author Chris Ferdinandi
- * @licence MIT
- * @URL https://gomakethings.com/how-to-add-transition-animations-to-vanilla-javascript-show-and-hide-methods/
  *
  */
 
@@ -136,13 +136,11 @@ class AriaAccordion {
                 button.setAttribute('aria-expanded', 'true')
                 button.dataset.accordionOpen = null
                 panel.setAttribute('aria-hidden', 'false')
-                panel.style.height = 'auto'
-                panel.style.visibility = 'visible'
-                panel.style.opacity = 1
+                // panel.style.height = 'auto'
+                // panel.style.visibility = 'visible'
+                // panel.style.opacity = 1
             } else {
-                panel.style.height = '0px'
-                panel.style.visibility = 'hidden'
-                panel.style.opacity = 0
+                // do nothing
             }
         })
     }
@@ -212,10 +210,8 @@ class AriaAccordion {
         if(currentButton.getAttribute('aria-expanded') === 'false') {
             currentButton.setAttribute('aria-expanded', 'true')
             currentPanel.setAttribute('aria-hidden', 'false') 
-            currentPanel.style.visibility = 'visible'
             var panelHeight = currentPanel.scrollHeight + 'px'
 
-            // Add Velocity animation
             currentPanel.velocity({ 
                     height: [ panelHeight, 0 ], 
                     transform: ["scaleY(1)", "scaleY(0)"], 
@@ -229,11 +225,8 @@ class AriaAccordion {
                 // so that panel reflows on resize          
                 currentPanel.style.height = 'auto'
             }, 320);
-            // Switch classes
-
         // if opened
         } else {
-
             currentPanel.velocity({ 
                 opacity: [ 0, 1 ],                 
                 transform: [ "scaleY(0)", "scaleY(1)" ],  
@@ -246,7 +239,6 @@ class AriaAccordion {
             setTimeout(() => {
                 currentButton.setAttribute('aria-expanded', 'false')
                 currentPanel.setAttribute('aria-hidden', 'true')  
-                currentPanel.style.visibility = 'hidden'
             }, 320); 
             
         }  // END LJB Customizations
