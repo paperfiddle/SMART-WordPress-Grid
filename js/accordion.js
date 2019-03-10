@@ -208,26 +208,14 @@ class AriaAccordion {
         currentButton.setAttribute('aria-selected', 'true')
 
     // START LJB Customizations
-        // Get panel height
-        var panelInfo = function () {
-            // Temp unhide so we can get info
-            currentPanel.setAttribute('aria-hidden', 'false')
-            // Grab the info
-            var isHeight = currentPanel.scrollHeight + 'px'
-            // Re-hide panel
-            currentPanel.setAttribute('aria-hidden', 'true')
-            // Return info  
-            return isHeight       
-        }
-
-        // Store panel height as variable so we can use it below
-        var panelHeight = panelInfo() 
-
         // if closed
         if(currentButton.getAttribute('aria-expanded') === 'false') {
+            currentButton.setAttribute('aria-expanded', 'true')
+            currentPanel.setAttribute('aria-hidden', 'false') 
             currentPanel.style.visibility = 'visible'
-            // Add Velocity animation
+            var panelHeight = currentPanel.scrollHeight + 'px'
 
+            // Add Velocity animation
             currentPanel.velocity({ 
                     height: [ panelHeight, 0 ], 
                     transform: ["scaleY(1)", "scaleY(0)"], 
@@ -237,13 +225,11 @@ class AriaAccordion {
                         easing: "linear",
                     }) // 
 
-            setTimeout(() => {
-                currentButton.setAttribute('aria-expanded', 'true')
-                currentPanel.setAttribute('aria-hidden', 'false') 
+            setTimeout(() => {  
+                // so that panel reflows on resize          
                 currentPanel.style.height = 'auto'
             }, 320);
             // Switch classes
-
 
         // if opened
         } else {

@@ -570,40 +570,51 @@ sup {
     color: #fff;
     background: rgba(33, 33, 33, 0.8); }
 
-.nav-mobile button {
-  width: 1.602rem;
-  height: 1.602rem;
-  padding: 0.25rem;
-  border: none;
-  background: no-repeat center center url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23FFFFFF' d='M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z'%3E%3C/path%3E%3C/svg%3E");
-  background-color: transparent; }
-  .nav-mobile button:hover, .nav-mobile button:active, .nav-mobile button:focus {
-    background: no-repeat center center url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23000000' d='M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z'%3E%3C/path%3E%3C/svg%3E"); }
+.site__header {
+  display: grid;
+  grid-column-gap: 0.5rem;
+  align-items: center; }
+  .site__header .branding {
+    grid-area: head-branding; }
+  .site__header .nav-follow {
+    grid-area: head-follow; }
+  .site__header .nav-mobile {
+    grid-area: head-mobile; }
 
-.nav-mobile ul[role="menu"] {
-  display: none;
-  position: absolute;
-  flex-direction: column;
-  top: 100%;
+body[data-nav-mobile="false"] .site__header {
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'head-branding head-follow' 'head-mobile head-mobile'; }
+  body[data-nav-mobile="false"] .site__header .branding {
+    justify-self: start;
+    padding-left: 0.5rem; }
+  body[data-nav-mobile="false"] .site__header .nav-follow {
+    justify-self: end;
+    padding-right: 0.5rem; }
+  body[data-nav-mobile="false"] .site__header .nav-mobile {
+    justify-self: center; }
+
+body[data-nav-mobile="true"] .site__header {
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+  grid-template-areas: 'head-branding head-follow head-mobile'; }
+  body[data-nav-mobile="true"] .site__header .branding {
+    justify-self: start;
+    padding-left: 0.5rem; }
+  body[data-nav-mobile="true"] .site__header .nav-follow {
+    justify-self: center; }
+  body[data-nav-mobile="true"] .site__header .nav-mobile {
+    justify-self: end;
+    padding-right: 0.5rem; }
+
+.site__header {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
   right: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0 4px 4px 0;
-  list-style: none;
-  font-size: 1rem; }
+  transform-origin: top; }
 
-.nav-mobile ul[role="menu"] li {
-  margin: 0;
-  padding: 0; }
-
-.nav-mobile ul[role="menu"] a[role="menuitem"] {
-  display: block;
-  max-width: 300px;
-  margin-left: auto;
-  padding: 0.35em;
-  text-decoration: none; }
-
-.nav-mobile ul[role="menu"] {
+.site__header {
   background: #ffab00;
   background: -moz-linear-gradient(left, #ffab00 0%, #ff6e40 100%);
   background: -webkit-gradient(left top, right top, color-stop(0%, #ffab00), color-stop(100%, #ff6e40));
@@ -612,12 +623,166 @@ sup {
   background: -ms-linear-gradient(left, #ffab00 0%, #ff6e40 100%);
   background: linear-gradient(to right, #ffab00 0%, #ff6e40 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#hex-left', endColorstr='$hex-right', GradientType=1 ); }
-  .nav-mobile ul[role="menu"] a[role="menuitem"],
-  .nav-mobile ul[role="menu"] a[role="menuitem"]:visited {
-    color: #ffffff; }
-  .nav-mobile ul[role="menu"] a[role="menuitem"]:focus,
-  .nav-mobile ul[role="menu"] a[role="menuitem"]:hover {
-    color: #000000; }
+
+.site__header a {
+  text-decoration: none;
+  color: #fff; }
+  .site__header a:hover, .site__header a:active, .site__header a:focus {
+    color: #212121; }
+
+/**
+ * branding - Base
+ * ======================================== */
+.branding {
+  line-height: 1.266; }
+  .branding a {
+    text-decoration: none; }
+  .branding__icon::before {
+    content: "\f520";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; }
+
+/**
+ * branding--full - Base
+ * ======================================== */
+.branding--full {
+  display: grid;
+  justify-content: start;
+  grid-template-areas: "logo name" "logo slogan"; }
+  .branding--full .branding__name {
+    grid-area: name;
+    align-self: end; }
+  .branding--full .branding__slogan {
+    grid-area: slogan;
+    align-self: start; }
+  .branding--full .branding__logo {
+    grid-area: logo;
+    align-self: center;
+    font-size: 51px;
+    font-size: 2.57rem; }
+
+/**
+ * branding--compact - Base
+ * ======================================== */
+.branding--compact {
+  display: flex;
+  align-items: center; }
+  .branding--compact .branding__logo {
+    order: 1;
+    font-size: 28px;
+    font-size: 1.42rem; }
+  .branding--compact .branding__name {
+    order: 2; }
+
+/**
+ * branding--mobile - Base
+ * ======================================== */
+.branding--mobile .branding__name,
+.branding--mobile .branding__slogan {
+  display: none; }
+.branding--mobile .branding__logo {
+  font-size: 32px;
+  font-size: 1.6rem; }
+
+/**
+* branding - Styles
+* ======================================== */
+.branding {
+  color: #fff; }
+  .branding__name {
+    font-family: "Georgia", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 23px;
+    font-size: 1.13rem; }
+  .branding__slogan {
+    font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 0.79rem; }
+
+button[data-nav-mobile='false'] {
+  display: none; }
+
+button[data-nav-mobile='true'] {
+  width: 1.602rem;
+  height: 1.602rem;
+  padding: 0.25rem;
+  border: none;
+  background: no-repeat center center url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23FFFFFF' d='M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z'%3E%3C/path%3E%3C/svg%3E");
+  background-color: transparent; }
+  button[data-nav-mobile='true']:hover, button[data-nav-mobile='true']:active, button[data-nav-mobile='true']:focus {
+    background: no-repeat center center url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23000000' d='M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z'%3E%3C/path%3E%3C/svg%3E"); }
+
+ul[data-nav-mobile] {
+  margin: 0;
+  list-style: none; }
+  ul[data-nav-mobile] li {
+    margin: 0;
+    padding: 0; }
+  ul[data-nav-mobile] a {
+    text-decoration: none; }
+
+ul[data-nav-mobile="false"] {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0.215rem 0;
+  font-size: 0.79rem; }
+  ul[data-nav-mobile="false"] a {
+    display: inline-block;
+    padding: 0.346em 1em; }
+
+ul[data-nav-mobile='true'] {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  transform-origin: top;
+  font-size: 1rem; }
+  ul[data-nav-mobile='true'] a {
+    display: block;
+    max-width: 300px;
+    margin-left: auto;
+    padding: 0.35em; }
+
+ul[data-nav-mobile][aria-hidden="true"] {
+  height: 0px;
+  visibility: hidden; }
+
+ul[data-nav-mobile][aria-hidden="false"] {
+  height: auto;
+  visibility: visible; }
+
+ul[data-nav-mobile] a,
+ul[data-nav-mobile] a:visited {
+  color: #ffffff; }
+ul[data-nav-mobile] a:focus,
+ul[data-nav-mobile] a:hover {
+  color: #000000; }
+
+ul[data-nav-mobile='false'] {
+  background: #ff6e40;
+  background: -moz-linear-gradient(left, #ff6e40 0%, #ffab00 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #ff6e40), color-stop(100%, #ffab00));
+  background: -webkit-linear-gradient(left, #ff6e40 0%, #ffab00 100%);
+  background: -o-linear-gradient(left, #ff6e40 0%, #ffab00 100%);
+  background: -ms-linear-gradient(left, #ff6e40 0%, #ffab00 100%);
+  background: linear-gradient(to right, #ff6e40 0%, #ffab00 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#hex-left', endColorstr='$hex-right', GradientType=1 ); }
+
+ul[data-nav-mobile='true'] {
+  background: #ffab00;
+  background: -moz-linear-gradient(left, #ffab00 0%, #ff6e40 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #ffab00), color-stop(100%, #ff6e40));
+  background: -webkit-linear-gradient(left, #ffab00 0%, #ff6e40 100%);
+  background: -o-linear-gradient(left, #ffab00 0%, #ff6e40 100%);
+  background: -ms-linear-gradient(left, #ffab00 0%, #ff6e40 100%);
+  background: linear-gradient(to right, #ffab00 0%, #ff6e40 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#hex-left', endColorstr='$hex-right', GradientType=1 ); }
 
 .nav-follow ul[role="menu"] {
   display: flex;
@@ -708,114 +873,6 @@ sup {
 
 .card {
   background: red; }
-
-.site__header {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  transform-origin: top;
-  display: grid;
-  grid-template-columns: max-content 1fr max-content;
-  grid-column-gap: 0.5rem;
-  align-items: center;
-  padding: 4px 0.5rem; }
-  .site__header .branding {
-    justify-self: start; }
-  .site__header .nav-follow {
-    justify-self: center; }
-  .site__header .nav-mobile {
-    justify-self: end; }
-
-.site__header {
-  background: #ffab00;
-  background: -moz-linear-gradient(left, #ffab00 0%, #ff6e40 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #ffab00), color-stop(100%, #ff6e40));
-  background: -webkit-linear-gradient(left, #ffab00 0%, #ff6e40 100%);
-  background: -o-linear-gradient(left, #ffab00 0%, #ff6e40 100%);
-  background: -ms-linear-gradient(left, #ffab00 0%, #ff6e40 100%);
-  background: linear-gradient(to right, #ffab00 0%, #ff6e40 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#hex-left', endColorstr='$hex-right', GradientType=1 ); }
-
-.site__header a {
-  text-decoration: none;
-  color: #fff; }
-  .site__header a:hover, .site__header a:active, .site__header a:focus {
-    color: #212121; }
-
-/**
- * branding - Base
- * ======================================== */
-.branding {
-  line-height: 1.266; }
-  .branding a {
-    text-decoration: none; }
-  .branding__icon::before {
-    content: "\f520";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900; }
-
-/**
- * branding--full - Base
- * ======================================== */
-.branding--full {
-  display: grid;
-  justify-content: start;
-  grid-template-areas: "logo name" "logo slogan"; }
-  .branding--full .branding__name {
-    grid-area: name;
-    align-self: end; }
-  .branding--full .branding__slogan {
-    grid-area: slogan;
-    align-self: start; }
-  .branding--full .branding__logo {
-    grid-area: logo;
-    align-self: center;
-    font-size: 51px;
-    font-size: 2.57rem; }
-
-/**
- * branding--compact - Base
- * ======================================== */
-.branding--compact {
-  display: flex;
-  align-items: center; }
-  .branding--compact .branding__logo {
-    order: 1;
-    font-size: 28px;
-    font-size: 1.42rem; }
-  .branding--compact .branding__name {
-    order: 2; }
-
-/**
- * branding--mobile - Base
- * ======================================== */
-.branding--mobile .branding__name,
-.branding--mobile .branding__slogan {
-  display: none; }
-.branding--mobile .branding__logo {
-  font-size: 32px;
-  font-size: 1.6rem; }
-
-/**
-* branding - Styles
-* ======================================== */
-.branding {
-  color: #fff; }
-  .branding__name {
-    font-family: "Georgia", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-style: normal;
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-size: 23px;
-    font-size: 1.13rem; }
-  .branding__slogan {
-    font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-style: italic;
-    font-weight: 400;
-    font-size: 16px;
-    font-size: 0.79rem; }
 
 /**
  * Input - Wrappers - Base

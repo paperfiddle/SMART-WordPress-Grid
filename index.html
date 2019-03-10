@@ -7,8 +7,8 @@
 
 	<title></title>
 </head>
-<body>
 
+<body data-nav-mobile="false">
 
 <a id="to-main" class="screen-reader-text" href="#site__main" title="Skip to main content">Skip to main content</a>
 
@@ -33,9 +33,9 @@
 	
 		<nav id="main-nav" class="nav-mobile" aria-label="Main navigation">
 			<button id="main-nav-button" aria-haspopup="true" aria-controls="main-nav-list"
-				aria-label="Show or hide main menu">
+				aria-label="Show or hide main menu" data-nav-mobile="false">
 			</button>
-			<ul id="main-nav-list" role="menu" aria-labelledby="main-nav-button">
+			<ul id="main-nav-list" role="menu" aria-labelledby="main-nav-button" data-nav-mobile="false">
 				<li role="none">
 					<a role="menuitem" href="https://www.w3.org/">
 						W3C Home Page
@@ -126,40 +126,32 @@
 
 
 
-<!-- VENDOR Scripts -->
+<!-- VELOCITY Scripts -->
 <script type="text/javascript" src="./vendors/velocity.2.0.5.min.js"></script>
-
 <!-- <script type="text/javascript" src="../js/velocity.ui.min.js"></script> -->
+
+<!-- SMOOTH Scroll Scripts -->
 <script type="text/javascript" src="./vendors/smooth-scroll.polyfills.15.2.1.min.js"></script>
-
-
-
-<!-- GLOBAL Scripts -->
-<script type="text/javascript" src="./js/adjust-main.js"></script>
-<script type="text/javascript" src="./js/site-header.js"></script>
-<script type="text/javascript" src="./js/site-to-top.js"></script>
-
-
-
-<script src="./js/nav-mobile.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-	var menubutton = new menuButton(document.getElementById('main-nav-button'));
-	menubutton.init();
-</script>
-
-<!-- VARIABLE Scripts -->
-
 <script type="text/javascript">
 	var scroll = new SmoothScroll('a[href*="#"]', {
 		speed: 500
 	});
 </script>
 
+<!-- GLOBAL Scripts -->
+<script type="text/javascript" src="./js/adjust-main.js"></script>
+<script type="text/javascript" src="./js/site-header.js"></script>
+<script type="text/javascript" src="./js/site-to-top.js"></script>
+
+<!-- MOBILE NAV Scripts -->
+<script src="./js/nav-mobile.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var menubutton = new menuButton(document.getElementById('main-nav-button'));
+	menubutton.init();
+</script>
 
 
 
-<!-- END Scripts -->
 
 </body>
 </html>

@@ -1,9 +1,21 @@
-.nav-mobile {
-    // position: relative;
-    // font-size: 1rem;
+// 
+// @file /sass/componenets/_nav-mobile.scss
+// @file /js/nav-mobile.js
+// Supports single level menus only
+// 
+
+
+//
+// Mobile nav - button
+// 
+
+// if nav-mobile.js is NOT loaded
+button[data-nav-mobile='false'] {
+    display: none;
 }
 
-.nav-mobile button {
+// if nav-mobile.js IS loaded
+button[data-nav-mobile='true'] {
     width: 1.602rem;
     height: 1.602rem;
     padding: 0.25rem;
@@ -21,35 +33,68 @@
 
 } // 
 
-.nav-mobile ul[role="menu"] {
-    display: none;
+
+// 
+// Mobile nav menu
+// 
+
+ul[data-nav-mobile] {
+    margin: 0;
+    list-style: none; 
+    li {
+        margin: 0;
+        padding: 0;
+    } 
+    a {
+        text-decoration: none;
+    }
+} //
+
+
+// if nav-mobile.js is NOT loaded
+ul[data-nav-mobile="false"] {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0.215rem 0; 
+    font-size: 0.79rem;   
+
+    a {
+        display: inline-block;
+        padding: 0.346em 1em;
+    }
+
+} //
+
+// if nav-mobile.js IS loaded
+ul[data-nav-mobile='true'] {
     position: absolute; 
-    // display: flex; // set via js
-    flex-direction: column;
     top: 100%; // start at bottom edge of header		
-    right: 0;		
-    width: 100%;  
-    
-    margin: 0;
-    padding: 0 4px 4px 0; // keep :focus styles in view
-    list-style: none;
-    font-size: 1rem;
+    right: 0;	
+    left: 0;
+    display: flex;
+    flex-direction: column; 
+    transform-origin: top;
+    font-size: 1rem;    
+
+    a {
+        display: block;
+        max-width: 300px;
+        margin-left: auto;
+        padding: 0.35em;
+    }   
+
+} //
+
+
+
+ul[data-nav-mobile][aria-hidden="true"]  {
+    height: 0px;
+    visibility: hidden;
 }
 
-.nav-mobile ul[role="menu"] li {
-    margin: 0;
-    padding: 0;
-}
-
-.nav-mobile ul[role="menu"] a[role="menuitem"] {
-    display: block;
-    max-width: 300px;
-    margin-left: auto;
-    padding: 0.35em;
-    text-decoration: none;
-    
-    
-    // width: 22em;
+ul[data-nav-mobile][aria-hidden="false"]  {
+    height: auto;
+    visibility: visible;
 }
 
 
@@ -57,20 +102,26 @@
 // Styles
 // 
 
-.nav-mobile button {}
+button[data-nav-mobile] {}
 
-.nav-mobile ul[role="menu"] {
-
-    @include bg-linear-h($color__alt, 1, $color__alt-a, 1);
-
-    a[role="menuitem"],
-    a[role="menuitem"]:visited {
+ul[data-nav-mobile] {
+    a,
+    a:visited {
         color: #ffffff;
     }
 
-    a[role="menuitem"]:focus,
-    a[role="menuitem"]:hover {
+    a:focus,
+    a:hover {
         color: #000000;
     }  
 
 } // 
+
+ul[data-nav-mobile='false'] {
+    @include bg-linear-h($color__alt-a, 1, $color__alt, 1);
+}
+
+ul[data-nav-mobile='true'] {
+    @include bg-linear-h($color__alt, 1, $color__alt-a, 1);
+}
+

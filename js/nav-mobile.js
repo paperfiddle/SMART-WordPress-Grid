@@ -265,6 +265,7 @@ menuButton_itemLinks.prototype.handleMouseout = function (event) {
 
 //
 // https://www.w3.org/TR/wai-aria-practices/examples/menu-button/js/PopupMenuLinks.js
+// Customized
 //
 
 var menuButton_popup_menuLinks = function (domNode, controllerObj) {
@@ -310,8 +311,16 @@ menuButton_popup_menuLinks.prototype.init = function () {
 
   // Configure the domNode itself
   this.domNode.tabIndex = -1;
-
   this.domNode.setAttribute('role', 'menu');
+
+  // LJB Custom
+
+  document.body.setAttribute('data-nav-mobile', 'true');
+  this.controller.domNode.setAttribute('aria-expanded', 'false'); 
+  this.domNode.setAttribute('aria-hidden', 'true');
+  this.controller.domNode.setAttribute('data-nav-mobile', 'true');
+  this.domNode.setAttribute('data-nav-mobile', 'true');
+
 
   if (!this.domNode.getAttribute('aria-labelledby') && !this.domNode.getAttribute('aria-label') && !this.domNode.getAttribute('title')) {
     label = this.controller.domNode.innerHTML;
@@ -441,27 +450,64 @@ menuButton_popup_menuLinks.prototype.getIndexFirstChars = function (startIndex, 
   return -1;
 };
 
+
 /* MENU DISPLAY METHODS */
-
+ // LJB Custom
 menuButton_popup_menuLinks.prototype.open = function () {
-  // get position and bounding rectangle of controller object's DOM node
-  var rect = this.controller.domNode.getBoundingClientRect();
 
-  // set CSS properties
-  // this.domNode.style.display = 'block';
-  this.domNode.style.display = 'flex';
-  this.domNode.style.position = 'absolute';
-  // this.domNode.style.top = rect.height + 'px';
-  // this.domNode.style.left = '0px';
+  // The menue is still hidden ...
+  if (this.domNode.getAttribute('aria-hidden') == 'true' ) {
 
-  // set aria-expanded attribute
-  this.controller.domNode.setAttribute('aria-expanded', 'true');
+    // Swap attributes so we can get menu's height ...
+    this.controller.domNode.setAttribute('aria-expanded', 'true');
+    this.domNode.setAttribute('aria-hidden', 'false');  
+
+    // Then get menu's height ...
+    var menuHeight = this.domNode.scrollHeight + 'px'; 
+
+    // And then animate it ...
+    this.domNode.velocity({
+      height: [menuHeight, 0],
+      transform: ["scaleY(1)", "scaleY(0)"],
+      opacity: [1, 0],
+    }, {
+        duration: 320,
+        easing: "linear",
+      }) // 
+
+  } else {
+    return;
+  }
+
 };
 
+// LJB Custom
 menuButton_popup_menuLinks.prototype.close = function (force) {
 
   if (force || (!this.hasFocus && !this.hasHover && !this.controller.hasHover)) {
-    this.domNode.style.display = 'none';
-    this.controller.domNode.removeAttribute('aria-expanded');
-  }
+
+    var menuHeight = this.domNode.scrollHeight + 'px'
+
+    // The menu is still visible ... 
+    if (this.domNode.getAttribute('aria-hidden') == 'false') {    
+      // So we animate it ...
+        this.domNode.velocity({
+          opacity: [0, 1],
+          transform: ["scaleY(0)", "scaleY(1)"],
+          height: [0, menuHeight],
+        }, {
+            duration: 300,
+            easing: "linear",
+          }) // 
+      // Then we swap attributes  
+        setTimeout(() => {
+          this.controller.domNode.setAttribute('aria-expanded', 'false');
+          this.domNode.setAttribute('aria-hidden', 'true');
+        }, 320); 
+
+    } else {
+        return;
+    }
+
+  } // if
 };
