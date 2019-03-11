@@ -707,6 +707,7 @@ button[data-nav-mobile='false'] {
   display: none; }
 
 button[data-nav-mobile='true'] {
+  display: block;
   width: 1.602rem;
   height: 1.602rem;
   padding: 0.25rem;
@@ -725,37 +726,39 @@ ul[data-nav-mobile] {
   ul[data-nav-mobile] a {
     text-decoration: none; }
 
-ul[data-nav-mobile="false"] {
+ul[data-nav-mobile='false'] {
   display: flex;
   flex-flow: row wrap;
   padding: 0.215rem 0;
   font-size: 0.79rem; }
-  ul[data-nav-mobile="false"] a {
+  ul[data-nav-mobile='false'] a {
     display: inline-block;
     padding: 0.346em 1em; }
 
-ul[data-nav-mobile='true'] {
+ul[data-nav-mobile="true"] {
   position: absolute;
   top: 100%;
   right: 0;
   left: 0;
+  height: auto;
   display: flex;
   flex-direction: column;
   transform-origin: top;
+  padding: 0 0 1rem 0;
   font-size: 1rem; }
-  ul[data-nav-mobile='true'] a {
+  ul[data-nav-mobile="true"] a {
     display: block;
     max-width: 300px;
     margin-left: auto;
     padding: 0.35em; }
 
-ul[data-nav-mobile][aria-hidden="true"] {
-  height: 0px;
-  visibility: hidden; }
-
 ul[data-nav-mobile][aria-hidden="false"] {
   height: auto;
   visibility: visible; }
+
+ul[data-nav-mobile][aria-hidden="true"] {
+  height: 0px;
+  visibility: hidden; }
 
 ul[data-nav-mobile] a,
 ul[data-nav-mobile] a:visited {
@@ -764,7 +767,7 @@ ul[data-nav-mobile] a:focus,
 ul[data-nav-mobile] a:hover {
   color: #000000; }
 
-ul[data-nav-mobile='false'] {
+ul[data-nav-mobile] {
   background: #ff6e40;
   background: -moz-linear-gradient(left, #ff6e40 0%, #ffab00 100%);
   background: -webkit-gradient(left top, right top, color-stop(0%, #ff6e40), color-stop(100%, #ffab00));

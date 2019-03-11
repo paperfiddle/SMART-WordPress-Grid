@@ -102,7 +102,7 @@
         header_ele.setAttribute('data-header-sticky', 'true');
         console.log('LOADED site-header.js');
         headerSticky();
-    }) // loaded   
+    }) // loaded
 
 
     // Listen for resize event 

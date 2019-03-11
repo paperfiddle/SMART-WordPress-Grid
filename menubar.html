@@ -10,53 +10,51 @@
 
 <body data-nav-mobile="false">
 
-	<a id="to-main" class="screen-reader-text" href="#site__main" title="Skip to main content">Skip to main content</a>
+<a id="to-main" class="screen-reader-text" href="#site__main" title="Skip to main content">Skip to main content</a>
 
-	<div id="site" class="site">
+<div id="site" class="site">
 
-		<header id="site-header" class="site__header site__header--full">
-
-			<div class="branding branding--full">
-				<div class="branding__name"><a href="">site.name</a></div>
-				<div class="branding__slogan">A nifty slogan here</div>
-				<div class="branding__logo"><span class="branding__icon"></span></div>
-			</div><!-- .branding -->
-
-			<nav class="nav-follow nav-follow--horizontal" aria-label="Social links">
-				<ul role="menu">
-					<li role="none"><a role="menuitem" href="#"><span class="nav-follow_icon icon-etsy"></span></a></li>
-					<li role="none"><a role="menuitem" href="#"><span class="nav-follow_icon icon-instagram"></span></a>
-					</li>
-					<li role="none"><a role="menuitem" href="#"><span class="nav-follow_icon icon-pinterest"></span></a>
-					</li>
-					<li role="none"><a role="menuitem" href="#"><span class="nav-follow_icon icon-fb"></span></a></li>
-				</ul>
-			</nav>
-
-			<nav id="main-nav" class="nav-mobile" aria-label="Main navigation">
-				<button id="main-nav-button" aria-haspopup="true" aria-controls="main-nav-list"
-					aria-label="Show or hide main menu" data-nav-mobile="false">
-				</button>
-				<ul id="main-nav-list" role="menu" aria-labelledby="main-nav-button" data-nav-mobile="false">
-					<li role="none">
-						<a role="menuitem" href="./index.html">
-							Index
-						</a>
-					</li>
-					<li role="none">
-						<a role="menuitem" href="./accordion.html">
-							Van11y Velocity Accordion
-						</a>
-					</li>
-					<li role="none">
-						<a role="menuitem" href="./menubar.html">
-							Van11y Velocity Menubar
-						</a>
-					</li>
-				</ul>
-			</nav>
-
-		</header><!-- .site__header -->
+	<header id="site-header" class="site__header site__header--full" data-header-pin="true" data-header-sticky="false">
+	
+		<div class="branding branding--full">
+			<div class="branding__name"><a href="">site.name</a></div>
+			<div class="branding__slogan">A nifty slogan here</div>
+			<div class="branding__logo"><span class="branding__icon"></span></div>
+		</div><!-- .branding -->
+	
+		<nav class="nav-follow nav-follow--horizontal" aria-label="Social links">
+			<ul role="menu">
+				<li role="none"><a role="menuitem" href="#"><span class="nav-follow_icon icon-etsy"></span></a></li>
+				<li role="none"><a role="menuitem" href="#"><span class="nav-follow_icon icon-instagram"></span></a></li>
+				<li role="none"><a role="menuitem" href="#"><span class="nav-follow_icon icon-pinterest"></span></a></li>
+				<li role="none"><a role="menuitem" href="#"><span class="nav-follow_icon icon-fb"></span></a></li>
+			</ul>
+		</nav>
+	
+		<nav id="main-nav" class="nav-mobile" aria-label="Main navigation">
+			<button id="main-nav-button" aria-haspopup="true" aria-controls="main-nav-list"
+				aria-label="Show or hide main menu" data-nav-mobile="false">
+			</button>
+			<ul id="main-nav-list" role="menu" aria-labelledby="main-nav-button" data-nav-mobile="false">
+				<li role="none">
+					<a role="menuitem" href="./index.html">
+						Index
+					</a>
+				</li>
+				<li role="none">
+					<a role="menuitem" href="./accordion.html">
+						Van11y Velocity Accordion
+					</a>
+				</li>
+				<li role="none">
+					<a role="menuitem" href="./menubar.html">
+						Van11y Velocity Menubar
+					</a>
+				</li>
+			</ul>
+		</nav>
+	
+	</header><!-- .site__header -->
 
 	<main id="site-main" class="site__main">
 
@@ -254,8 +252,6 @@
 </div><!-- #site -->
 
 
-
- 
 <!-- VELOCITY Scripts -->
 <script type="text/javascript" src="./vendors/velocity.2.0.5.min.js"></script>
 <!-- <script type="text/javascript" src="../js/velocity.ui.min.js"></script> -->

@@ -58,8 +58,7 @@ body[data-nav-mobile="true"] .site__header {
 
 .site__header {
 
-	&[data-header-sticky] {}
-	&[data-header-sticky='false'] {}
+	&[data-header-sticky="false"] {}
 
 	&[data-header-sticky='true'] {
 		z-index: 1;	
@@ -78,12 +77,11 @@ body[data-nav-mobile="true"] .site__header {
 //
 
 .site__header {
-	&[data-header-pin] {}
+
 	&[data-header-pin='false'] {}
 	&[data-header-pin='true'] {}
 
 } //
-
 
 
 //

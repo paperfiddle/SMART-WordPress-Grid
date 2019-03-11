@@ -323,13 +323,13 @@ menuButton_popup_menuLinks.prototype.init = function () {
   this.domNode.setAttribute('role', 'menu');
 
   // LJB Custom
-
   document.body.setAttribute('data-nav-mobile', 'true');
-  this.controller.domNode.setAttribute('aria-expanded', 'false'); 
-  this.domNode.setAttribute('aria-hidden', 'true');
   this.controller.domNode.setAttribute('data-nav-mobile', 'true');
   this.domNode.setAttribute('data-nav-mobile', 'true');
 
+  this.controller.domNode.setAttribute('aria-expanded', 'false'); 
+  this.domNode.setAttribute('aria-hidden', 'true');
+ 
 
   if (!this.domNode.getAttribute('aria-labelledby') && !this.domNode.getAttribute('aria-label') && !this.domNode.getAttribute('title')) {
     label = this.controller.domNode.innerHTML;
@@ -483,7 +483,7 @@ menuButton_popup_menuLinks.prototype.open = function () {
         duration: 320,
         easing: "linear",
       }) // 
-
+      
   } else {
     return;
   }
