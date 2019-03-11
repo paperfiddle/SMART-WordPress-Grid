@@ -39,7 +39,6 @@
 
     // Header Pin
     function headerPin() {
-        // If false, then make true
         if (header_ele.getAttribute('data-header-pin') === 'false') {
             header_ele.setAttribute("data-header-pin", "true");
             console.log('UPDATE site header true');
@@ -61,7 +60,6 @@
 
     // Header Unpin
     function headerUnpin() {
-        // If true, then make is-upin
         if (header_ele.getAttribute('data-header-pin') === 'true') {
             header_ele.setAttribute("data-header-pin", "false");
             console.log('UPDATE site header false');
@@ -82,7 +80,7 @@
 
 
     // Header Sticky
-    // Get's height of header and adjusts the top padding 
+    // Gets height of header and adjusts the top padding 
     // on the main container so content isn't hidden under header
     function headerSticky() {
         // Get header height as string
@@ -107,7 +105,7 @@
     }) // loaded   
 
 
-    // Listen for resize events 
+    // Listen for resize event 
     window.addEventListener('resize', function (event) {
         console.log('RESIZE no debounce')
         if (!timeout_resize) {
