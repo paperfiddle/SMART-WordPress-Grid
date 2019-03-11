@@ -7,14 +7,14 @@
 
 
 //
-// Accordion - JS NOT loaded
+// Accordion - JS NOT loaded + Fallback
 //
 
-.accordion[data-accordion="false"] {
+.accordion[data-accordion] {
 	.accordion__panel {}	
 	.accordion__header {}	
 }
-
+ 
 // 
 // Accordion - JS IS loaded
 // 
@@ -76,23 +76,13 @@
 // Height, scale and opacity toggled via JS
 // 
 
-.accordion__panel {
+.accordion[data-accordion="true"] .accordion__panel {
 
 	&[aria-hidden] {
 		transform-origin: top;
 		margin: 0;
 		padding: 1rem 0.5rem;
 	}
-
-	&[aria-hidden="false"] :first-child {
-		margin-top: 0;
-		padding-top: 0;
-	}	
-
-	&[aria-hidden="false"] :last-child {
-		margin-bottom: 0;
-		padding-bottom: 0;
-	}		
 
 	&[aria-hidden="true"] { 
 		display: none;
@@ -106,6 +96,16 @@
 		height: auto;
 		opacity: 1		
 	}
+
+	&[aria-hidden="false"] :first-child {
+		margin-top: 0;
+		padding-top: 0;
+	}	
+
+	&[aria-hidden="false"] :last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}			
 
 } //
 
