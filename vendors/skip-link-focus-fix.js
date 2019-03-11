@@ -1,16 +1,18 @@
 /*!
- * Vanilla Skip Link Focus Fix
- * Helps with accessibility for keyboard only users.
- *  
- * @file /vendors/kip-link-focus-fix.js
+ * skip-link-focus-fix.js (C) 1989, 1991 Free Software Foundation, Inc.
  *
  * Borrowed from Automatic _s Theme
  * https://github.com/Automattic/_s/blob/master/js/skip-link-focus-fix.js
  * 
- * Learn more: https://git.io/vWdr2
+ * GNU General Public License v2.0
+ * https://github.com/Automattic/_s/blob/master/LICENSE
+ * 
+ * Learn more about the issue this script handles
+ * https://git.io/vWdr2
  * 
  */
 
+ console.log('LOADED Skip Link Focus Fix')
 
 ( function() {
 	var isIe = /(trident|msie)/i.test( navigator.userAgent );
