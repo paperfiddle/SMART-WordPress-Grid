@@ -1,8 +1,18 @@
+/*!
+ * Vanilla Velocity Smooth To Top
+ *
+ * @file /js/site-to-top.js
+ * @file /sass/components/_site-to-top.scss
+ * @file /vendors/velocity.2.0.5.min.js
+ * @file /vendors/smooth-scroll.pollyfills.15.2.1.js
+ * 
+ */
+
+
 (function () {
 
     // DOM Variables
     toTop_wrap = document.getElementById('site-to-top');
-    // toTop_link = document.getElementById('site-to-top-link');
 
     // Event timeout variables
     var timeout_resize;

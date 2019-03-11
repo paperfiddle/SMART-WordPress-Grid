@@ -1,17 +1,17 @@
+// 
+// Vanilla Velocity Smooth To Top
 //
-// @file /sass/components/_site-to-top.scss
-//
-// @file /js/site-to-top.js - switch visibility classes on scroll
-// @file /js/smooth-scroll.js - smooth scrolling for all `href=#`
-//
-
+// @file /sass/components/_site-to-top.scss 
+// @file /js/site-to-top.js
+// @file /vendors/velocity.2.0.5.min.js
+// @file /vendors/smooth-scroll.pollyfills.15.2.1.js
+// 
 
 
 // 
 // To Top - Base
 // 
-
-// JS NOT loaded - Fallback 
+ 
 nav[data-to-top-pin] {
 
 	z-index: 2;
@@ -49,7 +49,7 @@ nav[data-to-top-pin="false"] {}
 
 
 //
-// Style
+// To Top - Styles
 // 
 
 nav[data-to-top-pin] a {
