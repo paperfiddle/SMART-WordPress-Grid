@@ -1,5 +1,10 @@
 /*
-* @file menuButton.js
+* Van11y Velocity Mobile Navigation
+*
+* @file /js/nav-mobile.js
+* @file /sass/components/_nav-mobile.scss
+* @file /sass/components/_site-header.scss
+* @file /vendors/velocity.2.0.5.min.js
 *
 * Adapted from: 
 * https://www.w3.org/TR/wai-aria-practices/examples/menu-button/menu-button-links.html
@@ -7,11 +12,14 @@
 * Licence: 
 * https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
 *
+* IMPORTANT: Supports single-level navigation only
 *
 */
 
+
 //
 // https://www.w3.org/TR/wai-aria-practices/examples/menu-button/js/Menubutton2.js
+// No changes
 //
 
 var menuButton = function (domNode) {
@@ -124,6 +132,7 @@ menuButton.prototype.handleMouseout = function (event) {
  
 //
 // https://www.w3.org/TR/wai-aria-practices/examples/menu-button/js/MenuItemLinks.js
+// No changes
 //
 
 var menuButton_itemLinks = function (domNode, menuObj) {

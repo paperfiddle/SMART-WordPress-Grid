@@ -606,7 +606,7 @@ body[data-nav-mobile="true"] .site__header {
     justify-self: end;
     padding-right: 0.5rem; }
 
-.site__header {
+.site__header[data-header-sticky='true'] {
   z-index: 1;
   position: fixed;
   top: 0;

@@ -1,10 +1,14 @@
 //
-// @file /sass/components/_site-header.scss
+// Vanilla Velocity Sticky-Scolly Header
+//
 // @file /js/site-header.js
+// @file /sass/components/_site-header.scss
+// @file /vendors/velocity.2.0.5.min.js
 //
 
+
 //
-// Base
+// Site Header - Base + Mobile Nav
 //
 
 .site__header {
@@ -48,18 +52,38 @@ body[data-nav-mobile="true"] .site__header {
 }
 
 
+//
+// Site Header - Sticky
+//
+
 .site__header {
-	// position
-	z-index: 1;	
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	// JS support
-	transform-origin: top;	
-	// layout
-	
+
+	&[data-header-sticky] {}
+	&[data-header-sticky='false'] {}
+
+	&[data-header-sticky='true'] {
+		z-index: 1;	
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		transform-origin: top;	
+	}
+
 } //
+
+
+//
+// Site Header - pin
+//
+
+.site__header {
+	&[data-header-pin] {}
+	&[data-header-pin='false'] {}
+	&[data-header-pin='true'] {}
+
+} //
+
 
 
 //
