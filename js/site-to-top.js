@@ -1,5 +1,9 @@
 (function () {
 
+    // DOM Variables
+    toTop_wrap = document.getElementById('site-to-top');
+    // toTop_link = document.getElementById('site-to-top-link');
+
     // Event timeout variables
     var timeout_resize;
     var timeout_scroll;
@@ -9,6 +13,11 @@
     var viewport_width;
     var toTop_thresh
 
+    // Scroll variables
+    var scroll_y_last;
+    var scroll_y_current;    
+
+
     // Set/update viewport variables
     var viewportUpdate = function () {
         viewport_height = window.innerHeight || document.documentElement.clientHeight
@@ -17,17 +26,10 @@
         console.log('VIEWPORT height = %i | wdith = %i', viewport_height, viewport_width)
     } // viewportSet
 
-    // Scroll variables
-    var scroll_y_last;
-    var scroll_y_current;
-
     // Scroll update
     var scrollUpdate = function () {
         scroll_y_last = scroll_y_current;
     }
-
-    // To Top Variables
-    var toTop_link
 
     // To Top Update
     function toTopUpdate() {
@@ -40,12 +42,12 @@
 
     // To Top Pin
     function toTopPin() {
-        // If is-unpin, then make is-pin
-        if (toTop_link.getAttribute('data-to-top') === 'is-unpin') {
-            toTop_link.setAttribute("data-to-top", "is-pin");
-            console.log('UPDATE site header is-pin');
+        // If false, then make true
+        if (toTop_wrap.getAttribute('data-to-top-pin') === 'false') {
+            toTop_wrap.setAttribute("data-to-top-pin", "true");
+            console.log('UPDATE site header true');
 
-            toTop_link.velocity({
+            toTop_wrap.velocity({
                 transform: ["scale(1)", "scale(0)"],
                 opacity: [1, 0],
             }, {
@@ -54,19 +56,19 @@
                 }) //  
 
         } else {
-            // Implied else is that attribute already = is-pin and no action is needed
+            // Implied else is that attribute already = true and no action is needed
             return;
         }
     } // pin 
 
 
     function toTopUnpin() {
-        // If is-pin, then make is-upin
-        if (toTop_link.getAttribute('data-to-top') === 'is-pin') {
-            toTop_link.setAttribute("data-to-top", "is-unpin");
-            console.log('UPDATE site header is-UNpin');
+        // If true, then make is-upin
+        if (toTop_wrap.getAttribute('data-to-top-pin') === 'true') {
+            toTop_wrap.setAttribute("data-to-top-pin", "false");
+            console.log('UPDATE site header false');
 
-            toTop_link.velocity({
+            toTop_wrap.velocity({
                 transform: ["scale(0)", "scale(1)"],
                 opacity: [0, 1],
             }, {
@@ -75,7 +77,7 @@
                 }) //  
 
         } else {
-            // Implied else is that attribute already = is-unpin and no action is needed
+            // Implied else is that attribute already = false and no action is needed
             return;
         }
     } // unpin
@@ -84,20 +86,12 @@
     // Listen for DOM 
     document.addEventListener("DOMContentLoaded", function (event) {
         scroll_y_last = 0;
-        scroll_y_current = 0;
-        toTop_link = document.getElementById('site-to-top');
-        toTop_link.setAttribute('data-to-top', 'is-unpin');
-
-        toTop_link.velocity({
-            transform: ["scale(0)", "scale(1)"],
-            opacity: [0, 1],
-        }, {
-                duration: 400,
-                easing: "linear",
-            }) //  
-
+        scroll_y_current = 0;   
+        toTop_wrap.setAttribute('data-to-top-pin', 'true');
         console.log('LOADED site-to-top.js');
         viewportUpdate();
+        scrollUpdate();
+        toTopUpdate();
     }) // loaded   
 
 
