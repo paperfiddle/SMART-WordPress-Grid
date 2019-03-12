@@ -595,13 +595,13 @@ var menuBar_popup_menuLinks = function (domNode, controllerObj) {
 };
 
 /*
-*   @method menuBar_popup_menuLinks.prototype.init
-*
-*   @desc
-*       Add domNode event listeners for mouseover and mouseout. Traverse
-*       domNode children to configure each menuitem and populate menuitems
-*       array. Initialize firstItem and lastItem properties.
-*/
+ *   @method menuBar_popup_menuLinks.prototype.init
+ *
+ *   @desc
+ *       Add domNode event listeners for mouseover and mouseout. Traverse
+ *       domNode children to configure each menuitem and populate menuitems
+ *       array. Initialize firstItem and lastItem properties.
+ */
 menuBar_popup_menuLinks.prototype.init = function () {
   var childElement, menuElement, menuItem, textContent, numItems, label;
 
@@ -767,22 +767,38 @@ menuBar_popup_menuLinks.prototype.getIndexFirstChars = function (startIndex, cha
 /* MENU DISPLAY METHODS */
 
 menuBar_popup_menuLinks.prototype.open = function () {
-  // Get position and bounding rectangle of controller object's DOM node
+
+  // Get the viewport width
+  var viewport_width = window.innerWidth || document.documentElement.clientWidth
+  // Get position and bounding rectangle of current menu item (parent)
   var rect = this.controller.domNode.getBoundingClientRect();
 
-  // Set CSS properties
+  // Set CSS properties - level 3
   if (!this.controller.isMenubarItem) {
     this.domNode.parentNode.style.position = 'relative';
     this.domNode.style.display = 'block';
     this.domNode.style.position = 'absolute';
     this.domNode.style.left = rect.width + 'px';
     this.domNode.style.zIndex = 100;
+    this.domNode.style.backgroundColor = 'green';    
+    
+    var menu_rect = this.domNode.getBoundingClientRect();
+
+    if (menu_rect.right >= viewport_width) {
+
+      this.domNode.style.left = '';
+      this.domNode.style.right = rect.width + 'px';
+
+    }
+
   }
+  // Level 2
   else {
     this.domNode.style.display = 'block';
     this.domNode.style.position = 'absolute';
     this.domNode.style.top = (rect.height - 1) + 'px';
     this.domNode.style.zIndex = 100;
+    this.domNode.style.backgroundColor = 'red';
   }
 
   this.controller.setExpanded(true);
