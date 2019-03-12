@@ -13,7 +13,7 @@
 
     // DOM variables
     var header_ele = document.getElementById('site-header');
-    var header_ht;
+    var header_ht_px;
     var main_ele = document.getElementById('site-main');
 
     // Event variables
@@ -83,7 +83,7 @@
         // Get header height as string
         header_ht_px = window.getComputedStyle(header_ele).height;
         // Apply padding
-        main_ele.style.paddingTop = header_ht;
+        main_ele.style.paddingTop = header_ht_px;
     };
 
 
