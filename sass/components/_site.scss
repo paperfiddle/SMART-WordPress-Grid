@@ -8,6 +8,10 @@
 		margin: 0 auto;
 		min-height: 100vh;
 	}
+	&__main--full {
+		max-width:  100%;
+		width: 100%;
+	}
 	&__footer {}
 	&__bottom {}
 	&__cookies {}
@@ -18,12 +22,10 @@
 // Site Layout - Styles
 // 
 
-
-
 .site {
 	@include bg-linear-v($color__white, 1, $color__white-a, 1);	
 	&__header {}
-	&__main {background: $color__white; padding-bottom: 1.602rem;}
+	&__main {background: $color__white;}
 	&__footer {
 		min-height: 2rem; 
 		@include bg-linear-v($color__black-a, 1, $color__black, 1);}

@@ -8,6 +8,18 @@
 
 <body data-nav-mobile="false">
 
+<!-- VELOCITY Scripts-->
+<script type="text/javascript" src="./vendors/velocity.js"></script>
+<script type="text/javascript">
+	var body = document.getElementsByTagName('body');
+	body.velocity({
+		opacity: [1, 0],
+	}, {
+			duration: 800,
+			easing: "linear",
+		}) //  
+</script>	
+
 <a id="to-main" class="screen-reader-text" href="#site__main" title="Skip to main content">Skip to main content</a>
 
 <div id="site" class="site">
@@ -40,13 +52,18 @@
 					</a>
 				</li>
 				<li role="none">
-					<a role="menuitem" href="./accordion.html">
+					<a role="menuitem" href="./index.accordion.html">
 						Van11y Velocity Accordion
 					</a>
 				</li>
 				<li role="none">
-					<a role="menuitem" href="./menubar.html">
+					<a role="menuitem" href="./index.menubar.html">
 						Van11y Velocity Menubar
+					</a>
+				</li>
+				<li role="none">
+					<a role="menuitem" href="./index.banner.html">
+						Vanilla Velocity Banners
 					</a>
 				</li>
 			</ul>
@@ -90,13 +107,11 @@
 		<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>
 	</main><!-- .site__main -->
 
-
 	<nav id="site-to-top" class="site__to-top" role="menu" aria-label="To top of main content" data-to-top-pin>
 		<a href="#site-main" role="menuitem" rel="bookmark" title="To top">
 			<span></span>
 		</a>
 	</nav>
-
 
 	<footer id="site-footer" class="site__footer">	
 	</footer><!-- #site__ footer -->
@@ -108,12 +123,6 @@
 	</div><!-- .cookies -->	
 
 </div><!-- #site -->
-
-
-
-
-<!-- VELOCITY Scripts -->
-<script type="text/javascript" src="./vendors/velocity.js"></script>
 
 
 <!-- SMOOTH Scroll Scripts -->

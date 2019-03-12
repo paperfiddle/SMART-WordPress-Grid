@@ -1,10 +1,10 @@
 /*
 * Van11y Velocity Mobile Navigation
 *
-* @file /js/nav-mobile.js
-* @file /sass/components/_nav-mobile.scss
-* @file /sass/components/_site-header.scss
-* @file /vendors/velocity.2.0.5.min.js
+* @this /js/nav-mobile.js
+* @css /sass/components/_nav-mobile.scss
+* @css /sass/components/_site-header.scss
+* @requires /vendors/velocity.2.0.5.min.js
 *
 * Adapted from: 
 * https://www.w3.org/TR/wai-aria-practices/examples/menu-button/menu-button-links.html

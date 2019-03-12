@@ -13,7 +13,7 @@
  * 
  */
 
-console.log('LOADED Rellax 1.8.0') 
+console.log('LOADED Rellax 1.8.0'); 
 
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {

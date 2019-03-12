@@ -515,6 +515,9 @@ sup {
   max-width: 810px;
   margin: 0 auto;
   min-height: 100vh; }
+.site__main--full {
+  max-width: 100%;
+  width: 100%; }
 
 .site {
   background: white;
@@ -526,8 +529,7 @@ sup {
   background: linear-gradient(to bottom, white 0%, whitesmoke 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$hex-top', endColorstr='$hex-bottom', GradientType=0 ); }
   .site__main {
-    background: #fff;
-    padding-bottom: 1.602rem; }
+    background: #fff; }
   .site__footer {
     min-height: 2rem;
     background: #616161;
@@ -702,6 +704,41 @@ body[data-nav-mobile="true"] .site__header {
     font-weight: 400;
     font-size: 16px;
     font-size: 0.79rem; }
+
+.banner {
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover; }
+  .banner--demo1 {
+    background-image: url(./images/FernSorus.jpg);
+    background-color: red; }
+  .banner--demo2 {
+    background-image: url(./images/MJBoyle_polytrochus_larva.jpg);
+    background-color: red; }
+  .banner--demo3 {
+    background-image: url(./images/Metapocyrtus-subquadrulfier.jpg);
+    background-color: greenyellow; }
+
+.banner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr auto 1fr;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  height: 100vh; }
+  .banner__content {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    max-width: 810px; }
+
+.banner__content {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1rem; }
+.banner__title {
+  color: #ffffff; }
+.banner__blurb {
+  color: #ffffff; }
 
 button[data-nav-mobile='false'] {
   display: none; }

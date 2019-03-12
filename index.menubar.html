@@ -10,6 +10,18 @@
 
 <body data-nav-mobile="false">
 
+<!-- VELOCITY Scripts-->
+<script type="text/javascript" src="./vendors/velocity.js"></script>
+<script type="text/javascript">
+	var body = document.getElementsByTagName('body');
+	body.velocity({
+		opacity: [1, 0],
+	}, {
+			duration: 800,
+			easing: "linear",
+		}) //  
+</script>	
+
 <a id="to-main" class="screen-reader-text" href="#site__main" title="Skip to main content">Skip to main content</a>
 
 <div id="site" class="site">
@@ -32,8 +44,8 @@
 		</nav>
 	
 		<nav id="main-nav" class="nav-mobile" aria-label="Main navigation">
-			<button id="main-nav-button" aria-haspopup="true" aria-controls="main-nav-list"
-				aria-label="Show or hide main menu" data-nav-mobile="false">
+			<button id="main-nav-button" aria-haspopup="true" aria-controls="main-nav-list" aria-label="Show or hide main menu"
+				data-nav-mobile="false">
 			</button>
 			<ul id="main-nav-list" role="menu" aria-labelledby="main-nav-button" data-nav-mobile="false">
 				<li role="none">
@@ -42,13 +54,18 @@
 					</a>
 				</li>
 				<li role="none">
-					<a role="menuitem" href="./accordion.html">
+					<a role="menuitem" href="./index.accordion.html">
 						Van11y Velocity Accordion
 					</a>
 				</li>
 				<li role="none">
-					<a role="menuitem" href="./menubar.html">
+					<a role="menuitem" href="./index.menubar.html">
 						Van11y Velocity Menubar
+					</a>
+				</li>
+				<li role="none">
+					<a role="menuitem" href="./index.banner.html">
+						Vanilla Velocity Banners
 					</a>
 				</li>
 			</ul>
@@ -251,10 +268,6 @@
 
 </div><!-- #site -->
 
-
-<!-- VELOCITY Scripts -->
-<script type="text/javascript" src="./vendors/velocity.js"></script>
-<!-- <script type="text/javascript" src="../js/velocity.ui.min.js"></script> -->
 
 <!-- SMOOTH Scroll Scripts -->
 <script type="text/javascript" src="./vendors/smooth-scroll.js"></script>

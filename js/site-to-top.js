@@ -1,10 +1,10 @@
 /*!
  * Vanilla Velocity Smooth To Top
  *
- * @file /js/site-to-top.js
- * @file /sass/components/_site-to-top.scss
- * @file /vendors/velocity.2.0.5.min.js
- * @file /vendors/smooth-scroll.pollyfills.15.2.1.js
+ * @this /js/site-to-top.js
+ * @css /sass/components/_site-to-top.scss
+ * @requires /vendors/velocity.js
+ * @uses /vendors/smooth-scroll.js
  * 
  */
 
@@ -12,7 +12,7 @@
 (function () {
 
     // DOM Variables
-    toTop_wrap = document.getElementById('site-to-top');
+    var toTop_wrap = document.getElementById('site-to-top');
 
     // Event timeout variables
     var timeout_resize;
@@ -20,8 +20,8 @@
 
     // Viewport variables
     var viewport_height;
-    var viewport_width;
-    var toTop_thresh
+    // var viewport_width;
+    var toTop_thresh;
 
     // Scroll variables
     var scroll_y_last;
@@ -33,13 +33,15 @@
         viewport_height = window.innerHeight || document.documentElement.clientHeight
         viewport_width = window.innerWidth || document.documentElement.clientWidth;
         toTop_thresh = viewport_height * 1.6;
-        console.log('VIEWPORT height = %i | wdith = %i', viewport_height, viewport_width)
-    } // viewportSet
+        console.log('TO TOP viewport height = %i | wdith = %i', viewport_height); 
+    }; // viewportSet
+
 
     // Scroll update
     var scrollUpdate = function () {
         scroll_y_last = scroll_y_current;
-    }
+    };
+
 
     // To Top Update
     function toTopUpdate() {
@@ -47,92 +49,99 @@
             toTopPin();
         } else if (scroll_y_current < toTop_thresh) {
             toTopUnpin();
-        }
-    }
+        }      
+    }; // update
+
 
     // To Top Pin
     function toTopPin() {
         // If false, then make true
         if (toTop_wrap.getAttribute('data-to-top-pin') === 'false') {
-            toTop_wrap.setAttribute("data-to-top-pin", "true");
-            console.log('UPDATE site header true');
+            console.log('TO TOP Pinned');
+            toTop_wrap.setAttribute('data-to-top-pin', 'true');
 
             toTop_wrap.velocity({
-                transform: ["scale(1)", "scale(0)"],
+                transform: ['scale(1)', 'scale(0)'],
                 opacity: [1, 0],
             }, {
-                    duration: 400,
-                    easing: "linear",
-                }) //  
-
+                duration: 400,
+                easing: 'linear',
+            }); //  
+            
         } else {
             // Implied else is that attribute already = true and no action is needed
             return;
         }
-    } // pin 
+    }; // pin 
 
 
     function toTopUnpin() {
         // If true, then make is-upin
         if (toTop_wrap.getAttribute('data-to-top-pin') === 'true') {
-            toTop_wrap.setAttribute("data-to-top-pin", "false");
-            console.log('UPDATE site header false');
+
+            console.log('TO TOP Un-pinned');
+            toTop_wrap.setAttribute('data-to-top-pin', 'false');
 
             toTop_wrap.velocity({
-                transform: ["scale(0)", "scale(1)"],
+                transform: ['scale(0)', 'scale(1)'],
                 opacity: [0, 1],
             }, {
-                    duration: 400,
-                    easing: "linear",
-                }) //  
+                duration: 400,
+                easing: 'linear',
+            }); // 
 
         } else {
             // Implied else is that attribute already = false and no action is needed
             return;
         }
-    } // unpin
+    }; // unpin
 
 
     // Listen for DOM 
-    document.addEventListener("DOMContentLoaded", function (event) {
+    document.addEventListener('DOMContentLoaded', function (event) {
+        console.log('LOADED site-to-top.js');
         scroll_y_last = 0;
         scroll_y_current = 0;   
-        toTop_wrap.setAttribute('data-to-top-pin', 'true');
-        console.log('LOADED site-to-top.js');
+        toTop_wrap.setAttribute('data-to-top-pin', 'true');    
         viewportUpdate();
         scrollUpdate();
         toTopUpdate();
-    }) // loaded   
+    });   
 
 
-    // Listen for resize events 
+    // Listen for resize events run viewport + card functions
     window.addEventListener('resize', function (event) {
-        console.log('RESIZE no debounce')
-        if (!timeout_resize) {
-            timeout_resize = setTimeout(function () {
-                timeout_resize = null;
-                scroll_y_current = window.pageYOffset;
-                console.log('RESIZE debounced');
-                viewportUpdate();
-                scrollUpdate();
-                toTopUpdate();
-            }, 66)
-        } // if timeout
-    }, false) // resize
+        console.log('TO TOP resize no debounce');
+        // If there's a timer, cancel it
+        if (timeout_resize) {
+            window.cancelAnimationFrame(timeout_resize);
+        }
+        // Setup the new requestAnimationFrame()
+        timeout_resize = window.requestAnimationFrame(function () {
+            // Run resize functions
+            console.log('TO TOP resize debounced');
+            scroll_y_current = window.pageYOffset;
+            viewportUpdate();
+            scrollUpdate();
+            toTopUpdate();
+        });
+    }, false);
 
-
-    // Scroll event 
+    // Listen for scroll events and update banners only
     window.addEventListener('scroll', function (event) {
-        console.log('SCROLL no debounce')
-        if (!timeout_scroll) {
-            timeout_scroll = setTimeout(function () {
-                timeout_scroll = null;
-                scroll_y_current = window.pageYOffset;
-                console.log('SCROLL debounced', scroll_y_last, scroll_y_current);
-                scrollUpdate();
-                toTopUpdate();
-            }, 66) // timeout     
-        } // if timeout   
-    }, false) // scroll
+        console.log('TO TOP scroll no debounce');
+        // If there's a timer, cancel it
+        if (timeout_scroll) {
+            window.cancelAnimationFrame(timeout_scroll);
+        }
+        // Setup the new requestAnimationFrame()
+        timeout_scroll = window.requestAnimationFrame(function () {
+            // Run scroll functions
+            console.log('TO TOP scroll debounced');
+            scroll_y_current = window.pageYOffset;
+            scrollUpdate();
+            toTopUpdate();
+        });
+    }, false);
     
 })();

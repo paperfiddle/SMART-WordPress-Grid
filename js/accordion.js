@@ -2,17 +2,19 @@
  * Va11y Velocity Accordion
  * A WAI-ARIA Accordion animated with Velocity V2
  * 
- * @file /js/accordion.js
- * @file /sass/components/_accordion.scss
- * @file /vendors/velosicty.2.0.5.min.js
+ * @this /js/accordion.js
+ * @css /sass/components/_accordion.scss
+ * @requires /vendors/velosicty.2.0.5.min.js
  *
- * Adapted from AriaAccordion
- * @author Frédéric Bisson <zigazou@free.fr>
- * @version 1.0
- * @licence MIT
- * @URL https://www.cssscript.com/accessible-accordion-ariaaccordion/
+ * Adapted from AriaAccordion (c) Frédéric Bisson <zigazou@free.fr>
+ * Version 1.0
  *
+ * Project
+ * https://github.com/Zigazou/aria-accordion
+ * https://www.cssscript.com/accessible-accordion-ariaaccordion/
  *
+ * MIT Licence
+ * 
  */
 
 console.log('LOADED accordion.js');
