@@ -1,0 +1,81 @@
+// 
+// Vanilla Linkify
+// Turn headings into anchor links
+//
+// @this /sass/components/_linkify.scss
+// @requires linkify.js 
+// 
+// 
+
+
+// 
+// Tocify
+// 
+
+.tocify {
+    padding: 0 0.5rem 2rem 0.5rem;
+    
+    &__heading {
+        border-top: 2px solid;
+        margin-top: 0;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__nav-item {}
+
+    &__link {
+        display: block;
+        @include font-size(0.79);
+        padding: 0.25em 0.5em; 
+        color: $color__secondary;
+        text-decoration: none;
+    }
+
+    &__link:hover, &__link:active, &__link:focus {
+        color: $color__secondary-a;
+    }
+
+}
+
+.tocify__link {
+
+    &--h1 {}
+    &--h2 {margin-left: 0.5rem;}
+    &--h3 {margin-left: 1rem;}
+    &--h4 {margin-left: 1.5rem;}
+    &--h5 {margin-left: 2rem;}
+    &--h6 {margin-left: 2.5rem;}
+
+}
+
+
+//
+// Linkify
+//
+
+h1,h2,h3,h4,h5,h6 {
+    display: flex;
+    align-items: flex-start;
+}
+
+.linkify {
+    // the 'a' tag
+    display: block;
+    margin-left: auto;
+    margin-right: 4px; // keep focus style in sight
+    margin-top: -0.5em;
+    padding: 0.5em;
+    @include font-size(1);
+
+    // the svg
+    &__icon {
+        width: 1rem;
+        height: 1rem;
+    }
+
+}
+

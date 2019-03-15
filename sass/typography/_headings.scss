@@ -3,28 +3,32 @@
 //  
 
 
-h1,h2,h3,h4 {
+h1,h2,h3,h4,h5,h6 {
 	@include serif-700;
 	line-height: 1.226;
-	margin: 0 0 1em 0;	
-
+	margin-bottom: 0.5rem;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	color: $color__black;
 }
 
 h1 { 
 	@include font-size(1.424); 
-	color: $color__black;
+	margin-top: 2rem;
 }
 
 h2 { 
 	@include font-size(1.266); 
-	color: $color__primary;
+	margin-top: 2rem;
 }
 
 h3 {
 	@include font-size(1); 
+	margin-top: 2rem;
 }
 
 h4 { 
 	@include font-size(0.889); 
+	margin-top: 2rem;
 }
 
