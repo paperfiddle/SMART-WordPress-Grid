@@ -61,7 +61,7 @@ body[data-nav-mobile="true"] .site__header {
 	&[data-header-sticky="false"] {}
 
 	&[data-header-sticky='true'] {
-		z-index: 1;	
+		z-index: 10;	
 		position: fixed;
 		top: 0;
 		left: 0;
