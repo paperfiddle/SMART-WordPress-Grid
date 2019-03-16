@@ -58,7 +58,6 @@ menuButton.prototype.init = function () {
   this.domNode.addEventListener('mouseout',   this.handleMouseout.bind(this));
 
   // initialize pop up menus
-
   var popupMenu = document.getElementById(this.domNode.getAttribute('aria-controls'));
 
   if (popupMenu) {
@@ -262,7 +261,6 @@ menuButton_itemLinks.prototype.handleBlur = function (event) {
 menuButton_itemLinks.prototype.handleMouseover = function (event) {
   this.menu.hasHover = true;
   this.menu.open();
-
 };
 
 menuButton_itemLinks.prototype.handleMouseout = function (event) {
@@ -315,6 +313,9 @@ var menuButton_popup_menuLinks = function (domNode, controllerObj) {
 };
 
 
+//
+// LJB Csutom
+//
 menuButton_popup_menuLinks.prototype.init = function () {
   var childElement, menuElement, menuItem, textContent, numItems, label;
 

@@ -1605,4 +1605,118 @@ video {
   .post__main h1:first-child {
     margin-top: 0; }
 
+@media screen and (max-width: 809px) {
+  .post__grid-right {
+    display: none; } }
+@media screen and (min-width: 810px) {
+  .post {
+    display: grid;
+    grid-template-columns: 1fr minmax(560px, 810px) 240px 1fr;
+    grid-template-areas: '. post-left post-right .' '. post-bottom post-bottom .'; }
+    .post__grid-left {
+      grid-area: post-left; }
+    .post__grid-right {
+      grid-area: post-right; }
+    .post__grid-bottom {
+      grid-area: post-bottom; } }
+.post-header {
+  display: grid;
+  grid-template-columns: 64px 1fr 40px;
+  grid-template-rows: auto auto 1fr;
+  align-items: start;
+  padding: 0.5rem; }
+  .post-header__title {
+    grid-row: 1/2;
+    grid-column: 1/4;
+    margin: 1rem 0 0.5rem 0;
+    padding: 0; }
+  .post-header__sub-title {
+    grid-row: 2/3;
+    grid-column: 1/3;
+    z-index: 1;
+    margin: 1rem 0 0.5rem 0;
+    padding: 0.5rem; }
+  .post-header__categories {
+    grid-row: 3/4;
+    grid-column: 2/4;
+    z-index: 1;
+    display: inline-block;
+    justify-self: end;
+    align-self: end;
+    margin: 0.5rem;
+    padding: 0.5rem; }
+  .post-header__image {
+    grid-row: 2/4;
+    grid-column: 2/4;
+    min-height: 340px; }
+  .post-header__share {
+    grid-row: 3/4;
+    grid-column: 1/2; }
+  .post-header__image img {
+    width: 100%;
+    min-height: 400px;
+    object-fit: cover; }
+
+.post-header__title {
+  font-size: 36px;
+  font-size: 1.8rem; }
+.post-header__sub-title {
+  font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  font-size: 1.13rem;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.7); }
+.post-header__image {
+  background: radial-gradient(circle at right bottom, rgba(0, 0, 0, 0) 80%, #AEEA00 80%), radial-gradient(farthest-corner at 0% -20%, #dcff75 68%, #577500 68%); }
+.post-header__categories {
+  background: rgba(0, 0, 0, 0.7); }
+.post-header__categories a {
+  color: #ffffff; }
+  .post-header__categories a:hover, .post-header__categories a:active, .post-header__categories a:focus {
+    color: #6200EA; }
+.post-header__share a:hover, .post-header__share a:active, .post-header__share a:focus {
+  color: #6200EA; }
+
+.post__summary {
+  padding: 0.5rem; }
+  .post__summary .post__byline {
+    justify-content: space-between;
+    margin-bottom: 1rem; }
+  .post__summary .post__excerpt {
+    padding: 1rem 0;
+    font-size: 25px;
+    font-size: 1.27rem;
+    font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-style: normal;
+    font-weight: 400;
+    border-top: 2px solid; }
+  .post__summary .post__excerpt :first-child {
+    margin-top: 0;
+    padding-top: 0; }
+  .post__summary .post__excerpt :last-child {
+    margin-bottom: 0;
+    padding-bottom: 0; }
+
+.card .post__byline {
+  display: flex;
+  flex-flow: column wrap; }
+  .card .post__byline .meta__author-name {
+    order: 1; }
+  .card .post__byline .meta__date-updated {
+    order: 2; }
+  .card .post__byline .meta__page-url {
+    order: 3; }
+  .card .post__byline .meta__page-edit {
+    order: 4; }
+
+.post__main {
+  padding: 0 0.5rem; }
+
+.post__main h1 {
+  border-top: 2px solid; }
+  .post__main h1:first-child {
+    margin-top: 0; }
+
 /*# sourceMappingURL=style.css.map */
