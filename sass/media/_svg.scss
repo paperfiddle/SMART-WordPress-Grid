@@ -4,14 +4,14 @@
 
 
 svg:not([fill]) {
-	fill: currentColor;
+	// fill: currentColor;
 }
 
 svg:not(:root) {
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 svg {
-	vertical-align: middle;
+	// vertical-align: middle;
 }
 

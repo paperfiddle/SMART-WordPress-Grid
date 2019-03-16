@@ -22,14 +22,11 @@ button[data-nav-mobile='false'] {
 // if nav-mobile.js IS loaded
 button[data-nav-mobile='true'] {
     display: block;
-    width: 1.602rem;
-    height: 1.602rem;
-    padding: 0.25rem;
+    width: 2.565rem;
+    height: 2.565rem;
+    padding: 0.493rem;
     border: none;
     background-color: transparent; 
-
-    svg {}
-
 } // 
 
 
@@ -101,18 +98,17 @@ ul[data-nav-mobile][aria-hidden="true"]  {
 // Styles
 // 
 
-ul[data-nav-mobile] {
-    a,
-    a:visited {
-        color: #ffffff;
-    }
+button[data-nav-mobile] {
+    // path {
+    //     fill: $color__white;
+    // }
+    // &:hover path,
+    // &:active path,
+    // &:focus path {
+    //     fill: $color__black;
+    // }
+}
 
-    a:focus,
-    a:hover {
-        color: #000000;
-    }  
-
-} // 
 
 ul[data-nav-mobile] {
     @include bg-linear-h($color__alt-a, 1, $color__alt, 1);

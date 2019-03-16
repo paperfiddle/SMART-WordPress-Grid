@@ -130,7 +130,7 @@
 	&:hover, &:active, &:focus,
 	&[aria-expanded="true"],
 	&[aria-selected="true"] {
-		@include bg-linear-h($color__secondary, 1, $color__secondary-a, 1);
+		@include bg-linear-h($color__blue, 1, $color__blue-a, 1);
 	}	
 	
 } //

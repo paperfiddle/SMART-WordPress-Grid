@@ -3,7 +3,12 @@
 // 
 
 
+// video {
+// 	vertical-align: middle;
+// 	display: inline-block;
+// }
+
 video {
-	vertical-align: middle;
-	display: inline-block;
+    object-fit: cover;
+    width: 100%;
 }

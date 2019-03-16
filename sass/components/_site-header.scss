@@ -89,10 +89,12 @@ body[data-nav-mobile="true"] .site__header {
 //
 
  .site__header {
+	color: $color__white;
  	@include bg-linear-h($color__alt, 1, $color__alt-a, 1);
  }
 
- .site__header a {
+ .site__header a,
+ .site__header button {
  	text-decoration: none;
 	color: $color__white;
 	&:hover,
@@ -101,4 +103,5 @@ body[data-nav-mobile="true"] .site__header {
 		color: $color__black;
 	} 
 }
+
 

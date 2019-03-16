@@ -5,11 +5,13 @@
 
 // The wrapper element containing meta items
 .meta {
+
     // layout
     display: flex;
     &:not(.meta--vertical) {
         flex-wrap: wrap;
     }
+    
     &--vertical {
         flex-flow: column nowrap;
         justify-content: flex-start;
@@ -19,14 +21,6 @@
 
     @include font-size(0.79);
     @include sans-400;
-
-    a {
-        text-decoration: none; 
-        color: $color__secondary;
-    }
-    a:hover, a:active, a:focus {
-        color: $color__secondary-a;
-    }
 
     &--author {}
     &--tags {}

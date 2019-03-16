@@ -10,7 +10,6 @@
 .branding {
 
 	line-height: 1.266;
-	a {text-decoration: none;}
 	&__icon {@include icon-fas(f520);}	// Temporary fa icon
 	
 } // .branding
@@ -90,8 +89,6 @@
  * ======================================== */
 
 .branding {	
-
-	color: $color__white;
 
 	&__name {
 		@include serif-700;

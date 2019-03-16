@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<title></title>
+	<title>Linkify Tocify Idify</title>
 </head>
 
 <body data-nav-mobile="false">
@@ -53,7 +53,7 @@
 			<ul id="main-nav-list" role="menu" aria-labelledby="main-nav-button" data-nav-mobile="false">
 				<li role="none">
 					<a role="menuitem" href="./index.html">
-						Index
+						Home
 					</a>
 				</li>
 				<li role="none">
@@ -215,31 +215,37 @@
 
 			<div class="post__grid-right">
 
-				<aside class="post__aside aside aside--advert">
-					<p>Advertizement</p>
+				<aside class="card card--advert">
+					<header class="card__head">
+						<p class="card__title">Advertizement</p>
+					</header>
+					<main class="card__main"></main>
 				</aside>
 
-				<aside class="post__aside aside">
-					<h2>Meta</h2>
-					<div class="post__byline meta meta--byline meta--vertical">
-						<span class="meta__author" href="#">Lisa Burton</span>
-						<a class="meta__page-url" href="#">Short URL</a>
-						<a class="meta__page-edit" href="#">Edit</a>
-						<span class="meta__date-updated">March 1, 2019</span>
-					</div>
-					<nav class="post__categories meta meta--categories" role="menu">
-						<a href="#" role="menuitem">Digital Projects</a>
-						<a href="#" role="menuitem">WordPress</a>
-					</nav>
-					<nav class="post__tags meta meta--tags" role="menu">
-						<a href="#" role="menuitem">Sass</a>
-						<a href="#" role="menuitem">JavaScript</a>
-						<a href="#" role="menuitem">CSS Grid Layout</a>
-					</nav>
+				<aside class="card card--meta">
+					<header class="card__head"><h2 class="card__title">Meta</h2></header>
+					<main class="card__main">
+						<div class="post__byline meta meta--byline meta--vertical">
+							<span class="meta__author" href="#">Lisa Burton</span>
+							<a class="meta__page-url" href="#">Short URL</a>
+							<a class="meta__page-edit" href="#">Edit</a>
+							<span class="meta__date-updated">March 1, 2019</span>
+						</div>
+						<nav class="post__categories meta meta--categories" role="menu">
+							<a href="#" role="menuitem">Digital Projects</a>
+							<a href="#" role="menuitem">WordPress</a>
+						</nav>
+						<nav class="post__tags meta meta--tags" role="menu">
+							<a href="#" role="menuitem">Sass</a>
+							<a href="#" role="menuitem">JavaScript</a>
+							<a href="#" role="menuitem">CSS Grid Layout</a>
+						</nav>
+					</main>
 				</aside>
 
-				<aside class="post__aside aside aside--advert">
-					<p>Advertizement</p>
+				<aside class="card card--advert">
+					<header class="card__head"><p class="card__title">Advertizement</p></header>
+					<main class="card__main"></main>				
 				</aside>
 				
 			</div><!-- .post__grid-right -->

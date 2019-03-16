@@ -4,8 +4,8 @@
 
 
 a {
-	color: $color__black;
-	text-decoration: underline;
+	color: $color__blue;
+	text-decoration: none;
 	border: 0;
 	outline: 0;
 	background: 0;
@@ -16,8 +16,7 @@ a {
 	&:hover,
 	&:active,
 	&:focus {
-		color: $color__primary;
-		text-decoration: none;
+		color: $color__blue-a;
 	}
 
 } // 

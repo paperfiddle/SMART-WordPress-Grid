@@ -31,12 +31,12 @@
         display: block;
         @include font-size(0.79);
         padding: 0.25em 0.5em; 
-        color: $color__secondary;
+        color: $color__blue;
         text-decoration: none;
     }
 
     &__link:hover, &__link:active, &__link:focus {
-        color: $color__secondary-a;
+        color: $color__blue-a;
     }
 
 }
