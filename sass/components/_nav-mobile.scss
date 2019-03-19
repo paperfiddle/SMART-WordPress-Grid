@@ -68,7 +68,6 @@ ul[data-nav-mobile="true"] {
     display: flex;
     flex-direction: column; 
     transform-origin: top;
-    padding: 0 0 1rem 0;
     font-size: 1rem;    
 
     a {
@@ -80,10 +79,10 @@ ul[data-nav-mobile="true"] {
 
 } //
 
-
 ul[data-nav-mobile][aria-hidden="false"]  {
     height: auto;
     visibility: visible;
+    padding: 0 0 1rem 0;
 }
 
 ul[data-nav-mobile][aria-hidden="true"]  {
@@ -91,13 +90,13 @@ ul[data-nav-mobile][aria-hidden="true"]  {
     visibility: hidden;
 }
 
+
 // 
 // Styles 
 // 
 
-
 ul[data-nav-mobile] {
-    @include bg-linear-h($color__alt-a, 1, $color__alt, 1);
+    background: transparent;
 }
 
 ul[data-nav-mobile='true'] {

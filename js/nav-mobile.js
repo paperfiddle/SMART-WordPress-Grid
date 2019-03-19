@@ -453,6 +453,7 @@ menuButton_popup_menuLinks.prototype.close = function (force) {
         setTimeout(() => {
           this.controller.domNode.setAttribute('aria-expanded', 'false');
           this.domNode.setAttribute('aria-hidden', 'true');
+          this.domNode.style.height = 'auto';
         }, 320); 
 
     } else {

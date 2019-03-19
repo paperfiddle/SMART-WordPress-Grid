@@ -520,7 +520,6 @@ ul[data-nav-mobile="true"] {
   display: flex;
   flex-direction: column;
   transform-origin: top;
-  padding: 0 0 1rem 0;
   font-size: 1rem; }
   ul[data-nav-mobile="true"] a {
     display: block;
@@ -530,21 +529,15 @@ ul[data-nav-mobile="true"] {
 
 ul[data-nav-mobile][aria-hidden="false"] {
   height: auto;
-  visibility: visible; }
+  visibility: visible;
+  padding: 0 0 1rem 0; }
 
 ul[data-nav-mobile][aria-hidden="true"] {
   height: 0px;
   visibility: hidden; }
 
 ul[data-nav-mobile] {
-  background: #ff6e40;
-  background: -moz-linear-gradient(left, #ff6e40 0%, #ffab00 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #ff6e40), color-stop(100%, #ffab00));
-  background: -webkit-linear-gradient(left, #ff6e40 0%, #ffab00 100%);
-  background: -o-linear-gradient(left, #ff6e40 0%, #ffab00 100%);
-  background: -ms-linear-gradient(left, #ff6e40 0%, #ffab00 100%);
-  background: linear-gradient(to right, #ff6e40 0%, #ffab00 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#hex-left', endColorstr='$hex-right', GradientType=1 ); }
+  background: transparent; }
 
 ul[data-nav-mobile='true'] {
   background: #ffab00;
