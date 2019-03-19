@@ -21,10 +21,7 @@ button[data-nav-mobile='false'] {
 
 // if nav-mobile.js IS loaded
 button[data-nav-mobile='true'] {
-    display: block;
-    width: 2.565rem;
-    height: 2.565rem;
-    padding: 0.493rem;
+    @include font-size(1.424);
     border: none;
     background-color: transparent; 
 } // 
@@ -97,17 +94,6 @@ ul[data-nav-mobile][aria-hidden="true"]  {
 // 
 // Styles 
 // 
-
-button[data-nav-mobile] {
-    // path {
-    //     fill: $color__white;
-    // }
-    // &:hover path,
-    // &:active path,
-    // &:focus path {
-    //     fill: $color__black;
-    // }
-}
 
 
 ul[data-nav-mobile] {

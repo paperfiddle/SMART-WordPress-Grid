@@ -6,7 +6,7 @@
 // Post - Grid
 //
 
-@media screen and (max-width: 809px) {
+@media screen and (max-width: 859px) {
     .post {
         &__grid-left   {}
         &__grid-right  {display: none;}
@@ -14,10 +14,12 @@
     }
 }
 
-@media screen and (min-width: 810px) {
+@media screen and (min-width: 860px) {
 
     .post {
         display: grid;
+        grid-gap: 1rem;
+        grid-gap: 20px;
         grid-template-columns: 1fr minmax(560px, 810px) 240px 1fr;
         grid-template-areas: 
             '. post-left post-right .'
@@ -73,7 +75,7 @@
     &__share {
         grid-row: 3/4;
          grid-column: 1/2;
-        }
+    }
      &__image img {
         width: 100%;
         min-height: 400px;
@@ -131,16 +133,14 @@
 
     .post__byline {
         justify-content: space-between;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
     .post__excerpt {
         padding: 1rem 0;
         @include font-size(1.266);
         @include sans-400;
         border-top: 2px solid;
-        // border-bottom: 2px solid;
     }
-
 
     .post__excerpt :first-child {
         margin-top: 0;
@@ -152,19 +152,6 @@
     }
 
 } 
-
-.card .post__byline {
-    display: flex;
-    flex-flow: column wrap;
-    .meta__author-name {order: 1;}
-    .meta__date-updated {order: 2;}    
-    .meta__page-url {order: 3;}
-    .meta__page-edit {order: 4;}    
-}
-
-.post__aside .post__byline {
-
-}
 
 
 // 

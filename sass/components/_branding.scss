@@ -10,7 +10,6 @@
 .branding {
 
 	line-height: 1.266;
-	&__icon {@include icon-fas(f520);}	// Temporary fa icon
 	
 } // .branding
 
@@ -41,9 +40,9 @@
 		grid-area: logo;
 		align-self: center;
 		@include font-size(2.565); // when fa icon
-		// max-height: 2.565rem; // when img
-		// margin-right: 0.25rem;
 	}
+
+	.icon {padding: 0.25em;;}
 
 } // --full
 

@@ -8,12 +8,13 @@
 
 .nav-follow {
 
+	@include font-size(1.266	);
+
 	ul[role="menu"] {
 		display: flex;
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		@include font-size(1);
 		text-align: center;
 
 	}
@@ -35,10 +36,7 @@
 		padding: 0;
 	}
 
-	ul[role="menu"] a[role="menuitem"] {
-		text-decoration: none;
-		padding: 0.5em;
-	}
+
 
 }
 

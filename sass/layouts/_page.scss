@@ -1,41 +1,43 @@
 // 
-// @this /sass/layouts/_post.scss
+// @this /sass/layouts/_page.scss
 // 
 
 // 
-// Post - Grid
+// Page - Grid
 //
 
-@media screen and (max-width: 809px) {
-    .post {
+@media screen and (max-width: 859px) {
+    .page {
         &__grid-left   {}
         &__grid-right  {display: none;}
         &__grid-bottom {}        
     }
 }
 
-@media screen and (min-width: 810px) {
+@media screen and (min-width: 860px) {
 
-    .post {
+    .page {
         display: grid;
+        grid-gap: 1rem;
+        grid-gap: 20px;
         grid-template-columns: 1fr minmax(560px, 810px) 240px 1fr;
         grid-template-areas: 
-            '. post-left post-right .'
-            '. post-bottom post-bottom .';
+            '. page-left page-right .'
+            '. page-bottom page-bottom .';
 
-        &__grid-left   {grid-area: post-left;}
-        &__grid-right  {grid-area: post-right;}
-        &__grid-bottom {grid-area: post-bottom;}        
+        &__grid-left   {grid-area: page-left;}
+        &__grid-right  {grid-area: page-right;}
+        &__grid-bottom {grid-area: page-bottom;}        
     }
 
 }
 
 
 // 
-// Post Header - Grid
+// Page Header - Grid
 // 
 
-.post-header {
+.page-header {
     display: grid;
     grid-template-columns: 64px 1fr 40px;
     grid-template-rows: auto auto 1fr;
@@ -73,7 +75,7 @@
     &__share {
         grid-row: 3/4;
          grid-column: 1/2;
-        }
+    }
      &__image img {
         width: 100%;
         min-height: 400px;
@@ -84,10 +86,10 @@
 
 
 // 
-// Post Header - Styles
+// Page Header - Styles
 // 
 
-.post-header {
+.page-header {
 
     &__title {
         @include font-size(1.802);
@@ -123,59 +125,39 @@
 
 
 // 
-// Post Summary
+// Page Summary
 // 
 
-.post__summary {
+.page__summary {
     padding: 0.5rem;
-
-    .post__byline {
-        justify-content: space-between;
-        margin-bottom: 1rem;
-    }
-    .post__excerpt {
+    .page__excerpt {
         padding: 1rem 0;
         @include font-size(1.266);
         @include sans-400;
         border-top: 2px solid;
-        // border-bottom: 2px solid;
     }
 
-
-    .post__excerpt :first-child {
+    .page__excerpt :first-child {
         margin-top: 0;
         padding-top: 0;
     }
-    .post__excerpt :last-child {
+    .page__excerpt :last-child {
         margin-bottom: 0;
         padding-bottom: 0;
     }
 
 } 
 
-.card .post__byline {
-    display: flex;
-    flex-flow: column wrap;
-    .meta__author-name {order: 1;}
-    .meta__date-updated {order: 2;}    
-    .meta__page-url {order: 3;}
-    .meta__page-edit {order: 4;}    
-}
-
-.post__aside .post__byline {
-
-}
-
 
 // 
-// Post Main
+// Page Main
 // 
 
-.post__main {
+.page__main {
     padding: 0 0.5rem;
 }
 
-.post__main h1 {
+.page__main h1 {
     border-top: 2px solid;
     &:first-child {
         margin-top: 0;
@@ -184,10 +166,8 @@
 
 
 // 
-// Post - Bottom
+// Page - Bottom
 // 
+.page__comments {}
 
-.post__loves {}
-.post__comments {}
-.post__related {}
 

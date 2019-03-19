@@ -3,15 +3,18 @@
 // 
 
 
-svg:not([fill]) {
-	// fill: currentColor;
+
+// The wrapper
+.icon {
+	// color: green;
+	display: inline-flex;
+	padding: 0.35em;
 }
 
-svg:not(:root) {
-	// overflow: hidden;
-}
-
-svg {
-	// vertical-align: middle;
+// The svg
+svg,
+.icon__svg {
+	height: 1em;
+	width: 1em;
 }
 

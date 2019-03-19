@@ -5,89 +5,38 @@
 
 // The wrapper element containing meta items
 .meta {
+    @include font-size(0.79);
+    @include sans-400;
+    line-height: 1; 
 
-    // layout
     display: flex;
-    &:not(.meta--vertical) {
-        flex-wrap: wrap;
-    }
-    
+    flex-flow: row wrap;
+
     &--vertical {
         flex-flow: column nowrap;
         justify-content: flex-start;
-        line-height: 1.602rem;
         margin-bottom: 1rem;
     }
 
-    @include font-size(0.79);
-    @include sans-400;
-
-    &--author {}
-    &--tags {}
-    &--categories {}
-    &--comment {}
-
 }
 
 
-// 
-// Dates 
-// 
-.meta__date-published, 
-.meta__date-updated, 
-.meta__comment-date {
-    &::before {margin-right: 0.5em;}
-    @include icon-far(f133);
+.meta__item {
+    display: inline-block;
+    padding: 0.39em 0.624em;
 }
 
 // 
-// Users
-// 
-.meta__author,
-.meta__comment-author  {
-    &::before {margin-right: 0.5em;}
-    @include icon-far(f007);
-}
-
-.meta__author-link {}
-.meta__author-img {}
-.meta__author-img-link {}
-.meta__author-bio {}
-.meta__comment-author-img {}
-
-//
-// Edit 
-// 
-.meta__page-edit, 
-.meta__comment-edit {
-    &::before {margin-right: 0.5em;}
-    @include icon-far(f044);
-}
-
-// 
-// URL 
-// 
-
-.meta__page-url,
-.meta__comment-url {
-    &::before {margin-right: 0.5em;}
-    @include icon-fas(f0c1);
-}
-
-
-// 
-// Meta Tags
+// Meta Categories + Tags
 //
 
-.meta--categories,
-.meta--tags {
-    line-height: 1; 
-    a {
-        display: inline-block;
-        margin: 0.25rem;
-        padding: 0.39em 0.624em;
-        text-align: center;
-        border-radius: 40px;
-        border: 2px solid;
-    }
+.meta--categories a,
+.meta--tags a {
+    display: inline-block;
+    padding: 0.39em 0.624em;
+    text-align: center;
+    margin: 0.25rem;
+    border-radius: 40px;
+    border: 2px solid;
 }
+
