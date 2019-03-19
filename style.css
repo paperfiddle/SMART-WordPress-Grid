@@ -838,7 +838,6 @@ nav.share {
 .tocify {
   padding: 0 0.5rem 2rem 0.5rem; }
   .tocify__heading {
-    border-top: 2px solid;
     margin-top: 0; }
   .tocify__nav {
     display: flex;
@@ -1238,7 +1237,8 @@ video {
     font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-style: normal;
     font-weight: 400;
-    border-top: 2px solid; }
+    border-top: 2px solid;
+    border-bottom: 2px solid; }
   .post__summary .post__excerpt :first-child {
     margin-top: 0;
     padding-top: 0; }
@@ -1339,7 +1339,8 @@ video {
     font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco", "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-style: normal;
     font-weight: 400;
-    border-top: 2px solid; }
+    border-top: 2px solid;
+    border-bottom: 2px solid; }
   .page__summary .page__excerpt :first-child {
     margin-top: 0;
     padding-top: 0; }
@@ -1353,6 +1354,7 @@ video {
 .page__main h1 {
   border-top: 2px solid; }
   .page__main h1:first-child {
+    border: 0;
     margin-top: 0; }
 
 /*# sourceMappingURL=style.css.map */

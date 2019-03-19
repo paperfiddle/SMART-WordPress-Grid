@@ -140,6 +140,7 @@
         @include font-size(1.266);
         @include sans-400;
         border-top: 2px solid;
+        border-bottom: 2px solid;
     }
 
     .post__excerpt :first-child {

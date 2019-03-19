@@ -6,7 +6,7 @@
 * @css /sass/components/_site-header.scss
 * @requires /vendors/velocity.2.0.5.min.js
 *
-* Adapted from: 
+* Heavily Adapted from: 
 * https://www.w3.org/TR/wai-aria-practices/examples/menu-button/menu-button-links.html
 *
 * Licence: 
@@ -19,17 +19,13 @@
 
 //
 // https://www.w3.org/TR/wai-aria-practices/examples/menu-button/js/Menubutton2.js
-// No changes
 //
 
 var menuButton = function (domNode) {
 
   this.domNode   = domNode;
   this.popupMenu = false;
-
   this.hasFocus = false;
-  this.hasHover = false;
-
   this.keyCode = Object.freeze({
     'TAB': 9,
     'RETURN': 13,
@@ -47,24 +43,18 @@ var menuButton = function (domNode) {
 };
 
 menuButton.prototype.init = function () {
-
   this.domNode.setAttribute('aria-haspopup', 'true');
-
   this.domNode.addEventListener('keydown',    this.handleKeydown.bind(this));
   this.domNode.addEventListener('click',      this.handleClick.bind(this));
   this.domNode.addEventListener('focus',      this.handleFocus.bind(this));
   this.domNode.addEventListener('blur',       this.handleBlur.bind(this));
-  this.domNode.addEventListener('mouseover',  this.handleMouseover.bind(this));
-  this.domNode.addEventListener('mouseout',   this.handleMouseout.bind(this));
 
-  // initialize pop up menus
   var popupMenu = document.getElementById(this.domNode.getAttribute('aria-controls'));
 
   if (popupMenu) {
     this.popupMenu = new menuButton_popup_menuLinks(popupMenu, this);
     this.popupMenu.init();
   }
-
 };
 
 menuButton.prototype.handleKeydown = function (event) {
@@ -117,21 +107,9 @@ menuButton.prototype.handleBlur = function (event) {
   this.popupMenu.hasFocus = false;
 };
 
-menuButton.prototype.handleMouseover = function (event) {
-  this.hasHover = true;
-  this.popupMenu.open();
-};
-
-menuButton.prototype.handleMouseout = function (event) {
-  this.hasHover = false;
-  setTimeout(this.popupMenu.close.bind(this.popupMenu, false), 300);
-};
-
-
  
 //
 // https://www.w3.org/TR/wai-aria-practices/examples/menu-button/js/MenuItemLinks.js
-// No changes
 //
 
 var menuButton_itemLinks = function (domNode, menuObj) {
@@ -166,9 +144,6 @@ menuButton_itemLinks.prototype.init = function () {
   this.domNode.addEventListener('click', this.handleClick.bind(this));
   this.domNode.addEventListener('focus', this.handleFocus.bind(this));
   this.domNode.addEventListener('blur', this.handleBlur.bind(this));
-  this.domNode.addEventListener('mouseover', this.handleMouseover.bind(this));
-  this.domNode.addEventListener('mouseout', this.handleMouseout.bind(this));
-
 };
 
 menuButton_itemLinks.prototype.handleKeydown = function (event) {
@@ -258,21 +233,9 @@ menuButton_itemLinks.prototype.handleBlur = function (event) {
   setTimeout(this.menu.close.bind(this.menu, false), 300);
 };
 
-menuButton_itemLinks.prototype.handleMouseover = function (event) {
-  this.menu.hasHover = true;
-  this.menu.open();
-};
-
-menuButton_itemLinks.prototype.handleMouseout = function (event) {
-  this.menu.hasHover = false;
-  setTimeout(this.menu.close.bind(this.menu, false), 300);
-};
-
-
 
 //
 // https://www.w3.org/TR/wai-aria-practices/examples/menu-button/js/PopupMenuLinks.js
-// Customized
 //
 
 var menuButton_popup_menuLinks = function (domNode, controllerObj) {
@@ -301,21 +264,14 @@ var menuButton_popup_menuLinks = function (domNode, controllerObj) {
 
   this.domNode = domNode;
   this.controller = controllerObj;
-
   this.menuitems = [];      // see menuButton_popup_menuLinks init method
   this.firstChars = [];      // see menuButton_popup_menuLinks init method
-
   this.firstItem = null;    // see menuButton_popup_menuLinks init method
   this.lastItem = null;    // see menuButton_popup_menuLinks init method
-
   this.hasFocus = false;   // see menuButton_itemLinks handleFocus, handleBlur
-  this.hasHover = false;   // see menuButton_popup_menuLinks handleMouseover, handleMouseout
 };
 
 
-//
-// LJB Csutom
-//
 menuButton_popup_menuLinks.prototype.init = function () {
   var childElement, menuElement, menuItem, textContent, numItems, label;
 
@@ -323,22 +279,16 @@ menuButton_popup_menuLinks.prototype.init = function () {
   this.domNode.tabIndex = -1;
   this.domNode.setAttribute('role', 'menu');
 
-  // LJB Custom
   document.body.setAttribute('data-nav-mobile', 'true');
   this.controller.domNode.setAttribute('data-nav-mobile', 'true');
   this.domNode.setAttribute('data-nav-mobile', 'true');
-
   this.controller.domNode.setAttribute('aria-expanded', 'false'); 
   this.domNode.setAttribute('aria-hidden', 'true');
  
-
   if (!this.domNode.getAttribute('aria-labelledby') && !this.domNode.getAttribute('aria-label') && !this.domNode.getAttribute('title')) {
     label = this.controller.domNode.innerHTML;
     this.domNode.setAttribute('aria-label', label);
   }
-
-  this.domNode.addEventListener('mouseover', this.handleMouseover.bind(this));
-  this.domNode.addEventListener('mouseout', this.handleMouseout.bind(this));
 
   // Traverse the element children of domNode: configure each with
   // menuitem role behavior and store reference in menuitems array.
@@ -365,16 +315,6 @@ menuButton_popup_menuLinks.prototype.init = function () {
   }
 };
 
-/* EVENT HANDLERS */
-
-menuButton_popup_menuLinks.prototype.handleMouseover = function (event) {
-  this.hasHover = true;
-};
-
-menuButton_popup_menuLinks.prototype.handleMouseout = function (event) {
-  this.hasHover = false;
-  setTimeout(this.close.bind(this, false), 300);
-};
 
 /* FOCUS MANAGEMENT METHODS */
 
@@ -494,8 +434,8 @@ menuButton_popup_menuLinks.prototype.open = function () {
 // LJB Custom
 menuButton_popup_menuLinks.prototype.close = function (force) {
 
-  if (force || (!this.hasFocus && !this.hasHover && !this.controller.hasHover)) {
-
+  // if (force || (!this.hasFocus && !this.hasHover && !this.controller.hasHover)) {
+  if (force || (!this.hasFocus)) {
     var menuHeight = this.domNode.scrollHeight + 'px'
 
     // The menu is still visible ... 
