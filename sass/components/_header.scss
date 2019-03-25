@@ -1,0 +1,96 @@
+//
+// Vanilla Velocity Sticky-Scrolly Header
+//
+// @this /sass/components/_header.scss
+// @script /js/site-header.js
+// @script /js/nam-mobile.js
+// @script /vendors/velocity.js
+//
+
+
+//
+// Site Header - Base 
+//
+
+.site__header {
+	display: grid;
+	grid-column-gap: 0.5rem;
+	align-items: center;	
+
+	.branding   {grid-area: head-branding;}
+	.nav-follow {grid-area: head-follow;}
+	.nav-mobile {grid-area: head-mobile;}
+
+}
+
+// 
+// @script /js/nav-mobile
+// Not loaded, fallback to horizontal nav bar
+// 
+
+body[data-nav-mobile="false"] .site__header {
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+		'head-branding head-follow'
+		'head-mobile head-mobile';
+
+	.branding {justify-self: start; padding-left: 0.5rem;}
+	.nav-follow {justify-self: end; padding-right: 0.5rem;}
+	.nav-mobile {justify-self: center;}
+
+}
+
+// 
+// @script /js/nav-mobile
+// Loaded, show button 
+// 
+
+body[data-nav-mobile="true"] .site__header {
+
+	grid-template-columns: max-content 1fr max-content;
+	align-items: center;
+	grid-template-areas: 
+		'head-branding head-follow head-mobile';
+
+	.branding {justify-self: start; padding-left: 0.5rem; }
+	.nav-follow {justify-self: center;}
+	.nav-mobile {justify-self: end; padding-right: 0.5rem;}
+
+}
+
+//
+// @script /js/header.js 
+// Loaded, header is sticky
+//
+
+[data-header-sticky] {
+    z-index: 10;	
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform-origin: top;	
+}
+
+
+//
+// Styles
+//
+
+ .site__header {
+	color: $color__white;
+ 	@include bg-linear-h($color__alt, 1, $color__alt-a, 1);
+ }
+
+ .site__header a,
+ .site__header button {
+ 	text-decoration: none;
+	color: $color__white;
+	&:hover,
+	&:active,
+	&:focus {
+		color: $color__black;
+	} 
+}
+
+
