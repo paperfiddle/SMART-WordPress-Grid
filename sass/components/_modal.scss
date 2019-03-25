@@ -1,0 +1,139 @@
+// 
+// Modals
+// 
+// @this /sass/components/_modal.scss
+// @requires /js/modals.js
+//
+//
+
+
+// 
+// Modal - Base
+// 
+
+[data-modal] {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	z-index: 60;	
+	margin: 0;
+	padding: 0;
+	// initial
+	visibility: hidden;		
+	height: 0;
+	transform-origin: center;
+} //
+
+[data-modal]:focus {
+    outline: none;
+} //
+
+[data-modal][aria-hidden="true"] {
+	visibility: hidden;		
+	height: 0;	
+} //
+
+[data-modal][aria-hidden="false"] {
+	visibility: visible;
+	height: auto;							
+} // 
+
+[data-modal-overlay] {
+	z-index: 30;	
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;	
+	background: rgba($color__black, 0.8);
+} //
+
+
+// 
+//  Modal - Layout
+// 
+
+[data-modal] header {
+	display: flex;
+	flex-flow: row nowrap;
+	padding: 0.5rem;
+}
+
+[data-modal-title] {
+	width: 100%;	
+	margin: 0; 
+	padding: 0.25rem;	
+	font-size: 1.424rem;
+	line-height: 1.125;
+}
+
+[data-modal-x] {
+	margin-left: auto;
+	font-size: 1rem;
+	padding: 0.25rem;
+	border: none;
+	background: none;
+	 .icon {
+		padding: 0.25em;
+	}
+}
+
+[data-modal-description] {
+	// padding: 0.5rem;
+	// margin: 0;
+	@include screen-reader-text;
+}
+
+[data-modal] main {
+	padding: 0.5rem;
+	:first-child {margin-top: 0;}
+	:last-child {margin-bottom: 0;}
+}
+
+[data-modal] footer {
+	padding: 0.5rem;
+}
+
+
+//
+// Modal Overlay
+//
+
+
+
+// 
+// Modal - Styles
+// 
+
+[data-modal-inner] {
+	border-radius: 10px;	
+	background-color: $color__white;
+	box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+}
+
+[data-modal-x] {
+	color: white;
+	 .icon {
+		border-radius: 100%;		 
+		background: $mc__gray-400;
+	}
+	&:hover, &:active, &:focus {
+		.icon {background: $mc__gray-900;}
+	}
+}
+
+
+// 
+// Modal Varients
+// 
+
+#modal-01 [data-modal-inner] {
+	margin: 1vh auto;
+	max-width: 720px;	
+}
+
