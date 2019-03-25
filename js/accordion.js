@@ -45,11 +45,13 @@ console.log('LOADED accordion.js');
  * Based on: https://a11y.nicolas-hoffmann.net/accordion/
  */
 class AriaAccordion {
+
     /**
      * Create an AriaAccordion.
      * @param {HTMLElement} container The container element.
      * @param {AriaAccordionOptions?} options The options.
      */
+
     constructor(container, options) {
         /**
          * An attribute containing every option.
@@ -89,11 +91,10 @@ class AriaAccordion {
         this.buttons = Array.from(
             this.root.querySelectorAll(this.options.buttonsSelector)
         )
-    }
+    } // constructor
 
-    /**
-     * Initializes attributes and classes of the accordion elements.
-     */
+
+    // Initializes attributes and classes of the accordion elements.
     initAttributes() {
         this.root.setAttribute('data-accordion', 'true')
         this.root.setAttribute('role', 'presentation')
@@ -145,11 +146,10 @@ class AriaAccordion {
                 // do nothing
             }
         })
-    }
+    } // attributes
 
-    /**
-     * Install events on the accordion elements.
-     */
+
+    // Install events on the accordion elements.
     initEvents() {
         this.root.querySelectorAll(this.options.buttonsSelector).forEach(
             button => {
@@ -169,14 +169,15 @@ class AriaAccordion {
                 )
             }
         )
-    }
+    } // events
+
 
     /**
      * Handles button focus event.
-     *
      * @param {Event} event The event information.
      * @private
      */
+
     focusButtonEventHandler(event) {
         const target = event.target
         const currentButton = AriaAccordion.closest(target, 'button')
@@ -186,15 +187,15 @@ class AriaAccordion {
         )
 
         currentButton.setAttribute('aria-selected', 'true')
-    }
+    } // event
 
 
     /**
      * Handles button click event.
-     *
      * @param {Event} event The event information.
      * @private
      */
+
     clickButtonEventHandler(event) {
         const currentButton = AriaAccordion.closest(event.target, 'button')
         const currentPanel = document.getElementById(
@@ -265,12 +266,13 @@ class AriaAccordion {
         event.preventDefault()
     }
 
+
     /**
      * Handles keydown event on a button.
-     *
      * @param {Event} event The event information.
      * @private
      */
+
     keydownButtonEventHandler(event) {
         const currentButton = AriaAccordion.closest(event.target, 'button')
         let index = this.buttons.indexOf(currentButton)
@@ -298,27 +300,30 @@ class AriaAccordion {
             event.preventDefault()
         }
     }
-}
+
+} // class
+
 
 /**
  * Focus on a specific element.
- *
  * @param {HTMLElement} target Element that will receive focus.
  */
+
 AriaAccordion.goToHeader = function(target) {
     target.setAttribute('aria-selected', 'true')
 
     setTimeout(() => target.focus(), 0)
 }
 
+
 /**
  * Imitates the "closest" jQuery method which will go through the ancestors of
  * an element to find the one matching a selector.
- *
  * @param {HTMLElement} element Search starts from this element.
  * @param {string} selector CSS selector to match.
  * @return {HTMLelement} The element found or null.
  */
+
 AriaAccordion.closest = function(element, selector) {
     if(element === null) return null
     if(element.matches(selector)) return element
@@ -327,53 +332,33 @@ AriaAccordion.closest = function(element, selector) {
     return AriaAccordion.closest(element.parentNode, selector)
 }
 
+
 /**
- * Key code for the End key.
- *
+ * Key Codes
  * @member {int}
  */
+
+// Key code for the End key.
 AriaAccordion.keyEnd = 35
-
-/**
- * Key code for the Home key.
- *
- * @member {int}
- */
+// Key code for the Home key.
 AriaAccordion.keyHome = 36
-
-/**
- * Key code for the Cursor Left key.
- *
- * @member {int}
- */
+// Key code for the Cursor Left key.
 AriaAccordion.keyLeft = 37
-
-/**
- * Key code for the Cursor Up key.
- *
- * @member {int}
- */
+// Key code for the Cursor Up key.
 AriaAccordion.keyUp = 38
-
-/**
- * Key code for the Cursor Right key.
- *
- * @member {int}
- */
+// Key code for the Cursor Right key.
 AriaAccordion.keyRight = 39
-
-/**
- * Key code for the Cursor Down key.
- *
- * @member {int}
- */
+// Key code for the Cursor Down key.
 AriaAccordion.keyDown = 40
+
+
+
 
 /**
  * Key codes for left to right display.
- *
  * @member {Object}
  */
+
 AriaAccordion.ltrKeys = {
     prev: [AriaAccordion.keyUp, AriaAccordion.keyLeft],
     next: [AriaAccordion.keyDown, AriaAccordion.keyRight],
@@ -381,11 +366,12 @@ AriaAccordion.ltrKeys = {
     last: AriaAccordion.keyEnd
 }
 
+
 /**
  * Key codes for right to left display.
- *
  * @member {Object}
  */
+
 AriaAccordion.rtlKeys = {
     prev: [AriaAccordion.keyUp, AriaAccordion.keyRight],
     next: [AriaAccordion.keyDown, AriaAccordion.keyLeft],
@@ -393,35 +379,36 @@ AriaAccordion.rtlKeys = {
     last: AriaAccordion.keyEnd
 }
 
+
 /**
  * All key codes the accordion understands.
- *
  * @member {int[]}
  */
+
 AriaAccordion.allKeys = [].concat(
     AriaAccordion.keyUp, AriaAccordion.keyDown,
     AriaAccordion.keyLeft, AriaAccordion.keyRight,
-    AriaAccordion.keyHome, AriaAccordion.keyEnd
+    AriaAccordion.keyHome, AriaAccordion.keyEnd   
 )
+
 
 /**
  * Generates a default button.
- *
  * @member {HTMLButtonElement}
  */
+
 AriaAccordion.defaultButton = function() {
     const button = document.createElement('button')
     button.classList.add('accordion__btn')
     button.setAttribute('type', 'button')
-
     return button
 }
 
 /**
  * Default configuration options.
- *
  * @member {AriaAccordionOptions}
  */
+
 AriaAccordion.defaultConfig = {
     headersSelector: '.accordion__header',
     panelsSelector: '.accordion__panel',
@@ -435,22 +422,20 @@ AriaAccordion.defaultConfig = {
     panelSuffixClass: '__panel',
     direction: 'ltr',
     accordionPrefixId: 'accordion'
-}
+} // config
 
 /**
  * Initializes all the accordion container given their selector.
- *
  * Each container may have the following data attributes:
- *
  * - data-accordion-multiselectable: "true" or "false"
  * - data-accordion-prefix-class: prefix classes
  *
  * @param {string} selector a CSS selector to specify every accordion container.
- * @param {AriaAccordionOptions} options Object containing all the custom
- *                                       settings.
+ * @param {AriaAccordionOptions} options Object containing all the custom settings.
  * @return {AriaAccordion[]} An array of AriaAccordion.
  */
-AriaAccordion.init = function(selector, options) {
+
+AriaAccordion.init = function(selector, options) { 
     const containers = Array.from(document.querySelectorAll(selector))
 
     return containers.map(container => {
@@ -477,4 +462,4 @@ AriaAccordion.init = function(selector, options) {
             Object.assign({}, tagOptions, options)
         )
     })
-}
+} // init

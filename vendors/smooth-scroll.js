@@ -10,7 +10,6 @@
  * 
  */
 
- console.log('LOADED Smooth Scroll 16.0.0')
 
 /**
  * closest() polyfill
@@ -684,6 +683,7 @@ if (window.Element && !Element.prototype.closest) {
 			if (settings.updateURL && settings.popstate) {
 				window.addEventListener('popstate', popstateHandler, false);
 			}
+			console.log('LOADED Smooth Scroll 16.0.0')
 
 		};
 
