@@ -1,0 +1,64 @@
+// 
+// Vanilla Velocity Smooth To Top
+//
+// @this /sass/components/_site-to-top.scss
+// @scropt /js/to-top.js
+// @script /vendors/velocity.js
+// @script /vendors/smooth-scroll.js
+//  
+
+
+// 
+// To Top - Base
+// 
+
+// A block level wrapper
+[data-to-top] {
+	z-index: 10;
+	position: fixed;
+	display: flex;
+	bottom: 0.493rem;
+	right: 0.493rem;	
+	transform-origin: center;
+	margin: 0;
+	padding: 0;
+}
+
+// The <a>
+[data-to-top-link] {
+	padding: 0.308rem;	
+	text-decoration: none;
+	text-align: center;	
+	border-radius: 100%;	
+}
+
+// The icon <span>
+[data-to-top-icon] {
+	display: block;
+	width: 1.424rem;
+	height: 1.424rem;		
+	background: no-repeat center center
+		url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23FFFFFF' d='M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z'%3E%3C/path%3E%3C/svg%3E");		
+}
+
+
+//
+// To Top - Styles
+// 
+
+// A block level wrapper
+[data-to-top] {}
+
+// The <a>
+[data-to-top-link] {
+	background: rgba($color__black, 0.4);
+	&:hover,
+	&:active,
+	&:focus {
+		background: rgba($color__black, 0.8);
+	}	
+}
+
+// The icon <span>
+[data-to-top-icon] {}
+

@@ -187,6 +187,8 @@
 							</footer>
 						</div>
 					</section><!-- #modal-01 -->
+
+					<p>Kale chips lumbersexual vegan twee raw denim mixtape normcore.  Pork belly before they sold out vaporware tilde, wayfarers single-origin coffee keytar pickled pinterest fanny pack portland pitchfork crucifix.  Narwhal truffaut fingerstache shaman, gluten-free four loko listicle prism keffiyeh XOXO hashtag 90's migas next level.  YOLO locavore wolf trust fund, williamsburg green juice hexagon humblebrag art party brooklyn shabby chic.</p><p>Asymmetrical kombucha pug taxidermy edison bulb helvetica taiyaki, put a bird on it single-origin coffee flannel 3 wolf moon artisan craft beer yr.  Slow-carb meh tumeric sriracha.  Raw denim pabst roof party, venmo pug drinking vinegar man bun heirloom.  Bushwick cold-pressed try-hard meditation meggings copper mug craft beer schlitz.  Edison bulb put a bird on it brunch seitan live-edge yr authentic man bun scenester ethical.</p><p>90's YOLO hella palo santo.  Kinfolk pok pok skateboard meggings, vaporware activated charcoal selvage tacos la croix seitan single-origin coffee af cronut.  Skateboard 90's artisan pop-up YOLO.  Williamsburg stumptown leggings art party celiac pug.  Flannel photo booth snackwave, salvia lumbersexual heirloom beard tote bag pug gentrify hella mlkshk waistcoat blue bottle.</p><p>Offal lomo kombucha, authentic mixtape roof party iPhone enamel pin.  Pabst try-hard shabby chic wolf sriracha prism freegan poutine, pitchfork gastropub +1.  Chillwave art party sriracha YOLO poke listicle, heirloom bitters irony.  Neutra raw denim salvia, everyday carry iceland blue bottle locavore poutine.  You probably haven't heard of them kale chips lyft blue bottle DIY fingerstache ramps keytar neutra franzen echo park 8-bit.  DIY leggings bicycle rights, butcher forage prism af crucifix godard.</p><p>Cred poutine beard, drinking vinegar coloring book literally polaroid scenester raw denim messenger bag biodiesel wolf aesthetic.  Asymmetrical banjo pop-up skateboard, plaid kinfolk franzen mumblecore prism vexillologist mustache bitters.  Man braid pug butcher, vexillologist jean shorts helvetica kickstarter deep v health goth tumblr.  Meh small batch hashtag ramps, DIY lumbersexual offal locavore celiac banjo.  Lo-fi offal typewriter tousled vinyl bitters celiac yr small batch lyft gentrify meh asymmetrical.  Leggings la croix farm-to-table chillwave shabby chic keffiyeh direct trade DIY four loko blog cray retro you probably haven't heard of them letterpress.  Meh post-ironic bitters irony farm-to-table tilde vice roof party truffaut hot chicken jean shorts tumeric fingerstache tacos etsy.</p>
 									
 				</main><!-- .site__main -->
 
@@ -263,9 +265,9 @@
 
 	</main><!-- .site__main -->
 
-	<nav id="site-to-top" class="site__to-top" role="menu" aria-label="To top of main content" data-to-top-pin>
-		<a href="#site-main" role="menuitem" rel="bookmark" title="To top">
-			<span></span>
+	<nav id="site-to-top" data-to-top role="menu" aria-label="To top of main content" data-to-top-pin>
+		<a href="#site-main" data-to-top-link role="menuitem" rel="bookmark" title="To top">
+			<span data-to-top-icon></span>
 		</a>
 	</nav>
 
@@ -300,8 +302,13 @@
 
 <!-- GLOBAL Scripts -->
 <!-- <script type="text/javascript" src="./js/site-to-top.js"></script> -->
+<script type="text/javascript" src="./js/to-top.js"></script>
+<script>
+	ToTop.init(); 
+</script>
 
-<!-- MODAL Scripts -->
+
+<!-- AriaModal Scripts -->
 <script type="text/javascript" src="./js/modal.js"></script>
 <script>
 	AriaModal.init('modal-01'); // id of modal
