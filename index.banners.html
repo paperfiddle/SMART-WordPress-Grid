@@ -10,8 +10,7 @@
 <!-- VELOCITY Scripts-->	
 <script type="text/javascript" src="./vendors/velocity.js"></script>
 <script type="text/javascript">
-	var body = document.getElementsByTagName('body');
-	body.velocity({
+	document.body.velocity({
 		opacity: [1, 0],
 	}, {
 			duration: 800,
@@ -121,6 +120,11 @@
 						Vanilla Idify Linkify Tocify
 					</a>
 				</li>
+				<li role="none">
+					<a role="menuitem" href="./index.modal.html">
+						Van11y ARIA Modal
+					</a>
+				</li>
 			</ul>
 		</nav>
 
@@ -128,40 +132,52 @@
 
 	<main id="site-main" class="site__main site__main--full">
 
-		<div class="banner banner--demo1">
-			<div class="banner__content">
-				<h1 class="banner__title">Subtle Velocity Banners</h1>
-				<div class="banner__blurb">				
+		<section id="banner-01" data-banner>
+			<div data-banner-content>
+				<h1 data-banner-title>Vanilla Velocity Banners</h1>
+				<div data-banner-text>
 					<p>Aliquam erat volutpat. Nulla facilisi. Nunc porttitor, elit non eleifend aliquam, est leo scelerisque nibh, nec faucibus odio urna ac nulla.</p>
-				</div>
-				<button class="banner__action">Do This Now</button>
+					<p><a data-banner-action href="#">Do This Now!</a></p>
+				</div>				
 			</div>
-		</div>
-	
-		<div class="banner banner--demo2">
-			<div class="banner__content">
-				<h1 class="banner__title">Hey, Banner Banner Banner!</h1>
-				<div class="banner__blurb">
-					<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>
-				</div>
-				<button class="banner__action">Button</button>				
-			</div>	
-		</div>
+		</section>
 
-		<div class="banner banner--demo3">
-			<div class="banner__content">
-				<h1 class="banner__title">Forage Hexagon</h1>
-				<div class="banner__blurb">
-					<p>Iceland thundercats helvetica, forage hexagon selvage normcore adaptogen you probably haven't heard of them sriracha kitsch slow-carb.</p>
+		<section id="banner-02" data-banner>
+			<div data-banner-content>
+				<h1 data-banner-title>Hey, Banner Banner Banner!</h1>
+				<div data-banner-text>
+					<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>				
+					<p><a data-banner-action href="#">Do This Now!</a></p>
 				</div>
-				<button class="banner__action">Button</button>
+			</div>			
+		</section>
+	
+		<section id="banner-03" data-banner>
+			<div data-banner-content>
+				<h1 data-banner-title>Forage Hexagon</h1>
+				<div data-banner-text>
+					<p>Iceland thundercats helvetica, forage hexagon selvage normcore adaptogen you probably haven't heard of them sriracha kitsch slow-carb.</p>
+					<p><a data-banner-action href="#">Do This Now!</a></p>
+				</div>
+			</div>	
+		</section> 
+
+		<section id="banner-04" data-banner>
+			<div data-banner-content>
+				<h1 data-banner-title>Last One!!</h1>
+				<div data-banner-text>
+					<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>
+					<p><a data-banner-action href="#">Do This Now!</a></p>
+				</div>
 			</div>
-		</div>
+		</section>
+
+
 	</main><!-- .site__main -->
 
-	<nav id="site-to-top" class="site__to-top" role="menu" aria-label="To top of main content" data-to-top-pin>
-		<a href="#site-main" role="menuitem" rel="bookmark" title="To top">
-			<span></span>
+	<nav id="site-to-top" data-to-top role="menu" aria-label="To top of main content" data-to-top-pin>
+		<a href="#site-main" data-to-top-link role="menuitem" rel="bookmark" title="To top">
+			<span data-to-top-icon></span>
 		</a>
 	</nav>
 
@@ -193,13 +209,24 @@
 	});
 </script>
 
-<!-- GLOBAL Scripts -->
-<script type="text/javascript" src="./js/site-header.js"></script>
-<script type="text/javascript" src="./js/site-to-top.js"></script>
+<!-- ToTop Scripts -->
+<script type="text/javascript" src="./js/to-top.js"></script>
+<script>
+	ToTop.init(); 
+</script>
+
+<!-- StickyHeader Scripts -->
+<script type="text/javascript" src="./js/header.js"></script>
+<script>
+	// 'id' of header, 'id' of main content container 
+	StickyHeader.init('site-header', 'site-main'); 
+</script>
 
 <!-- BANNER Script -->
-<script type="text/javascript" src="./js/banner.js"></script>
-
+<script type="text/javascript" src="./js/banners.js"></script>
+<script>
+	Banners.init(); 
+</script>
 
 </body>
 </html>
