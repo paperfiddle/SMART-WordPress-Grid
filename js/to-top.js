@@ -74,12 +74,12 @@ function ToTop(wrapper, link, icon) {
             scrollCurrent = window.pageYOffset || document.documentElement.scrollTop;
 
             // If below trigger point and not already PINNED
-            if (scrollCurrent > vpThreshold && pinState == false) {
+            if (scrollCurrent > vpThreshold && pinState != true) {
                 topPin();
                 // console.log('ToTop scroll direction = UP')
 
             // If above trigger and not already UNpinned    
-            } else if (scrollCurrent < vpThreshold && pinState == true) {
+            } else if (scrollCurrent < vpThreshold && pinState != false) {
                 topUnpin();
                 // console.log('ToTop scroll direction = DOWN')
             }

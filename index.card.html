@@ -10,8 +10,7 @@
 <!-- VELOCITY Scripts-->
 <script type="text/javascript" src="./vendors/velocity.js"></script>
 <script type="text/javascript">
-	var body = document.getElementsByTagName('body');
-	body.velocity({
+	document.body.velocity({
 		opacity: [1, 0],
 	}, {
 			duration: 800,
@@ -23,7 +22,7 @@
 
 <div id="site" class="site">
 
-	<header id="site-header" class="site__header site__header--full" data-header-pin="true" data-header-sticky="false"> 
+	<header id="site-header" class="site__header site__header--full">
 	
 		<div class="branding branding--full">
 			<div class="branding__name"><a href="">site.name</a></div>
@@ -393,7 +392,7 @@
 
 	</main><!-- .site__main -->
 
-	<nav id="site-to-top" data-to-top role="menu" aria-label="To top of main content" data-to-top-pin>
+	<nav id="site-to-top" data-to-top role="menu" aria-label="To top of main content">
 		<a href="#site-main" data-to-top-link role="menuitem" rel="bookmark" title="To top">
 			<span data-to-top-icon></span>
 		</a>
