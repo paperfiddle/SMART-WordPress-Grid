@@ -1,0 +1,14 @@
+@mixin bg-spill($lt:#9E9E9E, $md:#616161, $dk:#424242) {
+    $xlt: scale-color($lt, $lightness: 30%);
+    background: radial-gradient(
+            at top left,
+            $xlt 17%, 
+            $md 17%, 
+            $md 27.5%,
+            $lt 27.5%,
+            $lt 44.6%,
+            $dk 44.6%,
+            $dk 72%,
+            $md 72%,)
+        $dk; // background		
+} //

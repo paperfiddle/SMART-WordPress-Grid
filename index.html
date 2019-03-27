@@ -91,6 +91,11 @@
 						Vanilla Idify Linkify Tocify
 					</a>
 				</li>
+				<li role="none">
+					<a role="menuitem" href="./index.modal.html">
+						Van11y ARIA Modal
+					</a>
+				</li>
 			</ul>
 		</nav>
 	
@@ -225,9 +230,9 @@
 
 	</main><!-- .site__main -->
 
-	<nav id="site-to-top" class="site__to-top" role="menu" aria-label="To top of main content" data-to-top-pin>
-		<a href="#site-main" role="menuitem" rel="bookmark" title="To top">
-			<span></span>
+	<nav id="site-to-top" data-to-top role="menu" aria-label="To top of main content" data-to-top-pin>
+		<a href="#site-main" data-to-top-link role="menuitem" rel="bookmark" title="To top">
+			<span data-to-top-icon></span>
 		</a>
 	</nav>
 
@@ -258,9 +263,18 @@
 	});
 </script>
 
-<!-- GLOBAL Scripts -->
-<script type="text/javascript" src="./js/site-header.js"></script>
-<script type="text/javascript" src="./js/site-to-top.js"></script>
+<!-- ToTop Scripts -->
+<script type="text/javascript" src="./js/to-top.js"></script>
+<script>
+	ToTop.init(); 
+</script>
+
+<!-- StickyHeader Scripts -->
+<script type="text/javascript" src="./js/header.js"></script>
+<script>
+	// 'id' of header, 'id' of main content container 
+	StickyHeader.init('site-header', 'site-main'); 
+</script>
 
 <!-- MODAL Scripts -->
 <script type="text/javascript" src="./vendors/modals.js"></script>
