@@ -2,7 +2,7 @@
 <html> 
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>Linkify Tocify Idify</title>
+	<title>Vanilla Linkify Tocify Idify</title>
 </head>
 
 <body data-nav-mobile="false">
@@ -67,11 +67,11 @@
 				</li>
 				<li role="none">
 					<a role="menuitem" href="./index.accordion.html">
-						Van11y Velocity Accordion
+						Van11y Velocity ARIA Accordion
 					</a>
 				</li>
 				<li role="none">
-					<a role="menuitem" href="./index.banner.html">
+					<a role="menuitem" href="./index.banners.html">
 						Vanilla Velocity Banners
 					</a>
 				</li>
@@ -87,7 +87,7 @@
 				</li>
 				<li role="none">
 					<a role="menuitem" href="./index.modal.html">
-						Van11y ARIA Modal
+						Van11y Velocity ARIA Modal
 					</a>
 				</li>
 			</ul>
@@ -102,8 +102,8 @@
 			<div class="post__grid-left">
 
 				<header class="post__header post-header">
-					<h1 class="post-header__title" itemprop="headline">This is an Entry Title</h1>
-					<h2 class="post-header__sub-title" itemprop="alternativeHeadline">And this is an entry subtitle so you can say a bit more.</h2>
+					<h1 class="post-header__title" itemprop="headline">Vanilla Idify Linkify Tocify</h1>
+					<h2 class="post-header__sub-title" itemprop="alternativeHeadline">Add anchors and an optional Table of Contents</h2>
 					<div class="post-header__image">
 						<img src="https://picsum.photos/720/405?image=830" alt="Image alt text here">
 					</div>
@@ -171,7 +171,7 @@
 						</span>
 					</div>
 					<div class="post__excerpt" itemprop="about">
-						<p>Tbh everyday carry migas yuccie pabst dreamcatcher kale chips humblebrag tofu letterpress. Hashtag mlkshk hammock shabby chic live-edge. Neutra photo booth hexagon narwhal +1 wolf. Tilde af heirloom, twee tumblr edison bulb venmo chicharrones.</p>		
+						<p>Uses vanilla Javascript with no dependencies. Adds missing `id` to all headings. Adds anchors to a defined level of headings. Optionally adds a Table of Contents for a defined level of headings.</p>		
 					</div>
 				</section><!-- .post__summary -->
 
@@ -368,9 +368,10 @@
 </script>
 
 
-
 <script type="text/javascript" src="./js/linkify.js"></script>
-
+<script>
+	LinkTocify.init('.post__main', 6, 6); 
+</script>
 
 <!-- MOBILE NAV Scripts -->
 <script src="./js/nav-mobile.js" type="text/javascript"></script>

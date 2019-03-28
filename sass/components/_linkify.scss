@@ -7,73 +7,83 @@
 // 
  
 
-// 
-// Tocify
-// 
-
-.tocify {
-    padding: 0 0.5rem 2rem 0.5rem;
-    
-    &__heading {
-        margin-top: 0;
-    }
-
-    &__nav {
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__nav-item {}
-
-    &__link {
-        display: block;
-        @include font-size(0.79);
-        padding: 0.25em 0.5em; 
-        color: $color__blue;
-        text-decoration: none;
-    }
-
-    &__link:hover, &__link:active, &__link:focus {
-        color: $color__blue-a;
-    }
-
-}
-
-.tocify__link {
-
-    &--h1 {}
-    &--h2 {margin-left: 0.5rem;}
-    &--h3 {margin-left: 1rem;}
-    &--h4 {margin-left: 1.5rem;}
-    &--h5 {margin-left: 2rem;}
-    &--h6 {margin-left: 2.5rem;}
-
-}
-
-
 //
 // Linkify
 //
 
-h1,h2,h3,h4,h5,h6 {
+// Added via JS to <h1>, <h2>, <h3> ...
+// per value passed to new
+[data-linkify-heading] {
     display: flex;
     align-items: flex-start;
 }
 
-.linkify {
-    // the 'a' tag
-    display: block;
-    margin-left: auto;
-    margin-right: 4px; // keep focus style in sight
-    margin-top: -0.5em;
-    padding: 0.5em;
-    @include font-size(1);
-
-    // the svg
-    &__icon {
-        width: 1rem;
-        height: 1rem;
-    }
-
+// An <a> added via JS
+[data-linkify-anchor] {
+    display: block;   
+    line-height: 1;
+    font-size: 0.8em;
+    margin-top: 0.25em;
 }
+
+// <a> on left
+// [data-linkify-anchor] {
+//     margin-left: 4px; // keep focus in sight
+//     margin-right: 0.5em;
+// }
+
+// <a> on right 
+[data-linkify-anchor] {
+    order: 2;
+    margin-left: auto;
+    margin-right: 4px; // keep focus style in sight  
+}
+
+// An inline <svg> added via JS
+[data-linkify-icon] {}
+
+
+
+// 
+// Tocify 
+// 
+
+// A <section> added via JS
+[data-tocify-toc] { 
+    padding: 0 0.5rem 2rem 0.5rem;
+}
+
+// A <h1> added via JS
+[data-tocify-title] {
+    margin-top: 0;
+}
+
+
+// A <nav> added via JS
+[data-tocify-nav] {
+    display: flex;
+    flex-direction: column;    
+}
+
+// A <div> wrapping each TOC link
+[data-tocify-item] {}
+
+// A TOC <a>
+[data-tocify-link] {
+    display: block;
+    @include font-size(0.79);
+    padding: 0.25em 0.5em; 
+    color: $color__blue;
+    text-decoration: none;
+    &:hover, &:active, &:focus {
+        color: $color__blue-a;        
+    }
+} // 
+
+[data-tocify-h1] {}
+[data-tocify-h2] {padding-left: 1rem;}
+[data-tocify-h3] {padding-left: 2rem;}
+[data-tocify-h4] {padding-left: 3rem;}
+[data-tocify-h5] {padding-left: 4rem;}
+[data-tocify-h6] {padding-left: 5rem;}
 
