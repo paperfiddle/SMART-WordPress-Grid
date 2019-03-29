@@ -2,7 +2,7 @@
 <html> 
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>Vanilla Velocity Cards</title>
+	<title>Vanilla Velocity Scroll-Fade: Cards</title>
 </head>
 
 <body data-nav-mobile="false">
@@ -71,13 +71,13 @@
 					</a>
 				</li>
 				<li role="none">
-					<a role="menuitem" href="./index.banner.html">
-						Vanilla Velocity Banners
+					<a role="menuitem" href="./index.banners.html">
+						Vanilla Velocity Scroll-Fade: Banners
 					</a>
 				</li>
 				<li role="none">
 					<a role="menuitem" href="./index.card.html">
-						Vanilla Velocity Cards
+						Vanilla Velocity Scroll-Fade: Cards
 					</a>
 				</li>
 				<li role="none">
@@ -102,8 +102,8 @@
 			<div class="page__grid-left">
 
 				<header class="page__header page-header">
-					<h1 class="page-header__title" itemprop="headline">Velocity Cards</h1>
-					<h2 class="page-header__sub-title" itemprop="alternativeHeadline">Animated on Scroll In and Out</h2>
+					<h1 class="page-header__title" itemprop="headline">Vanilla Scroll-Fade Cards</h1>
+					<h2 class="page-header__sub-title" itemprop="alternativeHeadline">Animated with Velocity.</h2>
 					<div class="page-header__image">
 						<img src="./images/frank-1345621-unsplash.jpg" itemprop="image" alt="Image alt text here">
 					</div>
@@ -438,8 +438,11 @@
 	StickyHeader.init('site-header', 'site-main'); 
 </script>
 
-<!-- CARD Scripts -->
-<script type="text/javascript" src="./js/card.js"></script>
+<!-- Scroll-Fade Script -->
+<script type="text/javascript" src="./js/scrollfade.js"></script>
+<script>
+	ScrollFade.init('.card'); 
+</script>
 
 
 </body>

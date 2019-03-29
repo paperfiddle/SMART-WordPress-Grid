@@ -1,3 +1,13 @@
+/*!
+ * Vanilla Velocity Scroll-Fade
+ * Fade any element in-out on page scroll
+ * 
+ *  Uses Velocity but can be easily adapted to use any animation. 
+ *  https://github.com/julianshapiro/velocity
+ * 
+ */
+
+
 function ScrollFade(selector) {
 
     // Viewport variables
@@ -126,6 +136,14 @@ function ScrollFade(selector) {
 }; // ScrollFade
 
 
+//
+// HTML
+// @selector - any valid CSS selector - '.class', '#id' ...
+//
+// <script>
+//     ScrollFade.init('selector');
+// </script>
+// 
 
 ScrollFade.init = function (selector) {
 
