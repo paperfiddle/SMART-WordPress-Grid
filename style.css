@@ -373,7 +373,7 @@ body[data-nav-mobile="true"] .site__header {
   font-size: 16px;
   font-size: 0.79rem; }
 
-[data-banner] {
+.banner {
   width: 100%;
   min-height: 100vh;
   background-attachment: fixed;
@@ -386,35 +386,32 @@ body[data-nav-mobile="true"] .site__header {
   grid-template-rows: 1fr auto 1fr;
   grid-template-areas: '. . .' '. banner-content .' '. . .'; }
 
-[data-banner-content] {
+.banner__content {
   grid-area: banner-content;
   max-width: 810px;
   padding: 1rem;
   background: rgba(33, 33, 33, 0.9);
   color: #fff; }
 
-[data-banner-title] {
+.banner__title {
   color: #fff;
   margin-top: 0;
   padding-top: 0; }
 
-[data-banner-action] {
+.banner__action {
   display: inline-flex;
   align-items: center;
   color: #fff;
   border-bottom: 4px solid;
   border-color: transparent; }
-  [data-banner-action]::after {
+  .banner__action:hover, .banner__action:active, .banner__action:focus {
+    color: #fff;
+    border-color: #fff; }
+  .banner__action::after {
     content: '';
     width: 2em;
     height: 1em;
     background: no-repeat center center url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23ffffff' d='M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z'%3E%3C/path%3E%3C/svg%3E"); }
-
-[data-banner-action]:hover,
-[data-banner-action]:active,
-[data-banner-action]:focus {
-  color: #fff;
-  border-color: #fff; }
 
 #banner-01 {
   background-image: url(./images/FernSorus.jpg); }

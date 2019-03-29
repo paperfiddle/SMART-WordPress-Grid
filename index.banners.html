@@ -2,7 +2,7 @@
 <html> 
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>Vanilla Velocity Banners</title>
+	<title>Vanilla Velocity Scroll-Fade: Banners</title>
 </head>
 
 <body data-nav-mobile="false">
@@ -107,7 +107,7 @@
 				</li>
 				<li role="none">
 					<a role="menuitem" href="./index.banner.html">
-						Vanilla Velocity Banners
+						Vanilla Velocity Scroll-Fade: Banners
 					</a>
 				</li>
 				<li role="none">
@@ -132,42 +132,42 @@
 
 	<main id="site-main" class="site__main site__main--full">
 
-		<section id="banner-01" data-banner>
-			<div data-banner-content>
-				<h1 data-banner-title>Vanilla Velocity Banners</h1>
-				<div data-banner-text>
-					<p>Aliquam erat volutpat. Nulla facilisi. Nunc porttitor, elit non eleifend aliquam, est leo scelerisque nibh, nec faucibus odio urna ac nulla.</p>
-					<p><a data-banner-action href="#">Do This Now!</a></p>
+		<section id="banner-01" class="banner">
+			<div class="banner__content">
+				<h1 class="banner__title">Vanilla Velocity Scroll-Fade</h1>
+				<div class="banner__text">
+					<p>Uses vanilla Javascript + Velocity V2 to fade content in and out on page scroll.</p>
+					<p><a class="banner__action" href="#">Do This Now!</a></p>
 				</div>				
 			</div>
 		</section>
 
-		<section id="banner-02" data-banner>
-			<div data-banner-content>
-				<h1 data-banner-title>Hey, Banner Banner Banner!</h1>
-				<div data-banner-text>
-					<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>				
-					<p><a data-banner-action href="#">Do This Now!</a></p>
+		<section id="banner-02" class="banner">
+			<div class="banner__content">
+				<h1 class="banner__title">Use On Any Element</h1>
+				<div class="banner__text">
+					<p>Here, Scroll-Fade is applied to inner text blocks like this one.</p>				
+					<p><a class="banner__action" href="#">Do This Now!</a></p>
 				</div>
 			</div>			
 		</section>
 	
-		<section id="banner-03" data-banner>
-			<div data-banner-content>
-				<h1 data-banner-title>Forage Hexagon</h1>
-				<div data-banner-text>
+		<section id="banner-03" class="banner">
+			<div class="banner__content">
+				<h1 class="banner__title">Forage Hexagon</h1>
+				<div class="banner__text">
 					<p>Iceland thundercats helvetica, forage hexagon selvage normcore adaptogen you probably haven't heard of them sriracha kitsch slow-carb.</p>
-					<p><a data-banner-action href="#">Do This Now!</a></p>
+					<p><a class="banner__action" href="#">Do This Now!</a></p>
 				</div>
 			</div>	
 		</section> 
 
-		<section id="banner-04" data-banner>
-			<div data-banner-content>
-				<h1 data-banner-title>Last One!!</h1>
-				<div data-banner-text>
+		<section id="banner-04" class="banner">
+			<div class="banner__content">
+				<h1 class="banner__title">Last One!!</h1>
+				<div class="banner__text">
 					<p>Maecenas laoreet in metus eget convallis. Vivamus at eleifend felis. Proin non vehicula neque. Etiam eleifend sapien ut nulla malesuada, ac condimentum nisl efficitur.</p>
-					<p><a data-banner-action href="#">Do This Now!</a></p>
+					<p><a class="banner__action" href="#">Do This Now!</a></p>
 				</div>
 			</div>
 		</section>
@@ -223,10 +223,11 @@
 </script>
 
 <!-- BANNER Script -->
-<script type="text/javascript" src="./js/banners.js"></script>
+<script type="text/javascript" src="./js/scrollfade.js"></script>
 <script>
-	Banners.init(); 
+	ScrollFade.init('.banner__content'); 
 </script>
+
 
 </body>
 </html>
