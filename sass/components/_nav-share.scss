@@ -1,0 +1,38 @@
+// 
+// @this /sass/componenets/_share.scss
+// 
+
+
+// Wraps the Share plugin we'll be using
+nav.share {
+    // the container added by the plugin
+    // Keep focus outline visible
+    padding: 8px;
+    text-align: center;
+    line-height: 1;
+
+    div {
+        display: flex;
+    }
+
+    a {
+        color: $color__black;
+    }
+
+    .icon-wrap {
+        padding: 0.25em;
+    }
+
+    &--single a:not(.a2a_dd) {
+        display: none;
+    }
+
+    &--horizontal div {
+        flex-flow: row nowrap;
+    }
+    &--vertical div {
+        flex-flow: column nowrap;
+    }
+
+}
+

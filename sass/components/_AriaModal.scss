@@ -1,0 +1,395 @@
+//
+// Vanilla Aria Modals
+// Accessible modals with vanilla Javascript
+//
+// @this /sass/componenets/_AriaModal.scss
+// @requires /js/AriaModal.js + related
+// @requires /sass/variables/_animate.scss
+// 
+ 
+
+// A wrapper <div> or other block
+// containing the opener and modal content
+[data-modal-component] {}
+
+
+// Open <a> or <button>
+[data-modal-open] {}
+
+
+// A <p> that can be hidden or visible
+[data-modal-description] {
+    // @include screen-reader-text;
+}
+
+
+// Overlay <div>
+[data-modal-overlay] {
+    position: fixed;    
+    overflow-y: auto; 
+    overflow-x: hidden;
+    z-index: 100;	      
+	top: 0;
+	bottom: 0;
+	left: 0;
+    right: 0;
+	margin: 0;
+    padding: 2rem; 
+    &:not([data-modal-active]) {
+        display: none;
+    }
+    &[data-modal-active] {
+       display: block;
+    }
+} // 
+
+
+// Modal <div> 
+// See demos below for positioning
+[data-modal] {
+    position: relative; 
+    margin: auto;
+}
+
+
+// An optional inner <div>
+[data-modal-content] {
+    padding: 1rem;
+}
+
+
+// Defualt close X <button>
+[data-modal-xButton] {
+    display: flex;
+    position: absolute;
+    z-index: 200;
+    top: -0.5rem;
+    right: -0.5rem;
+    margin: 0; 
+}
+// The <span>
+[data-modal-x-wrap] {
+    height: 1em;
+    width: 1em;   
+}
+// The <svg>
+[data-modal-x-icon] {
+    height: 1em;
+    width: 1em;
+}
+
+
+//
+// Default Modal Transitions
+// [data-modal-component].class
+// JS accomodates transitions up to 1000ms
+// 
+
+// Default fade
+// No animate.css here - interferes with 
+// tranistions on the [data-modal] element.
+[data-modal-overlay] {
+    transition-property: opacity;    
+    &:not([data-modal-active]) {
+        opacity: 0;        
+        transition-duration: 500ms;
+    }
+    &[data-modal-active] {
+        opacity: 1;  
+        transition-duration: 500ms;
+    }
+} //
+
+// Default Animation settings
+// for use with /sass/mixins/_animate.scss
+[data-modal] {
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+
+//
+// animate.scss Modal Transitions
+// [data-modal-component].class
+// JS accomodates transitions up to 500ms
+// For CSS trasitions to work,
+// do no use `transform` for positioning
+// 
+
+// Scale from center
+.modal-zoom [data-modal] {
+    &:not([data-modal-active]) {
+        -webkit-animation-name: zoomOut;
+        animation-name: zoomOut;
+    }
+    &[data-modal-active] {
+        -webkit-animation-name: zoomIn;
+        animation-name: zoomIn;
+    }
+} //
+
+// Twist from center
+.modal-roll [data-modal] {
+    &:not([data-modal-active]) {
+        -webkit-animation-name: rollOut;
+        animation-name: rollOut;
+    }
+    &[data-modal-active] {
+        -webkit-animation-name: rollIn;
+        animation-name: rollIn;
+    }      
+} // 
+
+// Slide left to right
+.modal-slide-right [data-modal] {
+
+    &:not([data-modal-active]) {
+        -webkit-animation-name: fadeOutRight;
+        animation-name: fadeOutRight;
+    }
+
+    &[data-modal-active] {
+        -webkit-animation-name: fadeInLeft;
+        animation-name: fadeInLeft;
+    }
+
+} //
+
+// Rubber band on open (fade on close)
+.modal-rubber [data-modal] {
+    -webkit-animation-name: rubberBand;
+    animation-name: rubberBand;
+} //
+
+// Bounce
+.modal-bounce [data-modal] {
+
+    &:not([data-modal-active]) {
+        -webkit-animation-name: bounceOutDown;
+        animation-name: bounceOutDown;
+    }
+
+    &[data-modal-active] {
+        -webkit-animation-name: bounceInDown;
+        animation-name: bounceInDown;
+    }
+
+} //
+
+// Lightspeed
+.modal-lightspeed [data-modal] {
+
+    &:not([data-modal-active]) {
+        -webkit-animation-name: lightSpeedOut;
+        animation-name: lightSpeedOut;
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    &[data-modal-active] {
+        -webkit-animation-name: lightSpeedIn;
+        animation-name: lightSpeedIn;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+} //
+
+
+// 
+// Modal - Theme-specific Styles
+//
+
+[data-modal-component] {
+    border: 1px solid;
+    margin: 2rem;
+    padding: 1rem;
+}
+
+[data-modal-overlay] {
+    background-color: rgba(0,0,0, 0.8);
+}
+
+[data-modal] {
+    border-radius: 10px;	
+    background-color: $color__white;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.4);    
+    h1 {
+        border: none !important;
+        margin-top: 0; 
+    }
+}
+
+[data-modal-xButton] {
+    @include font-size(1.424);   
+    padding: 0.15em;
+    border-radius: 100%;
+    border: 4px double;
+    background: $color__white;
+    color: $color__black;
+
+    &:hover, &:active, &:focus {
+        background: $color__black;
+        color: $color__white;        
+    }
+}
+
+
+@include test-mode {
+    // 
+    // Demo - Tricky Focus +  Media Players
+    // 
+
+    #demo-iframe {
+        [data-modal-overlay] {
+            background-color: rgba(#D50000, 0.8);
+        }
+        [data-modal] {
+            height: 100%;
+            width: 100%;
+            border-radius: 0; 
+            box-shadow: none;
+            background: none;  
+            // For iframe
+            padding: 0;
+            padding-top: 56.25%;      
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;	    
+            width: 100%;
+            height: 100%;
+            border: 0;	        
+        }  
+        [data-modal-xButton] {
+            top: 1rem;
+            right: 1rem;
+        }    
+    }
+
+    #demo-video {
+        [data-modal-overlay] {
+            background-color: rgba(#0091EA, 0.8);
+        }
+        [data-modal] {
+            height: 100%;
+            width: 100%;
+            // Remove some defaults
+            border-radius: 0; 
+            box-shadow: none;
+            background: none;       
+        }
+        video {
+            object-fit: cover;
+            width: 100%;
+            box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75); 
+        }
+    }
+
+    #demo-audio {
+        [data-modal-overlay] {
+            background-color: rgba(#311B92, 0.85);
+        }   
+        [data-modal] {
+            max-width: 600px;
+        }
+    }
+
+    // 
+    // Demo - Alternative Focus
+    // 
+
+    #demo-subscribe {
+        [data-modal-overlay] {
+            background-color: rgba(#64DD17, 0.9);
+        }
+        [data-modal] {
+            max-width: 710px;        
+        }
+    }
+
+    #demo-scroll  {
+        [data-modal] {
+            max-width: 720px;
+        }
+    }
+
+    #demo-return {
+        [data-modal] {
+            max-width: 720px;
+        }
+    }
+
+    // 
+    // Demo - Images
+    // 
+        
+    #demo-image {
+        [data-modal-overlay] {
+            background-color: rgba(#FF6F00, 0.85);
+        }
+        [data-modal] {
+            width: 100%;
+            // Remove some defaults
+            border-radius: 0; 
+            box-shadow: none;
+            background: none;               
+        }
+        img {
+            display: block;
+            // magic number = [data-modal-overlay] padding * 2
+            max-height: calc(100vh - 4rem);
+            margin: auto;
+            box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);    
+        }
+    }
+
+    #demo-figure {
+        [data-modal-overlay] {
+            background-color: rgba(#64DD17, 0.85);
+        }
+        [data-modal] {
+            width: 100%;
+            // Remove some defaults
+            border-radius: 0; 
+            box-shadow: none;
+            background: none;               
+        }
+        img {
+            display: block;
+            // magic number = [data-modal-overlay] padding * 2
+            max-height: calc(100vh - 4rem);
+            margin: auto;
+            box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);    
+        }
+        figcaption {
+            position: absolute;
+            bottom: 1rem; 
+            left: 50%;
+            transform: translateX(-50%);  
+            padding: 0.5rem 1rem;             
+            color: white;
+            background: rgba(0,0,0, 0.9);
+        }
+
+    }
+
+    // 
+    // Demo - Animations
+    // 
+
+    #demo-zoom,
+    #demo-roll,
+    #demo-slide-right,
+    #demo-rubber,
+    #demo-bounce,
+    #demo-lightspeed  {
+        [data-modal] {
+            max-width: 720px;
+        }
+    }
+
+} // test-mode

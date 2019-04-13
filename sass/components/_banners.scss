@@ -1,11 +1,15 @@
 // 
-// Vanilla Velocity Banners
+// Vanilla Scroll-Pin Banners
 //
 // @this /sass/components/_banner.scss
-// @requires /js/banner.js
-// @requires /vendors/velocity.js
+// @uses /js/ScrollPin.js
+// @uses /sass/variables/_animate.scss
 // 
  
+
+// 
+// No Javascript
+//
 
 // The outter block element
 .banner {
@@ -37,7 +41,6 @@
     color: $color__white;
 }
 
-
 // An h1, h2, h3 ...
 .banner__title {
     color: $color__white;
@@ -45,12 +48,11 @@
     padding-top: 0;
 }
 
-
 // A block with text in it
 .banner__text {}
 
 
-// An  <a> 
+// An <a> 
 .banner__action {
     
     display: inline-flex;
@@ -73,6 +75,33 @@
 
 } //
 
+
+
+//
+// ScrollPin.js
+// 
+
+.banner__content[data-scroll-pin] {
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.banner__content[data-scroll-pin="false"] {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
+.banner__content[data-scroll-pin="true"] {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+
+// 
+// Demo
+// 
 
 @include test-mode {
 

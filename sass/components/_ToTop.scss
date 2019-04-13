@@ -1,0 +1,62 @@
+// 
+// Vanilla Smooth To Top
+//
+// @this /sass/components/_site-totop.scss
+// @requires /js/ToTop.js
+// @enhanced /vendors/smooth-scroll.js
+//  
+
+
+// 
+// To Top - Base
+// 
+
+[data-totop] {
+	z-index: 10;
+	position: fixed;
+	bottom: 0.493rem;
+	right: 0.493rem;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+
+	-webkit-animation-duration: 300ms;
+	animation-duration: 300ms;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both; 
+}
+
+
+// JS Pin states
+[data-totop-pin='false'] {
+	-webkit-animation-name: zoomOut;
+	animation-name: zoomOut;
+}
+
+[data-totop-pin='true'] {
+	-webkit-animation-name: zoomIn;
+	animation-name: zoomIn;
+}
+
+// 
+// To Top - Styles
+// 
+
+[data-totop] {
+	border-radius: 100%;	
+	color: #ECEFF1;
+	background-color: rgba(#263238, 0.5);
+
+	&:hover, &:active, &:focus {
+		color: #FFFFFF;
+		background-color: rgba(#263238, 0.75);
+	}
+
+	svg {
+		height: 2.565rem;
+		width: 2.565rem;
+	}	
+
+}
+

@@ -6,7 +6,7 @@
 html {
 	cursor: default; 	
 	box-sizing: border-box;
-    font-size: $font-size;
+	font-size: $font-size;
 	-moz-tab-size: 4; 
 	tab-size: 4; 
 	-ms-text-size-adjust: 100%; 
@@ -46,6 +46,16 @@ body {
 	padding: 0;
 	@include sans-400;
 	@include font-size;		
-	line-height: 1.602;		
+	line-height: 1.602;	
+
 }
 
+body {
+		opacity: 1;
+		transition: 1000ms opacity;
+}
+
+body[data-body-fade]{
+		opacity: 0;
+		transition: none;
+}

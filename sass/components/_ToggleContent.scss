@@ -1,0 +1,169 @@
+//
+// Vanilla Aria Toggle Content
+// A lighter-weight alternative to many ARIA accordions.
+//
+// @this /sass/componenets/_ToggleContent.scss
+// @requires /js/ToggleContent.js
+// 
+ 
+// 
+// Button - Added via JS
+// Replaces text inisde [data-toggle-title]
+// 
+
+// The <h> tag wrappin the <button>
+[data-toggle-title][aria-label] {
+    margin: 0;
+    padding: 2px 4px;    
+}
+
+// <button>
+[data-toggle-button] {
+    display: flex;
+    width: 100%; 
+    padding: 0.35em 0.25em;
+    text-align: left;
+    font-size: inherit;
+
+    &[aria-expanded] {}
+    &[aria-expanded='false'] {}
+    &[aria-expanded='true'] {}
+}
+
+// <span>
+[data-toggle-icon-wrap] {
+	display: inline-block;
+	line-height: 1;
+	text-align: center;
+}
+
+// <svg>
+[data-toggle-icon] {
+    transform-origin: center;
+    transition-property: transform;
+    transition-duration: 300ms;    
+    height: 1em;
+    width: 1em;
+}
+
+[aria-expanded="true"] [data-toggle-icon] {
+  transform: rotate(90deg);
+}
+
+// <span>
+[data-toggle-button-text] {}
+
+
+// 
+// Content <div>
+// 
+
+[data-toggle-content] {
+
+    &[aria-hidden] {
+        -webkit-animation-duration: 300ms;
+        animation-duration: 300ms;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;   
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;             
+        transform-origin: top;   
+
+        margin: 0 4px;       
+        padding: 1rem;   
+        border: 1px solid #B0BEC5;
+        border-top: none;        
+    }
+
+    &[aria-hidden='true'] {
+		-webkit-animation-name: scaleOutUp;
+        animation-name: scaleOutUp;   
+    }   
+
+    &[aria-hidden='false'] {
+        -webkit-animation-name: scaleInDown;
+        animation-name: scaleInDown;
+    }
+
+} 
+
+
+// 
+// Theme-specific styles
+//
+
+// Title
+[data-toggle-title][aria-label] {
+    @include font-size(1.266);
+}
+
+// Button
+[data-toggle-button] {   
+    color: #ffffff;
+    background-color: #3D5AFE;
+    border: 1px solid #3D5AFE;
+    transition: background-color 250ms;
+
+    &:hover, 
+    &:active,
+    &:focus,
+    &[aria-expanded='true'] {
+        background-color: #6200EA;
+        border: 1px solid #6200EA;        
+    }
+} // 
+
+
+// 
+// Keyframes
+//
+
+@-webkit-keyframes scaleInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(1, 0, 1);
+    transform: scale3d(1, 0, 1);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(1, 0, 1);
+    transform: scale3d(1, 0, 1);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scaleOutUp {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(1, 0.3, 1);
+    transform: scale3d(1, 0.3, 1);
+  }
+  to {
+    opacity: 0;   
+  }
+}
+
+@keyframes scaleOutUp {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(1, 0.3, 1);
+    transform: scale3d(1, 0.3, 1);
+  }
+  to {
+    opacity: 0;
+  }
+}

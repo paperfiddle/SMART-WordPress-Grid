@@ -2,174 +2,28 @@
 // @this /sass/layouts/_page.scss
 // 
 
-// 
-// Page - Grid
-//
 
-@media screen and (max-width: 859px) {
-    .page {
-        &__grid-left   {}
-        &__grid-right  {display: none;}
-        &__grid-bottom {}        
-    }
-}
 
-@media screen and (min-width: 860px) {
+.page {
 
-    .page {
-        display: grid;
-        grid-gap: 1rem;
-        grid-gap: 20px;
-        grid-template-columns: 1fr minmax(560px, 810px) 240px 1fr;
-        grid-template-areas: 
-            '. page-left page-right .'
-            '. page-bottom page-bottom .';
-
-        &__grid-left   {grid-area: page-left;}
-        &__grid-right  {grid-area: page-right;}
-        &__grid-bottom {grid-area: page-bottom;}        
+    &__header {
+        max-width: 810px;
+        margin: auto;
     }
 
-}
-
-
-// 
-// Page Header - Grid
-// 
-
-.page-header {
-    display: grid;
-    grid-template-columns: 64px 1fr 40px;
-    grid-template-rows: auto auto 1fr;
-    align-items: start;
-    padding: 0.5rem;
-
-    &__title {
-        grid-row: 1/2; 
-        grid-column: 1/4;
-        margin: 1rem 0 0.5rem 0;
-        padding: 0;
-    }
-    &__sub-title {
-        grid-row: 2/3; 
-        grid-column: 1/3; 
-        z-index: 1;
-        margin: 1rem 0 0.5rem 0;
-        padding: 0.5rem;
-    }
-    &__categories {
-        grid-row: 3/4; 
-        grid-column: 2/4;
-        z-index: 1;
-        display: inline-block;
-        justify-self: end;
-        align-self: end;
-        margin: 0.5rem;
-        padding: 0.5rem;
-    }
-    &__image {
-        grid-row: 2/4; 
-        grid-column: 2/4; 
-        min-height: 340px;
-    } 
-    &__share {
-        grid-row: 3/4;
-         grid-column: 1/2;
-    }
-     &__image img {
-        width: 100%;
-        min-height: 400px;
-        object-fit: cover;
+    &__main {
+        max-width: 810px;
+        margin: auto;
     }
 
-}
-
-
-// 
-// Page Header - Styles
-// 
-
-.page-header {
-
-    &__title {
-        @include font-size(1.802);
-    }
-    &__sub-title {
-        @include sans-400;
-        @include font-size(1.125);        
-        color: #ffffff;
-        background: rgba(0, 0, 0, 0.7);
-    }
-    &__image {
-        @include bg-swoosh($color__primary);
-    }
-    &__image img {
-        // display: none; // test fallback style
-    }
-    &__categories {
-        background: rgba(0, 0, 0, 0.7);
-    }
-    &__categories a {
-        color: #ffffff;
-        &:hover, &:active, &:focus {
-            color: $color__blue-a;
-        }
-    }
-    &__share {
-        a:hover, a:active, a:focus {
-            color: $color__blue-a;
-        }
+    &__main--full {
+        max-width: 100%;
     }
 
-}
-
-
-// 
-// Page Summary
-// 
-
-.page__summary {
-    padding: 0.5rem 0.5rem 0 0.5rem;
-    .page__excerpt {
-        padding: 1rem 0;
-        @include font-size(1.266);
-        @include sans-400;
-        border-top: 2px solid;
-        border-bottom: 2px solid;
+    &__foooter {
+        max-width: 810px;
+        margin: auto;
     }
 
-    .page__excerpt :first-child {
-        margin-top: 0;
-        padding-top: 0;
-    }
-    .page__excerpt :last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
 
-} 
-
-
-// 
-// Page Main
-// 
-
-.page__main {
-    padding: 0 0.5rem;
-}
-
-.page__main h1 {
-    border-top: 2px solid;
-    &:first-child {
-        border: 0;
-        margin-top: 0;
-    }
-}
-
-
-// 
-// Page - Bottom
-// 
-.page__comments {}
-
-
+} //

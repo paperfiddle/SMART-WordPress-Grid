@@ -1,39 +1,11 @@
 // 
-// @file /sass/mixins/_mix-focus.scss
+// @this /sass/mixins/_mix-focus.scss
 //
-
-// This theme's global focus style for links, buttons, inputs, etc. 
-// TODO: Opera Mini fallback.
-// @link https://caniuse.com/#feat=css-boxshadow
+// This theme's global focus style for links, buttons, inputs, etc.
+// 
 
 
 @mixin focus {
-
 		outline: 4px dashed $color__focus;
-		// background: $color__focus-a;
-		// // outline-offset: 2px;
-		
-		// outline: 0 !important;
-		// -webkit-box-shadow: 0px 0px 2px 1px rgba(#2962FF, 0.5) !important;
-		//    -moz-box-shadow: 0px 0px 2px 1px rgba(#2962FF, 0.5) !important;
-		//         box-shadow: 0px 0px 2px 1px rgba(#2962FF, 0.5) !important;	
 }
-
-
-// 
-// By default, `:focus` uses the `outline` property to provide visual
-//  cues for those using screen readers or keyboard navigation. 
-//
-// `outline` plays an important accessibility role, but it has two drawbacks.
-// 
-// First is inconsistent style across browsers.
-// This is easily fixed by writing our own. 
-//
-// Second, `outline` doesn't have a 'border-radius' equivalent.
-// So, `outline` can look awkward around buttons and inputs with radi
-// 
-// This @mixin replaces `outline` with `box-shadow`.
-// It provides the necessary visual cues and obeys `border-radius`.
-// It uses blue vs. theme colors because blue is the most accessible color
-// and is the default / expected color across all browsers. 
-// 
+ 

@@ -1,105 +1,149 @@
 // 
-// Van11y Velocity Mobile Navigation
-// 
-// @file /sass/componenets/_nav-mobile.scss
-// @file /sass/components/_site-header.scss
-// @file /js/nav-mobile.js
-// @file /vendors/velocity.2.0.5.min.js
-//
-// IMPORTANT: Supports single-level navigation only
+// @this /sass/components/_nav-mobile.scss
+// @requires /js/AriaModal.js + related
+// @related /sass/components/_StickyHeader.scss
 // 
 
-
-//
-// Mobile nav - button
-// 
-
-// if nav-mobile.js is NOT loaded
-button[data-nav-mobile='false'] {
-    display: none;
-}
-
-// if nav-mobile.js IS loaded
-button[data-nav-mobile='true'] {
-    @include font-size(1.424);
-    border: none;
-    background-color: transparent; 
-} // 
-
-
-// 
-// Mobile nav menu
-// 
-
-ul[data-nav-mobile] {
+// Component wrapper <div>
+#mobile[data-modal-component] {
     margin: 0;
-    list-style: none; 
-    li {
-        margin: 0;
-        padding: 0;
-    } 
-    a {
-        text-decoration: none;
-    }
-} //
-
-
-// if nav-mobile.js is NOT loaded
-ul[data-nav-mobile='false'] {
-    display: flex;
-    flex-flow: row wrap;
-    padding: 0.215rem 0; 
-    font-size: 0.79rem;   
-
-    a {
-        display: inline-block;
-        padding: 0.346em 1em;
-    }
-
-} //
-
-// if nav-mobile.js IS loaded
-ul[data-nav-mobile="true"] {
-    position: absolute; 
-    top: 100%; // start at bottom edge of header		
-    right: 0;	
-    left: 0;
-    height: auto;
-    display: flex;
-    flex-direction: column; 
-    transform-origin: top;
-    font-size: 1rem;    
-
-    a {
-        display: block;
-        max-width: 300px;
-        margin-left: auto;
-        padding: 0.35em;
-    }   
-
-} //
-
-ul[data-nav-mobile][aria-hidden="false"]  {
-    height: auto;
-    visibility: visible;
-    padding: 0 0 1rem 0;
+    padding: 0;
+    border: 0;
 }
 
-ul[data-nav-mobile][aria-hidden="true"]  {
-    height: 0px;
-    visibility: hidden;
+// Open <button>
+#mobile [data-modal-open] {
+    display: flex;
+    margin: 0; 
+    padding: 0.15em;    
+    @include font-size(1.802);
+    background: none;
+    border: none;
+    [data-modal-open-icon-wrap],
+    [data-modal-open-icon] {
+        height: 1em;
+        width: 1em;  
+    }
+} 
+
+
+// Overlay <div>
+#mobile [data-modal-overlay] {
+    padding: 0;
+    background: rgba(0,0,0,0.95)
 }
 
-
-// 
-// Styles 
-// 
-
-ul[data-nav-mobile] {
+// Modal <div> 
+#mobile [data-modal] {
+    position: relative;
+    margin: auto;
+    padding: 2rem;     
+    border-radius: 0;
+    box-shadow: none;
     background: transparent;
+
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    &:not([data-modal-active]) {
+        -webkit-animation-name: fadeOutRight;
+        animation-name: fadeOutRight;
+    }
+    &[data-modal-active] {
+        -webkit-animation-name: fadeInRight;
+        animation-name: fadeInRight;
+    }
 }
 
-ul[data-nav-mobile='true'] {
-    @include bg-linear-h($color__alt, 1, $color__alt-a, 1);
+// Inner <div>
+#mobile [data-modal-content] {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr) ) ;
+    padding: 1rem;        
 }
+
+// Defualt close X <button>
+#mobile [data-modal-xButton] {
+    display: flex;
+    position: absolute;
+    z-index: 200;
+    top: 0.6rem;
+    right: 0.6rem;
+    margin: 0; 
+
+    [data-modal-x-wrap],
+    [data-modal-x-icon] {
+        height: 1em;
+        width: 1em;   
+    }    
+
+    @include font-size(1.424);   
+    padding: 0.15em;
+    border-radius: 100%;
+    border: 4px double;
+    background: #FFFFFF;
+    color: #000000;
+
+    &:hover, &:active, &:focus {
+        background: #000000;
+        color: #FFFFFF;        
+    }
+}
+
+
+// 
+// Styles
+// 
+
+#mobile .mobile-item {
+    padding: 1rem;
+    // border: 1px dotted;
+    border-radius: 10px; 
+    color: white;   
+
+    h1 {
+        color: white;
+        margin-top: 0;
+        padding-top: 0;
+        @include font-size(1.242);
+    }
+
+    &--subscribe {
+        background: rgba(#EA80FC, 0.9)
+    }
+    &--offer {
+        background: rgba(#64DD17, 0.9)
+    }
+    &--categories {
+        background: rgba(#FF6D00, 0.9)
+    }
+    &--about {
+        background: rgba(#AA00FF, 0.9)
+    }
+
+}
+
+
+
+
+
+
+// Close X <button>
+#mobile [data-modal-xButton] {
+    @include font-size(1.424);   
+    padding: 0.15em;
+    border-radius: 100%;
+    border: 4px double;
+    background: #FFFFFF;
+    color: #000000;
+
+    &:hover, &:active, &:focus {
+        background: #000000;
+        color: #FFFFFF;        
+    }
+}
+
 

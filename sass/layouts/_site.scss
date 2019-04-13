@@ -15,16 +15,19 @@
 // Site Layout - Styles
 // 
 
-.site {
-	@include bg-linear-v($color__white, 1, $color__white-a, 1);	
-	&__header {}
-	&__main {background: $color__white;}
-	&__footer {
-		min-height: 2rem; 
-		@include bg-linear-v($color__black-a, 1, $color__black, 1);}
-	&__bottom {
-		min-height: 2rem; 
-		@include bg-slash-v($color__primary, 1, $color__primary-a, 1);}
+.demo-main {
+	max-width: 810px;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 100vh;
+}
 
+.site {
+	
+	&__header {}
+	&__main {}
+	&__footer {}
+	&__bottom {}
+	
 } // .site
 

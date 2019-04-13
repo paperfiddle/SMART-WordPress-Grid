@@ -12,8 +12,6 @@
  * 
  */
 
- console.log('LOADED Skip Link Focus Fix')
-
 ( function() {
 	var isIe = /(trident|msie)/i.test( navigator.userAgent );
 

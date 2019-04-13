@@ -5,15 +5,15 @@
 
 
 // The wrapper
-.icon {
-	// color: green;
-	display: inline-flex;
-	padding: 0.35em;
+.icon-wrap {
+	display: inline-block;
+	line-height: 1;
+	text-align: center;
 }
 
 // The svg
 svg,
-.icon__svg {
+.icon {
 	height: 1em;
 	width: 1em;
 }

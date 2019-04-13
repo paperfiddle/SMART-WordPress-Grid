@@ -1,0 +1,47 @@
+// 
+// @this /sass/components/_skip-link.scss
+// @requires /vendors/skip-link-focus-fix.js
+// 
+
+#skip-to-main  {
+    position: absolute;
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;    
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    word-wrap: normal !important;
+
+    &:focus {
+        position: fixed;
+        z-index: 100000;          
+        display: block;        
+        height: auto;
+        width: auto;  
+
+        top: 4px;              
+        left: 4px; 
+        right: 4px;       
+
+        clip: auto !important;
+        clip-path: none !important;
+        padding: 1em;
+
+        font-size: 1em;
+        line-height: normal;
+        text-align: center;
+
+        background-color: $color__focus;
+        color: $color__white;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    &:focus:hover {
+        text-decoration: none;
+    }
+
+}
