@@ -1,4 +1,14 @@
-# CSS and Sass
+# Sass
+
+* Compile `.scss` to `.css`
+* Add vendor prefixes for browser support
+* Minify for perfomance
+* TODO: Modularize so only needed CSS is called
+
+## Resources
+
+* https://github.com/hellobrian/sass-recipes/tree/master/node-sass
+
 
 ## Packages
 
@@ -6,7 +16,7 @@
     https://github.com/sass/node-sass
 
         1 high severity vulnerbility
-        npm audit
+        npm audit - requires manual review
 
     npm i -D autoprefixer
     https://github.com/postcss/autoprefixer
@@ -17,6 +27,8 @@
     npm i -D npm-run-all
     https://github.com/mysticatea/npm-run-all
 
+        1 high severity vulnerbility
+        npm audit - requires manual review
 
 
 # Not Installed
