@@ -44,11 +44,11 @@ Processes Javascript files.
     https://github.com/WordPress/gutenberg/tree/master/packages/babel-preset-default
     Preset for WordPress development
 
-# .babelrc
+## .babelrc
 
 The Babel configuration file. Tells Babel which browsers to target when transpiling modern JS and has minification settings. 
 
-# package.json - npm run babel
+## package.json - npm run babel
 
 Run Babel on the `./src` directory and out to `./dist`.
 
