@@ -17,6 +17,8 @@ This porject uses Node.js for these tasks:
     npm run build
 
     "scripts": {
+        "build-task:destroy-dist": "del-cli dist",
+        "build-task:make-dist": "make-dir dist",
         "build-task:babel": "babel src -d dist",
         "build-task:sass": "node-sass src/sass/ --output-style compressed -o dist/css",
         "build-task:autoprefixer": "postcss dist/css/*.css --use autoprefixer -d dist/css",
@@ -27,27 +29,27 @@ This porject uses Node.js for these tasks:
 
 Project
 
-    npm i -D make-dir
-    https://github.com/sindresorhus/make-dir
-    Make directories
+    npm i -D del-cli
+    https://github.com/sindresorhus/del-cli
+    Destroy existing `/dist` directory
 
     npm i -D make-dir-cli
     https://github.com/sindresorhus/make-dir-cli
-    Make directories
+    Make fresh `/dist` directory
 
-    npm i -D del-cli
-    https://github.com/sindresorhus/del-cli
-    Delete directories
+    npm i -D cpy-cli
+    https://github.com/sindresorhus/cpy-cli#readme
+    Copy assets + unprocessed files from `/src` to `/dist`
 
     npm i -D npm-run-all
     https://github.com/mysticatea/npm-run-all
-    Execute multiple scripts
+    Execute multiple scripts in sequence
 
 Babel
 
     npm i -D @babel/core
     https://babeljs.io/docs/en/babel-core 
-    The core runtime
+    The core runtime for processing JS files
 
     npm i -D @babel/cli
     https://babeljs.io/docs/en/babel-cli 
@@ -69,10 +71,17 @@ Sass
 
     npm i -D node-sass
     https://github.com/sass/node-sass
-
-    npm i -D autoprefixer
-    https://github.com/postcss/autoprefixer
+    The core runtime for processing `.scss` + minification
 
     npm i -D postcss-cli
     https://github.com/postcss/postcss-cli
+    The cli required for Autoprefixer
+
+    npm i -D autoprefixer
+    https://github.com/postcss/autoprefixer
+    Add vendor prefixes
+
+npm update check failed
+Try running with `sudo` or get acces to the local update config store via
+sudo chown -R $USER:$(id -gn $USER) C:\Users\User\.config
 

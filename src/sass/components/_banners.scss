@@ -109,26 +109,26 @@
 @include test-mode {
 
     #banner-01 {
-        background-image: url(../uploads/FernSorus.jpg);
+        background-image: url(../assets/media/FernSorus.jpg);
         [data-banner-content] {}
     }
 
     #banner-02 {
-        background-image: url(../uploads/MJBoyle_polytrochus_larva.jpg);
+        background-image: url(../assets/media/MJBoyle_polytrochus_larva.jpg);
         [data-banner-content] {
             background: rgba(#D50000, 0.9);
         }        
     }
 
     #banner-03 {
-        background-image: url(../uploads/Metapocyrtus-subquadrulfier.jpg);
+        background-image: url(../assets/media/Metapocyrtus-subquadrulfier.jpg);
          [data-banner-content] {
             background: rgba(#00695C, 0.9);
         }       
     }
 
     #banner-04 {
-        background-image: url(../uploads/Taraxacum-officinale-22-mm-3x.jpg);
+        background-image: url(../assets/media/Taraxacum-officinale-22-mm-3x.jpg);
         [data-banner-content] {
             background: rgba(#E65100, 0.9);
         }

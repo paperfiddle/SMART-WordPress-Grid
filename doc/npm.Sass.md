@@ -15,20 +15,11 @@
     npm i -D node-sass
     https://github.com/sass/node-sass
 
-        1 high severity vulnerbility
-        npm audit - requires manual review
-
     npm i -D autoprefixer
     https://github.com/postcss/autoprefixer
 
     npm i -D postcss-cli
     https://github.com/postcss/postcss-cli
-
-    npm i -D npm-run-all
-    https://github.com/mysticatea/npm-run-all
-
-        1 high severity vulnerbility
-        npm audit - requires manual review
 
 
 # Not Installed
