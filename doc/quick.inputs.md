@@ -41,7 +41,7 @@ Inputs with spinner
 
 Inputs with picker
 
-	select {}
+	[type="select"] {}
 
 Inputs with spinner + picker
 
