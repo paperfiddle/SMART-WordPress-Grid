@@ -1,0 +1,32 @@
+{
+  "name": "smart-vanilla-components",
+  "version": "1.0.0",
+  "description": "A collection of front-end components written in vanilla Javasrcipt and animated with CSS.",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "babel": "babel src -d dist",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wcDogg/SMART-Vanilla-Components.git"
+  },
+  "author": "Lisa Burton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wcDogg/SMART-Vanilla-Components/issues"
+  },
+  "homepage": "https://github.com/wcDogg/SMART-Vanilla-Components#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-preset-minify": "^0.5.0",
+    "node-sass": "^4.11.0"
+  },
+  "dependencies": {}
+}

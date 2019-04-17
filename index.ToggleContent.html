@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="./dist/style.css">
 	<title>Vanilla Aria Toggle Content</title>
 </head>
 
@@ -121,12 +121,12 @@
 								</li>
 								<li role="none">
 									<a role="menuitem" href="./index.ScrollPin.banner.html">
-										Vanilla Scroll-Fade Banners
+										Vanilla Scroll-Pin Banners
 									</a>
 								</li>
 								<li role="none">
 									<a role="menuitem" href="./index.ScrollPin.card.html">
-										Vanilla Scroll-Fade Cards
+										Vanilla Scroll-Pin Cards
 									</a>
 								</li>
 								<li role="none">
@@ -232,39 +232,37 @@
 
 </div><!-- #site -->
 
-<!-- GLOBAL-->
-<script type="text/javascript" src="./js/general.js" type="text/javascript"></script>
 
-<!-- Smooth Scroll Scripts -->
-<script type="text/javascript" src="./vendors/smooth-scroll.js"></script>
+<!-- Global -->
+<script type="text/javascript" src="./dist/vendors/smooth-scroll.polyfills.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/skip-link-focus-fix.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/StickyHeader.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/ToTop.js" type="text/javascript"></script>
+
 <script type="text/javascript">
+	// Smmoth Scroll
 	var scroll = new SmoothScroll('a[href*="#"]', {
-		speed: 500
+		speed: 300
 	});
-</script>
-
-<!-- ToTop Scripts -->
-<script type="text/javascript" src="./js/ToTop.js"></script>
-<script>
-	ToTop.init(); 
-</script>
-
-<!-- StickyHeader Scripts -->
-<script type="text/javascript" src="./js/StickyHeader.js"></script>
-<script>
+	// ToTop
+	ToTop.init();
+	// Sticky-Scrolly Header
 	StickyHeader.init('site-header', 'site-main'); 
 </script>
 
-<!-- AriaModal Scripts -->
-<script type="text/javascript" src="./js/AriaModalPrep.js"></script>
-<script type="text/javascript" src="./js/AriaUtils.js"></script>
-<script type="text/javascript" src="./js/AriaModal.js"></script>
+<!-- Aria Modal -->
+<script type="text/javascript" src="./dist/js/AriaModalPrep.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/AriaUtils.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/AriaModal.js" type="text/javascript"></script>
 
-<!-- ToggleContent Scripts -->
-<script type="text/javascript" src="./js/ToggleContent.js"></script>
-<script>
+
+<!-- Toggle Content-->
+<script type="text/javascript" src="./dist/js/ToggleContent.js" type="text/javascript"></script>
+
+<script type="text/javascript">
 	ToggleContent.init(); 
 </script>
+
 
 </body>
 </html>

@@ -1,0 +1,87 @@
+//
+// Vanilla Sticky-Scrolly Header
+//
+// @this /sass/components/_header.scss
+// @script /js/StickyHeader.js
+// @script /js/nam-mobile.js
+//
+
+
+//
+// Site Header - Base 
+//
+
+.site__header {
+	display: grid;
+	grid-template-columns: max-content 1fr max-content;	
+	grid-gap: 0.5rem;
+	padding: 0.216rem 0.624rem;
+	align-items: center;	
+	grid-template-areas: 
+		'head-branding head-follow head-mobile';
+
+	.branding {
+		grid-area: head-branding; 
+		justify-self: start;
+	}
+	.follow {
+		grid-area: head-follow; 
+		justify-self: center;
+	}
+	#mobile {
+		grid-area: head-mobile; 
+		justify-self: end;
+	}
+
+} //
+
+
+//
+// @script /js/StickyHeader.js 
+// Loaded, header is sticky
+//
+
+[data-header] {	
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	right: 0;
+	&[data-header-sticky] {
+		-webkit-animation-duration: 500ms;
+		animation-duration: 500ms;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;			
+	}
+	&[data-header-sticky='false'] {
+		-webkit-animation-name: fadeOutUp;
+		animation-name: fadeOutUp;
+	}
+	&[data-header-sticky='true'] {
+		-webkit-animation-name: fadeInDown;
+		animation-name: fadeInDown;	
+	}
+}
+
+
+//
+// Styles
+//
+
+ .site__header {
+	color: $color__white;
+	background: #F57F17;
+ }
+
+ .site__header a,
+ .site__header button {
+ 	text-decoration: none;
+	color: $color__white;
+	&:hover,
+	&:active,
+	&:focus {
+		color: $color__black;
+	} 
+}
+
+

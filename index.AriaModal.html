@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html> 
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="./dist/style.css">
 	<title>Vanilla Aria Modals</title>
 </head>
 
@@ -114,12 +114,12 @@
 								</li>
 								<li role="none">
 									<a role="menuitem" href="./index.ScrollPin.banner.html">
-										Vanilla Scroll-Fade Banners
+										Vanilla Scroll-Pin Banners
 									</a>
 								</li>
 								<li role="none">
 									<a role="menuitem" href="./index.ScrollPin.card.html">
-										Vanilla Scroll-Fade Cards
+										Vanilla Scroll-Pin Cards
 									</a>
 								</li>
 								<li role="none">
@@ -217,7 +217,7 @@
 						<div data-modal-overlay>
 							<div data-modal>
 								<video controls>
-									<source src="./video/snow-dog.mp4">
+									<source src="./uploads/snow-dog.mp4">
 								</video>
 							</div>
 						</div>
@@ -235,12 +235,12 @@
 									<p>Erykah Badu</p>
 									<h2>Nested source</h2>
 									<audio controls>
-										<source src="./audio/erykah-badu-back-in-the-day.mp3" type="audio/mpeg">
-										<p>Your browser doesn't support HTML5 audio. Here is a <a href="./audio/erykah-badu-back-in-the-day.mp3">link to the audio</a> instead.</p>
+										<source src="./uploads/erykah-badu-back-in-the-day.mp3" type="audio/mpeg">
+										<p>Your browser doesn't support HTML5 audio. Here is a <a href="./uploads/erykah-badu-back-in-the-day.mp3">link to the audio</a> instead.</p>
 									</audio>
 									<h2>src</h2>
-									<audio controls src="./audio/erykah-badu-back-in-the-day.mp3" autoplay>
-										<p>Your browser doesn't support HTML5 audio. Here is a <a href="./audio/erykah-badu-back-in-the-day.mp3">link to the audio</a> instead.</p>
+									<audio controls src="./uploads/erykah-badu-back-in-the-day.mp3">
+										<p>Your browser doesn't support HTML5 audio. Here is a <a href="./uploads/erykah-badu-back-in-the-day.mp3">link to the audio</a> instead.</p>
 									</audio>
 								</div>
 							</div>
@@ -326,7 +326,7 @@
 						</ul>
 						<div data-modal-overlay>
 							<div data-modal>
-								<img src="./images/Taraxacum-officinale-22-mm-3x.jpg" alt="">
+								<img src="./uploads/Taraxacum-officinale-22-mm-3x.jpg" alt="">
 							</div>
 						</div>
 					</div>
@@ -340,7 +340,7 @@
 						<div data-modal-overlay>
 							<div data-modal>
 								<figure id="attachment_479" aria-describedby="caption-attachment-479">
-									<img src="./images/Metapocyrtus-subquadrulfier.jpg" alt="Crazy thing under microscope">
+									<img src="./uploads/Metapocyrtus-subquadrulfier.jpg" alt="Crazy thing under microscope">
 									<figcaption id="caption-attachment-479">Crazy Thing Under Microscope</figcaption>
 								</figure>
 							</div>
@@ -477,19 +477,6 @@
 
 	</main><!-- .site__main -->
 
-	<nav id="site-totop" data-totop role="menu" aria-label="To top of main content">
-		<a href="#site-main" data-totop-link role="menuitem" rel="bookmark" title="To top" class="icon-wrap">
-			<svg aria-hidden="true" focusable="false" class="icon" data-icon="angle-up" role="img"
-				xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-				<path fill="currentColor"
-					d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z">
-				</path>
-			</svg>
-		</a>
-	</nav>
-
-	<footer id="site-footer" class="site__footer"></footer>
-
 	<a id="skip-to-top" href="#site-main" aria-label="Skip to top of main content" title="Skip to top of main content" rel="bookmark" data-totop>
 		<svg aria-hidden="true" focusable="false" data-totop-icon role="img"
 			xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -499,36 +486,34 @@
 		</svg>		
 	</a>
 
+	<footer id="site-footer" class="site__footer"></footer>
+
 </div><!-- #site -->
 
 
-<!-- GLOBAL-->
-<script type="text/javascript" src="./js/general.js" type="text/javascript"></script>
+<!-- Global -->
+<script type="text/javascript" src="./dist/vendors/smooth-scroll.polyfills.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/skip-link-focus-fix.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/StickyHeader.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/ToTop.js" type="text/javascript"></script>
 
-<!-- Smooth Scroll Scripts -->
-<script type="text/javascript" src="./vendors/smooth-scroll.js"></script>
+
 <script type="text/javascript">
+	// Smmoth Scroll
 	var scroll = new SmoothScroll('a[href*="#"]', {
 		speed: 300
 	});
-</script>
-
-<!-- ToTop Scripts -->
-<script type="text/javascript" src="./js/ToTop.js"></script>
-<script>
-	ToTop.init(); 
-</script>
-
-<!-- StickyHeader Scripts -->
-<script type="text/javascript" src="./js/StickyHeader.js"></script>
-<script>
+	// ToTop
+	ToTop.init();
+	// Sticky-Scrolly Header
 	StickyHeader.init('site-header', 'site-main'); 
 </script>
 
-<!-- AriaModal Scripts -->
-<script type="text/javascript" src="./js/AriaModalPrep.js"></script>
-<script type="text/javascript" src="./js/AriaUtils.js"></script>
-<script type="text/javascript" src="./js/AriaModal.js"></script>
+
+<!-- Aria Modal -->
+<script type="text/javascript" src="./dist/js/AriaModalPrep.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/AriaUtils.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/AriaModal.js" type="text/javascript"></script>
 
 
 </body>

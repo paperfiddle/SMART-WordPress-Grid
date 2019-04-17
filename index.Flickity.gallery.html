@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="./dist/style.css">
 	<title>Flickity.js Image Gallery</title>
 </head>
 
@@ -121,12 +121,12 @@
 								</li>
 								<li role="none">
 									<a role="menuitem" href="./index.ScrollPin.banner.html">
-										Vanilla Scroll-Fade Banners
+										Vanilla Scroll-Pin Banners
 									</a>
 								</li>
 								<li role="none">
 									<a role="menuitem" href="./index.ScrollPin.card.html">
-										Vanilla Scroll-Fade Cards
+										Vanilla Scroll-Pin Cards
 									</a>
 								</li>
 								<li role="none">
@@ -188,60 +188,72 @@
 
 			<main class="page__main page__main--full">
 
-				<div id="gallery">
+				<div id="gallery01">
 
-					<div class="gallery__images">
-						<figure class="gallery__item" id="" aria-describedby="">
-							<img data-flickity-lazyload="./images/FOVEA_hanen-khabou-RGB.jpg" alt="Crazy thing under microscope">
-							<figcaption id="">Fovea</figcaption>
-						</figure>
-
-						<figure  class="gallery__item" id="" aria-describedby="">
-							<img data-flickity-lazyload="./images/oviduct1.jpg" alt="Crazy thing under microscope">
-							<figcaption id="">Oviduct</figcaption>
-						</figure>
-
-						<figure  class="gallery__item" id="" aria-describedby="">
-							<img data-flickity-lazyload="./images/Human-Fovea_GNB3-Cit-CRALBP-40x.jpg" alt="Crazy thing under microscope">
-							<figcaption id="">Human Fovia</figcaption>
-						</figure>
-
-						<figure  class="gallery__item" id="" aria-describedby="">
-							<img data-flickity-lazyload="./images/spider_embryo.jpg" alt="Crazy thing under microscope">
-							<figcaption id="">Spider Embryo</figcaption>
-						</figure>
-
-						<figure  class="gallery__item" id="" aria-describedby="">
-							<img data-flickity-lazyload="./images/Butterfly-Urania-Ripeus-scales.jpg" alt="Crazy thing under microscope">
-							<figcaption id="">Butterfly Scales</figcaption>
-						</figure>			
+					<div class="slider slider--images">
+						<div class="slider__cell">
+							<figure aria-describedby="">
+								<img data-flickity-lazyload="./uploads/FOVEA_hanen-khabou-RGB.jpg" alt="Crazy thing under microscope">
+								<figcaption id="">Fovea</figcaption>
+							</figure>							
+						</div>
+						<div class="slider__cell">
+							<figure  aria-describedby="">
+								<img data-flickity-lazyload="./uploads/oviduct1.jpg" alt="Crazy thing under microscope">
+								<figcaption id="">Oviduct</figcaption>
+							</figure>							
+						</div>
+						<div class="slider__cell">
+							<figure  aria-describedby="">
+								<img data-flickity-lazyload="./uploads/Human-Fovea_GNB3-Cit-CRALBP-40x.jpg" alt="Crazy thing under microscope">
+								<figcaption id="">Human Fovia</figcaption>
+							</figure>							
+						</div>
+						<div class="slider__cell">
+							<figure  aria-describedby="">
+								<img data-flickity-lazyload="./uploads/spider_embryo.jpg" alt="Crazy thing under microscope">
+								<figcaption id="">Spider Embryo</figcaption>
+							</figure>							
+						</div>
+						<div class="slider__cell">
+							<figure  aria-describedby="">
+								<img data-flickity-lazyload="./uploads/Butterfly-Urania-Ripeus-scales.jpg" alt="Crazy thing under microscope">
+								<figcaption id="">Butterfly Scales</figcaption>
+							</figure>								
+						</div>
 					</div><!-- .slider -->
 
-					<div class="gallery__thumbs">
-						<figure class="gallery__item" id="" aria-describedby="">
-							<img src="./images/FOVEA_hanen-khabou-RGB.jpg" alt="Crazy thing under microscope">
-							<figcaption id="">Fovea</figcaption>
-						</figure>
-					
-						<figure class="gallery__item" id="" aria-describedby="">
-							<img src="./images/oviduct1.jpg" alt="Crazy thing under microscope">
-							<figcaption id="">Oviduct</figcaption>
-						</figure>
-					
-						<figure class="gallery__item" id="" aria-describedby="">
-							<img src="./images/Human-Fovea_GNB3-Cit-CRALBP-40x.jpg" alt="Crazy thing under microscope">
-							<figcaption id="">Human Fovia</figcaption>
-						</figure>
-					
-						<figure class="gallery__item" id="" aria-describedby="">
-							<img src="./images/spider_embryo.jpg" alt="Crazy thing under microscope">
-							<figcaption id="">Spider Embryo</figcaption>
-						</figure>
-					
-						<figure class="gallery__item" id="" aria-describedby="">
-							<img src="./images/Butterfly-Urania-Ripeus-scales.jpg" alt="Crazy thing under microscope">
-							<figcaption id="">Butterfly Scales</figcaption>
-						</figure>
+					<div class="slider slider--thumbs">
+						<div class="slider__cell">
+							<figure aria-describedby="">
+								<img src="./uploads/200/FOVEA_hanen-khabou-RGB.jpg" alt="Crazy thing under microscope">
+								<figcaption id="">Fovea</figcaption>
+							</figure>							
+						</div>
+						<div class="slider__cell">
+							<figure aria-describedby="">
+								<img src="./uploads/200/oviduct1.jpg" alt="Crazy thing under microscope">
+								<figcaption id="">Oviduct</figcaption>
+							</figure>						
+						</div>
+						<div class="slider__cell">
+							<figure aria-describedby="">
+								<img src="./uploads/200/Human-Fovea_GNB3-Cit-CRALBP-40x.jpg" alt="Crazy thing under microscope">
+								<figcaption id="">Human Fovia</figcaption>
+							</figure>						
+						</div>
+						<div class="slider__cell">
+							<figure aria-describedby="">
+								<img src="./uploads/200/spider_embryo.jpg" alt="Crazy thing under microscope">
+								<figcaption id="">Spider Embryo</figcaption>
+							</figure>						
+						</div>
+						<div class="slider__cell">	
+							<figure aria-describedby="">
+								<img src="./uploads/200/Butterfly-Urania-Ripeus-scales.jpg" alt="Crazy thing under microscope">
+								<figcaption id="">Butterfly Scales</figcaption>
+							</figure>						
+						</div>
 					</div><!-- .slider -->
 
 				</div><!-- #gallery -->		
@@ -267,57 +279,57 @@
 
 </div><!-- #site -->
 
-<!-- GLOBAL-->
-<script type="text/javascript" src="./js/general.js" type="text/javascript"></script>
 
-<!-- Smooth Scroll Scripts -->
-<script type="text/javascript" src="./vendors/smooth-scroll.js"></script>
+<!-- Global -->
+<script type="text/javascript" src="./dist/vendors/smooth-scroll.polyfills.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/skip-link-focus-fix.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/StickyHeader.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/ToTop.js" type="text/javascript"></script>
+
 <script type="text/javascript">
+	// Smmoth Scroll
 	var scroll = new SmoothScroll('a[href*="#"]', {
-		speed: 500
+		speed: 300
 	});
-</script>
-
-<!-- ToTop Scripts -->
-<script type="text/javascript" src="./js/ToTop.js"></script>
-<script>
-	ToTop.init(); 
-</script>
-
-<!-- StickyHeader Scripts -->
-<script type="text/javascript" src="./js/StickyHeader.js"></script>
-<script>
+	// ToTop
+	ToTop.init();
+	// Sticky-Scrolly Header
 	StickyHeader.init('site-header', 'site-main'); 
 </script>
 
-<!-- AriaModal Scripts -->
-<script type="text/javascript" src="./js/AriaModalPrep.js"></script>
-<script type="text/javascript" src="./js/AriaUtils.js"></script>
-<script type="text/javascript" src="./js/AriaModal.js"></script>
+<!-- Aria Modal -->
+<script type="text/javascript" src="./dist/js/AriaModalPrep.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/AriaUtils.js" type="text/javascript"></script>
+<script type="text/javascript" src="./dist/js/AriaModal.js" type="text/javascript"></script>
 
-<!-- Flickity scripts -->
-<script type="text/javascript" src="./vendors/flickity.pkgd.min.js"></script>
-<script type="text/javascript" src="./vendors/flickity.fullscreen.js"></script>
-<script>
+<!-- Flickity -->
+<script type="text/javascript" src="./dist/vendors/flickity.pkgd.min.js" type="text/javascript"></script>
 
-	var imageSlider = document.querySelector('.gallery__images');
-	var flkty = new Flickity(imageSlider, {
-		// options
+<script type="text/javascript" src="./dist/vendors/flickity.fullscreen.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	// Flickity
+	var imageSlider = document.querySelector('#gallery01 .slider--images');
+	var flktyImg = new Flickity(imageSlider, {
 		wrapAround: true,
 		setGallerySize: false,
 		fullscreen: true,
 		lazyLoad: true,
 		lazyLoad: 1,
 		imagesLoaded: true,
+		selectedAttraction: 0.2,
+		friction: 0.8,
 	});
-
-	var thumbSlider = document.querySelector('.gallery__thumbs');
-	var flkty = new Flickity(thumbSlider, {
-		// options
-		asNavFor: '.gallery__images',
-		wrapAround: true,
+	var thumbSlider = document.querySelector('#gallery01 .slider--thumbs');
+	var flktyThumb = new Flickity(thumbSlider, {
+		asNavFor: '#gallery01 .slider--images',
+		contain: true,		
+		prevNextButtons: false,
 		pageDots: false,
 		setGallerySize: false,
+		imagesLoaded: true,
+		selectedAttraction: 0.2,
+		friction: 0.8,
 	});
 </script>
 

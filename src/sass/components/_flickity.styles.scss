@@ -1,0 +1,111 @@
+// 
+// Flickity Styles 
+// 
+// @this /sass/components/_flickity.styles.scss
+// @related /sass/compnents/_flickity...scss
+// @script /vendors/.flickity.js + related
+//
+
+
+// 
+// Full-cell-height hack
+// 
+
+.flickity-resize .slider__cell {
+  min-height: 100%;
+}
+
+// 
+// Outter <div> 
+// 
+
+.slider {
+    figure {
+        position: relative;
+        height: 100%;        
+        margin: 0;
+        padding: 0;
+        background: #222;
+        text-align: center;
+        line-height: 1;
+    }
+    figcaption {
+        position: absolute;
+        bottom: 1.5em; 
+        left: 50%;
+        transform: translateX(-50%);  
+        padding: 0.5em;   
+        @include font-size(1);   
+        line-height: 1;       
+        color: white;
+        background: rgba(0,0,0, 0.9);
+    }
+    figure img {
+        object-fit: cover;
+        height: 100%;  
+        max-width: 100vw; 
+    }
+}
+
+.slider.is-fullscreen {
+    z-index: 500;    
+    height: 100% !important;
+    margin: 0;
+    padding: 0;
+    .flickity-page-dots {
+        display: none;
+    } 
+}
+
+// 
+// Gallery Thumbs (nav)
+// 
+.slider--thumbs {
+    height: 120px;
+    background: #ECEFF1;
+    margin-bottom: 32px;
+    padding: 8px;
+
+    .slider__cell {
+        padding: 16px;
+        height: 100%;        
+    }
+    figcaption {
+        display: none;
+    }
+    .is-nav-selected {
+        border: 4px dashed $color__focus;
+        padding: 4px;
+    }
+} // 
+
+// 
+// Gallery Imagees
+// 
+
+.slider--images {
+    height: 405px;
+    background: rgba(0,0,0, 0.8);
+    margin: 32px 0 48px 0;
+    .slider__cell {
+        height: 100%;
+    }
+} 
+
+
+// 
+// Post Slicer
+// 
+
+.slider--post {
+    margin: 48px 0;
+    .slider__cell {
+        padding: 10px;   
+        min-height: 100%;
+        display: grid;
+    }
+    .card {
+        margin: 0;
+    }
+}
+

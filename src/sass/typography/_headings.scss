@@ -1,0 +1,35 @@
+// 
+// @file /sass/typography/_headings.scss
+//  
+
+
+h1,h2,h3,h4,h5,h6 {
+	@include serif-700;
+	line-height: 1.226;
+	margin: 0;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	color: $color__black;
+}
+
+h1 { 
+	font-size: calc(1vw + 1rem);
+	// @include font-size(1.424); 
+	// margin-top: 2rem;
+}
+
+h2 { 
+	@include font-size(1.266); 
+	// margin-top: 2rem;
+}
+
+h3 {
+	@include font-size(1); 
+	// margin-top: 2rem;
+}
+
+h4 { 
+	@include font-size(0.889); 
+	// margin-top: 2rem;
+}
+
