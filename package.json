@@ -7,6 +7,11 @@
     "doc": "doc"
   },
   "scripts": {
+    "dev-task:destroy-css": "del-cli src/css",
+    "dev-task:make-css": "make-dir src/css",
+    "dev-task:new-css": "node-sass src/sass/ -o src/css",
+    "dev-task:watch-sass": "node-sass src/sass/ -wo src/css",
+    "dev": "npm-run-all -p dev-task:*",
     "build-task:destroy-dist": "del-cli dist",
     "build-task:make-dist": "make-dir dist",
     "build-task:copy-html": "cpy \"**/*.html\" \"../dist/\" --cwd=src --parents",

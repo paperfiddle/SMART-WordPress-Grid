@@ -116,3 +116,4 @@ To return focus to a different element,  maually create the element with an `id`
 Note that with these CSS transitions, the element being animated cannot have other transforms. For example, you cannot use `postion: absolute` plus `transform: translate(-50%, -50%);` for centering the modal.
 
 Alternatively, you can replace CSS with Javascript animations by adding them to the `aria.Modal` and the `aria.Modal.prototype.close` functions.
+

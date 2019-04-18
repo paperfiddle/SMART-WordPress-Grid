@@ -2,9 +2,9 @@
 
 This porject uses Node.js for these tasks:
 
-* Babel - Transpiles and minifies modern Javascript
-* Sass - Compiles `.scss` to `.css`, adds vendor prefixes, minifies
-* Copy - Moves unporcessed files into the `/dist` directory
+* Babel - Transpile and minify modern Javascript
+* Sass - Compile `.scss` to `.css`, add vendor prefixes, minify
+* Copy - Move unporcessed files into the `/dist` directory
 
 ## Start
 
@@ -13,6 +13,16 @@ This porject uses Node.js for these tasks:
 3. `npm init` to install dev dependencies
 
 ## package.json scripts
+
+    npm run dev
+    
+    "scripts": {
+        "dev-task:destroy-css": "del-cli src/css",
+        "dev-task:make-css": "make-dir src/css",
+        "dev-task:new-css": "node-sass src/sass/ -o src/css",
+        "dev-task:watch-sass": "node-sass src/sass/ -wo src/css",
+        "dev": "npm-run-all -p dev-task:*",
+    }
 
     npm run build
 
@@ -24,6 +34,7 @@ This porject uses Node.js for these tasks:
         "build-task:autoprefixer": "postcss dist/css/*.css --use autoprefixer -d dist/css",
         "build": "npm-run-all -p build-task:*"
     },
+
 
 ## Packages
 
@@ -80,8 +91,4 @@ Sass
     npm i -D autoprefixer
     https://github.com/postcss/autoprefixer
     Add vendor prefixes
-
-npm update check failed
-Try running with `sudo` or get acces to the local update config store via
-sudo chown -R $USER:$(id -gn $USER) C:\Users\User\.config
 
